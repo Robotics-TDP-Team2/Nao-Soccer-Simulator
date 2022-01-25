@@ -34,10 +34,9 @@ Thank you for your interest in our project. We strongly encourage reading the co
 
 `Nao-Soccer-Simulator ` is maintained by the RTDP-Project-Team2. Contributors include:
 
-Adwait Naik
-Ankit Soni
-Bin Liu
-Evelyn Onyi Anyebe
-Shijia Liu
-Xinhe Zheng
-
+* Adwait Naik
+* Ankit Soni
+* Bin Liu
+* Evelyn Onyi Anyebe
+* Shijia Liu
+* Xinhe Zheng
