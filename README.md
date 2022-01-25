@@ -6,7 +6,6 @@
 ![](https://img.shields.io/github/repo-size/Robotics-TDP-Team2/Nao-Soccer-Simulator.svg?label=Repo%20size&style=flat-square)&nbsp;
 ![Contributors](https://img.shields.io/github/contributors/Robotics-TDP-Team2/Nao-Soccer-Simulator.svg?style=flat&label=Contributors&maxAge=86400)
 
-
 #### Contents
 * [Synopsis](#synopsis)
 * [Conceptualisation](#conceptualisation)
