@@ -1,0 +1,31 @@
+<package>
+
+  <name>nao_moveit_config</name>
+  <version>0.0.11</version>
+  <description>
+     An automatically generated package with all the configuration and launch files for using the NAO robot with the MoveIt Motion Planning Framework
+  </description>
+  <author email="mikael.arguedas@gmail.com">Mikael Arguedas</author>
+  <maintainer email="surya.ambrose@gmail.com">Surya Ambrose</maintainer>
+  <maintainer email="natalia.lyubova@gmail.com">Natalia Lyubova</maintainer>
+
+  <license>BSD</license>
+
+  <url type="bugtracker">https://github.com/ros-naoqi/nao_moveit_config/issues</url>
+  <url type="repository">https://github.com/ros-naoqi/nao_moveit_config</url>
+
+  <build_depend>nao_description</build_depend>
+
+  <run_depend>nao_description</run_depend>
+  <run_depend>joint_state_publisher</run_depend>
+  <run_depend>moveit_planners_ompl</run_depend>
+  <run_depend>moveit_ros_move_group</run_depend>
+  <run_depend>moveit_ros_visualization</run_depend>
+  <run_depend>moveit_fake_controller_manager</run_depend>
+  <run_depend>moveit_simple_controller_manager</run_depend>
+  <run_depend>robot_state_publisher</run_depend>
+  <run_depend>xacro</run_depend>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  
+</package>

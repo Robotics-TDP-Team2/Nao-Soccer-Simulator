@@ -1,0 +1,12 @@
+\subsubsection parameters ROS parameters
+
+Reads and maintains the following parameters on the ROS server
+
+- \b "~visual_expression" : \b [bool] Enable speech recognizer's visual expression min: False, default: True, max: True
+- \b "~language" : \b [str] NAOqi's language min: , default: , max: 
+- \b "~vocabulary" : \b [str] None min: , default: , max: 
+- \b "~word_spotting" : \b [bool] Enable word spotting (recognizing words in the middle of a speech), only if your NAO supports it (>v4) min: False, default: False, max: True
+- \b "~audio_expression" : \b [bool] Enable speech recognizer's audio expression min: False, default: True, max: True
+- \b "~volume" : \b [int] NAOqi's volume min: 0, default: -1, max: 100
+- \b "~voice" : \b [str] NAOqi's voice min: , default: , max: 
+

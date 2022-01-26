@@ -1,0 +1,8 @@
+prefix=/home/lucas/myrobot_ws/devel
+
+Name: naoqi_pose
+Description: Description of naoqi_pose
+Version: 0.5.5
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

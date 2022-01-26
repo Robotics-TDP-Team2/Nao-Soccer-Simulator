@@ -1,0 +1,7 @@
+set(naoqi_navigation_SETUP_PY_SETUP_MODULE "distutils.core")
+set(naoqi_navigation_SETUP_PY_VERSION "0.0.1")
+set(naoqi_navigation_SETUP_PY_SCRIPTS "")
+set(naoqi_navigation_SETUP_PY_PACKAGES "")
+set(naoqi_navigation_SETUP_PY_PACKAGE_DIRS "")
+set(naoqi_navigation_SETUP_PY_MODULES "")
+set(naoqi_navigation_SETUP_PY_MODULE_DIRS "")

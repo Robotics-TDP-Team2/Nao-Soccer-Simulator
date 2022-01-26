@@ -1,0 +1,5 @@
+# Hashes of file build rules.
+f8e9e5253bf3bf233324c901db1b71c5 /home/lucas/myrobot_ws/devel/include/naoqi_driver_py/NaoqiSpeechConfig.h
+9949563c0bc64fdc89aa6f8e96be823c /home/lucas/myrobot_ws/devel/include/naoqi_sensors_py/NaoqiCameraConfig.h
+b6dee7bcd941c68bf392e68d46527b61 /home/lucas/myrobot_ws/devel/include/naoqi_sensors_py/NaoqiMicrophoneConfig.h
+6edbf2d764078f5ce702b5a34c19f823 CMakeFiles/clean_test_results

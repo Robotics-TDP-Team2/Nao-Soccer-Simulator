@@ -1,0 +1,24 @@
+\subsubsection parameters ROS parameters
+
+Reads and maintains the following parameters on the ROS server
+
+- \b "~guid" : \b [str] Global Unique ID of camera, 16 hex digits (use first camera if null). min: , default: , max: 
+- \b "~source" : \b [int] Video source. min: -2147483648, default: 0, max: 2147483647
+- \b "~resolution" : \b [int] Camera resolution. min: -2147483648, default: 1, max: 2147483647
+- \b "~frame_rate" : \b [double] Camera speed (frames per second). min: 1.0, default: 15.0, max: 30.0
+- \b "~camera_info_url" : \b [str] Camera [[camera_info_manager#URL_Names|calibration URL]] for this video_mode (uncalibrated if null). min: , default: , max: 
+- \b "~use_ros_time" : \b [bool] Timestamp Image and CameraInfo using ros::Time::now() instead of NAOqi timestamps min: False, default: False, max: True
+- \b "~auto_exposition" : \b [int] Auto exposition. min: 0, default: 1, max: 1
+- \b "~auto_exposure_algo" : \b [int] Auto Exposure Algorithm. min: 0, default: 1, max: 0
+- \b "~exposure" : \b [int] Exposure (time in ms = (value * 2) / 5) (disables auto exposition) min: 0, default: 128, max: 512
+- \b "~gain" : \b [int] Relative circuit gain (disables auto exposition). min: 0, default: 128, max: 255
+- \b "~brightness" : \b [int] Brightness (enables auto exposition). min: 0, default: 128, max: 255
+- \b "~contrast" : \b [int] Constrast. min: 0, default: 64, max: 127
+- \b "~saturation" : \b [int] Color saturation. min: 0, default: 128, max: 255
+- \b "~hue" : \b [int] Color phase. min: -180, default: 0, max: 180
+- \b "~sharpness" : \b [int] Image sharpness. min: -7, default: 0, max: 7
+- \b "~auto_white_balance" : \b [int] White balance control state. min: 0, default: 1, max: 1
+- \b "~white_balance" : \b [int] White balance (disables auto white balance). min: -120, default: -50, max: -36
+- \b "~camera3d_frame" : \b [str] The frame of the 3d sensor when added min: , default: /CameraTop_optical_frame, max: 
+- \b "~color_space" : \b [int] The color space min: 0, default: 11, max: 24
+

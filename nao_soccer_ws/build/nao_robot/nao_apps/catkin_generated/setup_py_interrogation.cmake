@@ -1,0 +1,7 @@
+set(nao_apps_SETUP_PY_SETUP_MODULE "distutils.core")
+set(nao_apps_SETUP_PY_VERSION "0.5.15")
+set(nao_apps_SETUP_PY_SCRIPTS "")
+set(nao_apps_SETUP_PY_PACKAGES "nao_apps")
+set(nao_apps_SETUP_PY_PACKAGE_DIRS "src/nao_apps")
+set(nao_apps_SETUP_PY_MODULES "")
+set(nao_apps_SETUP_PY_MODULE_DIRS "")
