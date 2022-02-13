@@ -25,6 +25,8 @@
 
 ## [Changelog](#Nao-Soccer-Simulator)
 
+Latest changes to the project are listed in this section.
+
 ## [Contribution Guidelines](#Nao-Soccer-Simulator)
 
 Thank you for your interest in our project. We strongly encourage reading the contribution guidelines before you be begin which can be found [here](https://github.com/Robotics-TDP-Team2/Nao-Soccer-Simulator/blob/devel/CONTRIBUTION_GUIDELINES.md).
