@@ -16,7 +16,7 @@
 
 ## [Synopsis](#Nao-Soccer-Simulator)
 
-As a team design project, we aim to develop a set of robust algorithms to simulate Nao humanoid robot autonomously to play soccer. The project involves designing a pipeline for robot manipulation, path planning, perception, and control. This project is based on a 20 credit course [RTDP](https://moodle.gla.ac.uk/course/view.php?id=30877)
+As a team design project, we aim to develop a set of robust algorithms to simulate Nao humanoid robot autonomously to play soccer. The project involves designing a pipeline for robot manipulation, path planning, perception, and control. The game is supposed to be played between two teams of Nao robots with each team consisting of 4 players.
 
 ## [Conceptualisation and Roadmap](#Nao-Soccer-Simulator)
 
