@@ -8,8 +8,7 @@
 
 #### Contents
 * [Synopsis](#synopsis)
-* [Conceptualisation](#conceptualisation)
-* [Project Roadmap](#project-roadmap)
+* [Conceptualisation and Roadmap](#conceptualisation-and-roadmap)
 * [Usage Examples](#usage-examples)
 * [Changelog](#changelog)
 * [Contribution Guidelines](#contribution-guidelines)
@@ -17,11 +16,13 @@
 
 ## [Synopsis](#Nao-Soccer-Simulator)
 
-## [Conceptualisation](#Nao-Soccer-Simulator)
+As a team design project, we aim to develop a set of robust algorithms to simulate Nao humanoid robot autonomously to play soccer. The project involves designing a pipeline for robot manipulation, path planning, perception, and control. This project is based on a 20 credit course [RTDP](https://moodle.gla.ac.uk/course/view.php?id=30877)
 
-## [Project Roadmap](#Nao-Soccer-Simulator)
+## [Conceptualisation and Roadmap](#Nao-Soccer-Simulator)
 
 ## [Usage Examples](#Nao-Soccer-Simulator)
+
+In this section, we illustrate few tutorials to guide users.
 
 ## [Changelog](#Nao-Soccer-Simulator)
 
