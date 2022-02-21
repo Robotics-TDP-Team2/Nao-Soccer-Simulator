@@ -22,12 +22,13 @@ As a team design project, we aim to develop a set of robust algorithms to simula
 
 * Phase1: Requirements
 
-![p1](https://user-images.githubusercontent.com/29406906/155015693-a7687dc9-d9dc-413c-a649-1adc1f0f0d16.png)
+
+![2](https://user-images.githubusercontent.com/29406906/155030636-ad122c04-d5ef-414e-bb6f-703d3019cc5d.png)
 
 
 * Phase2: Algorithm Development
 
-![p2_1](https://user-images.githubusercontent.com/29406906/155015699-66f5ca48-fe1f-4f83-92b7-a986dc773753.png)
+![1](https://user-images.githubusercontent.com/29406906/155030644-b1b4ddf2-bff0-45e4-9b40-c730305316b3.png)
 
 
 ## [Usage Examples](#Nao-Soccer-Simulator)
