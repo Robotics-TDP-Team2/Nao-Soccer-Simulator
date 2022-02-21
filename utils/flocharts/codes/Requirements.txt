@@ -1,0 +1,21 @@
+Phase1: Requirement Stage; 
+Stage:Requirement & Specification; 
+branch(RequirementStage)
+[Requirement rs] {
+project specification document discussion;
+survey conducted to guage technical proficiency 
+} 
+branch(SpecificationStage)
+[Specification ss] 
+{ 
+software & hardware specifications discussion;
+research and brainstorming to select proper software;
+ROS and Gazebo installation.
+} 
+branch(ProjectManagement)
+[ProjectMgmnt pm] {
+gantt chart preparation
+with deadlines;
+setting delivearbles for every week;
+cost mapping preparation with workpackage and total project cost estimation. 
+}
