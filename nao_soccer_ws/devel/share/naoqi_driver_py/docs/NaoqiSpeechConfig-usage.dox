@@ -1,0 +1,13 @@
+\subsubsection usage Usage
+\verbatim
+<node name="NaoqiSpeech" pkg="naoqi_driver" type="NaoqiSpeech">
+  <param name="visual_expression" type="bool" value="True" />
+  <param name="language" type="str" value="" />
+  <param name="vocabulary" type="str" value="" />
+  <param name="word_spotting" type="bool" value="False" />
+  <param name="audio_expression" type="bool" value="True" />
+  <param name="volume" type="int" value="-1" />
+  <param name="voice" type="str" value="" />
+</node>
+\endverbatim
+

@@ -1,0 +1,8 @@
+\subsubsection parameters ROS parameters
+
+Reads and maintains the following parameters on the ROS server
+
+- \b "~frame_rate" : \b [double] Camera speed (frames per second). min: 1.0, default: 15.0, max: 30.0
+- \b "~frequency" : \b [int] Audio sampling frequency. min: -2147483648, default: 16000, max: 2147483647
+- \b "~use_ros_time" : \b [bool] Timestamp Image and CameraInfo using ros::Time::now() instead of NAOqi timestamps min: False, default: True, max: True
+

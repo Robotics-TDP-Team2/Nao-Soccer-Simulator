@@ -1,0 +1,25 @@
+\subsubsection usage Usage
+\verbatim
+<node name="NaoqiCamera" pkg="naoqicamera" type="NaoqiCamera">
+  <param name="guid" type="str" value="" />
+  <param name="source" type="int" value="0" />
+  <param name="resolution" type="int" value="1" />
+  <param name="frame_rate" type="double" value="15.0" />
+  <param name="camera_info_url" type="str" value="" />
+  <param name="use_ros_time" type="bool" value="False" />
+  <param name="auto_exposition" type="int" value="1" />
+  <param name="auto_exposure_algo" type="int" value="1" />
+  <param name="exposure" type="int" value="128" />
+  <param name="gain" type="int" value="128" />
+  <param name="brightness" type="int" value="128" />
+  <param name="contrast" type="int" value="64" />
+  <param name="saturation" type="int" value="128" />
+  <param name="hue" type="int" value="0" />
+  <param name="sharpness" type="int" value="0" />
+  <param name="auto_white_balance" type="int" value="1" />
+  <param name="white_balance" type="int" value="-50" />
+  <param name="camera3d_frame" type="str" value="/CameraTop_optical_frame" />
+  <param name="color_space" type="int" value="11" />
+</node>
+\endverbatim
+

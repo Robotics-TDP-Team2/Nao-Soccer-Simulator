@@ -1,0 +1,9 @@
+\subsubsection usage Usage
+\verbatim
+<node name="NaoqiMicrophone" pkg="naoqimicrophone" type="NaoqiMicrophone">
+  <param name="frame_rate" type="double" value="15.0" />
+  <param name="frequency" type="int" value="16000" />
+  <param name="use_ros_time" type="bool" value="True" />
+</node>
+\endverbatim
+
