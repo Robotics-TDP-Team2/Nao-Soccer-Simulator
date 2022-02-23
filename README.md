@@ -30,6 +30,14 @@ As a team design project, we aim to develop a set of robust algorithms to simula
 
 ![1](https://user-images.githubusercontent.com/29406906/155030644-b1b4ddf2-bff0-45e4-9b40-c730305316b3.png)
 
+* Robot Positions
+
+![Screenshot 2022-02-23 at 01 02 15](https://user-images.githubusercontent.com/29406906/155245779-9cb18ecc-8355-4756-b203-15778066361d.png)
+
+* Robot Actions
+
+![Screenshot 2022-02-23 at 01 01 31](https://user-images.githubusercontent.com/29406906/155245772-b053aff6-fc61-4eda-83d0-4a862ecb071e.png)
+
 
 ## [Usage Examples](#Nao-Soccer-Simulator)
 
