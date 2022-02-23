@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<launch>
+
+  <!-- Load joint controller configurations from YAML file to parameter server -->
+  <rosparam file="$(find nao_control)/config/nao_trajectory_control.yaml" command="load"/>
+
+  <!-- load the controllers -->
+  <node name="nao_trajectory_controller" pkg="controller_manager" type="spawner" respawn="false"
+    output="screen" args="
+      /nao/Head_controller 
+      /nao/RightArm_controller /nao/LeftArm_controller 
+      /nao/LeftLeg_controller /nao/RightLeg_controller 
+      /nao/RightHand_controller /nao/LeftHand_controller 
+      /nao/Pelvis_controller /nao/LeftFoot_controller /nao/RightFoot_controller
+      /nao/joint_state_controller "/>
+
+</launch>
