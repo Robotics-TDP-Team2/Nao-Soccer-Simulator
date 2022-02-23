@@ -1,2 +1,0 @@
-nao_robot/nao_apps:nao_robot/nao_bringup:nao_robot/nao_description:nao_robot/nao_moveit_config:nao_robot/nao_robot
--DCATKIN_DEVEL_PREFIX=/home/lucas/myrobot_ws/devel -DCMAKE_INSTALL_PREFIX=/home/lucas/myrobot_ws/install -G Unix Makefiles

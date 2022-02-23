@@ -1,7 +1,0 @@
-set(naoqi_driver_py_SETUP_PY_SETUP_MODULE "distutils.core")
-set(naoqi_driver_py_SETUP_PY_VERSION "0.5.5")
-set(naoqi_driver_py_SETUP_PY_SCRIPTS "")
-set(naoqi_driver_py_SETUP_PY_PACKAGES "naoqi_driver")
-set(naoqi_driver_py_SETUP_PY_PACKAGE_DIRS "src/naoqi_driver")
-set(naoqi_driver_py_SETUP_PY_MODULES "")
-set(naoqi_driver_py_SETUP_PY_MODULE_DIRS "")
