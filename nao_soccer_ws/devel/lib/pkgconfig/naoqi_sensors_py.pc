@@ -1,8 +1,0 @@
-prefix=/home/lucas/myrobot_ws/devel
-
-Name: naoqi_sensors_py
-Description: Description of naoqi_sensors_py
-Version: 0.5.5
-Cflags: -I/home/lucas/myrobot_ws/devel/include
-Libs: -L${prefix}/lib 
-Requires: 

@@ -1,8 +1,0 @@
-prefix=/home/lucas/myrobot_ws/devel
-
-Name: naoqi_navigation
-Description: Description of naoqi_navigation
-Version: 0.0.1
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 

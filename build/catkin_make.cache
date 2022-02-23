@@ -1,0 +1,2 @@
+nao_control:nao_description:nao_gazebo:nao_moveit_config
+-DCATKIN_DEVEL_PREFIX=/home/lucas/nao_soccer_ws/devel -DCMAKE_INSTALL_PREFIX=/home/lucas/nao_soccer_ws/install -G Unix Makefiles

@@ -1,0 +1,40 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${workspaceFolder}/.vscode/browse.vc.db",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/home/ohmygoal/turtlebot_ws/devel/include/**",
+        "/home/ohmygoal/catkin_ws/devel/include/**",
+        "/opt/ros/melodic/include/**",
+        "/home/ohmygoal/turtlebot_ws/src/depthimage_to_laserscan/include/**",
+        "/home/ohmygoal/turtlebot_ws/src/kobuki_auto_docking/include/**",
+        "/home/ohmygoal/turtlebot_ws/src/kobuki_bumper2pc/include/**",
+        "/home/ohmygoal/turtlebot_ws/src/kobuki_controller_tutorial/include/**",
+        "/home/ohmygoal/turtlebot_ws/src/kobuki_desktop/kobuki_gazebo_plugins/include/**",
+        "/home/ohmygoal/turtlebot_ws/src/kobuki_keyop/include/**",
+        "/home/ohmygoal/turtlebot_ws/src/kobuki_node/include/**",
+        "/home/ohmygoal/turtlebot_ws/src/kobuki_random_walker/include/**",
+        "/home/ohmygoal/turtlebot_ws/src/kobuki_safety_controller/include/**",
+        "/home/ohmygoal/nao_soccer_ws/src/nao_robot/nao_gazebo/include/**",
+        "/home/ohmygoal/turtlebot_ws/src/robot_pose_ekf/include/**",
+        "/home/ohmygoal/catkin_ws/src/test_pkg1/include/**",
+        "/home/ohmygoal/catkin_ws/src/test_pkg2/include/**",
+        "/home/ohmygoal/catkin_ws/src/test_pkg3/include/**",
+        "/home/ohmygoal/catkin_ws/src/test_pkg4/include/**",
+        "/home/ohmygoal/turtlebot_ws/src/turtlebot_apps/turtlebot_actions/include/**",
+        "/home/ohmygoal/turtlebot_ws/src/yocs_cmd_vel_mux/include/**",
+        "/home/ohmygoal/turtlebot_ws/src/yocs_controllers/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-arm64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}

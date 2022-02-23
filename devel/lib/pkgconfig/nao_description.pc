@@ -1,0 +1,8 @@
+prefix=/home/lucas/nao_soccer_ws/devel
+
+Name: nao_description
+Description: Description of nao_description
+Version: 0.5.15
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
