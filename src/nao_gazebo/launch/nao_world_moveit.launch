@@ -21,13 +21,20 @@
     <arg name="headless" value="$(arg headless)"/>
   </include>
 
+<include file="$(find nao_moveit_config)/launch/move_group.launch">
+    <arg name="publish_monitored_planning_scene" value="true" />
+    <arg name="fake_execution" value="false"/> 
+    <arg name="fake_execution_type" value="interpolate" />
+  </include>
+
+
     <!-- We do not have a robot connected, so publish fake joint states -->
   <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
     <param name="use_gui" value="false"/> 
     <rosparam param="source_list">[nao/joint_states]</rosparam>
   </node>
 
-    <param name="robot_description" command="$(find xacro)/xacro $(find nao_description)/urdf/nao$(arg version)_generated_urdf/nao_robot.xacro"/>
+  <param name="robot_description" command="$(find xacro)/xacro $(find nao_description)/urdf/nao$(arg version)_generated_urdf/nao_robot.xacro"/>   
 
     <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-param robot_description -urdf -x -0.5 -y 1 -z 0.33 -model nao" />
 
