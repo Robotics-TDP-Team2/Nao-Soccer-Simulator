@@ -1,0 +1,86 @@
+controller_manager_ns: controller_manager
+controller_list:
+  - name: nao/Head_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: true
+    joints:
+      - HeadYaw
+      - HeadPitch
+  - name: nao/LeftArm_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: true
+    joints:
+      - LShoulderPitch
+      - LShoulderRoll
+      - LElbowYaw
+      - LElbowRoll
+      - LWristYaw
+  - name: nao/RightArm_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: true
+    joints:
+      - RShoulderPitch
+      - RShoulderRoll
+      - RElbowYaw
+      - RElbowRoll
+      - RWristYaw
+  - name: nao/LeftHand_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: true
+    joints:
+      - LHand
+  - name: nao/RightHand_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: true
+    joints:
+      - RHand
+  - name: nao/Pelvis_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: true
+    joints:
+      - LHipYawPitch
+  - name: nao/LeftLeg_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: true
+    joints:
+      - LHipRoll
+      - LHipPitch
+      - LKneePitch
+  - name: nao/RightLeg_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: true
+    joints:
+      - RHipRoll
+      - RHipPitch
+      - RKneePitch
+  - name: nao/LeftFoot_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: true
+    joints:
+      - LAnklePitch
+      - LAnkleRoll
+  - name: nao/RightFoot_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: true
+    joints:
+      - RAnklePitch
+      - RAnkleRoll
+initial:  # Define initial robot poses.
+  - group: Head
+    pose: move_head
+  - group: LeftArm
+    pose: llower_arm
+  - group: RightArm
+    pose: rlower_arm
+  - group: LeftHand
+    pose: lmove_hand

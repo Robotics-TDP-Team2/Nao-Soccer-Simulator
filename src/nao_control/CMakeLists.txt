@@ -7,7 +7,20 @@ project(nao_control)
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
-find_package(catkin REQUIRED COMPONENTS cmake_modules interactive_markers moveit_core moveit_ros_perception moveit_ros_planning_interface moveit_ros_planning pluginlib roscpp rospy std_msgs)
+find_package(catkin REQUIRED COMPONENTS 
+    cmake_modules 
+    interactive_markers 
+    moveit_core 
+    moveit_ros_perception 
+    moveit_ros_planning_interface 
+    moveit_ros_planning 
+    pluginlib 
+    roscpp 
+    rospy 
+    std_msgs 
+    message_generation 
+    geometry_msgs
+)
 
 ## System dependencies are found with CMake's conventions
 #find_package(Boost REQUIRED COMPONENTS system)
@@ -64,11 +77,16 @@ find_package(Boost COMPONENTS system filesystem REQUIRED)
 #   Action2.action
 # )
 
+add_message_files(FILES Order.msg)
+
+
 ## Generate added messages and services with any dependencies listed here
-# generate_messages(
-#   DEPENDENCIES
-#   std_msgs
-# )
+add_service_files(FILES Walk.srv)
+generate_messages(
+   DEPENDENCIES
+   std_msgs
+ )
+
 
 ################################################
 ## Declare ROS dynamic reconfigure parameters ##
@@ -102,7 +120,7 @@ find_package(Boost COMPONENTS system filesystem REQUIRED)
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES nao_control
-   CATKIN_DEPENDS interactive_markers moveit_core moveit_ros_perception moveit_ros_planning_interface pluginlib roscpp std_msgs rospy moveit_ros_planning
+   CATKIN_DEPENDS interactive_markers moveit_core moveit_ros_perception moveit_ros_planning_interface pluginlib roscpp rospy std_msgs moveit_ros_planning geometry_msgs message_runtime
 #  DEPENDS system_lib
 )
 
@@ -166,7 +184,8 @@ target_link_libraries(nao_control ${Boost_LIBRARIES})
 ## Mark executable scripts (Python etc.) for installation
 ## in contrast to setup.py, you can choose the destination
 # catkin_install_python(PROGRAMS
-#   scripts/my_python_script
+#   scripts/nao_robot_control.py
+#   scripts/nao_control.py
 #   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 # )
 

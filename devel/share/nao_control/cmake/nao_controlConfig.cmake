@@ -91,9 +91,9 @@ endif()
 # flag project as catkin-based to distinguish if a find_package()-ed project is a catkin project
 set(nao_control_FOUND_CATKIN_PROJECT TRUE)
 
-if(NOT " " STREQUAL " ")
+if(NOT "/home/lucas/nao_soccer_ws/devel/include " STREQUAL " ")
   set(nao_control_INCLUDE_DIRS "")
-  set(_include_dirs "")
+  set(_include_dirs "/home/lucas/nao_soccer_ws/devel/include")
   if(NOT " " STREQUAL " ")
     set(_report "Check the issue tracker '' and consider creating a ticket if the problem has not been reported yet.")
   elseif(NOT " " STREQUAL " ")
@@ -177,7 +177,7 @@ foreach(library ${libraries})
   endif()
 endforeach()
 
-set(nao_control_EXPORTED_TARGETS "")
+set(nao_control_EXPORTED_TARGETS "nao_control_generate_messages_cpp;nao_control_generate_messages_eus;nao_control_generate_messages_lisp;nao_control_generate_messages_nodejs;nao_control_generate_messages_py")
 # create dummy targets for exported code generation targets to make life of users easier
 foreach(t ${nao_control_EXPORTED_TARGETS})
   if(NOT TARGET ${t})
@@ -185,7 +185,7 @@ foreach(t ${nao_control_EXPORTED_TARGETS})
   endif()
 endforeach()
 
-set(depends "interactive_markers;moveit_core;moveit_ros_perception;moveit_ros_planning_interface;pluginlib;roscpp;std_msgs;rospy;moveit_ros_planning")
+set(depends "interactive_markers;moveit_core;moveit_ros_perception;moveit_ros_planning_interface;pluginlib;roscpp;rospy;std_msgs;moveit_ros_planning;geometry_msgs;message_runtime")
 foreach(depend ${depends})
   string(REPLACE " " ";" depend_list ${depend})
   # the package name of the dependency must be kept in a unique variable so that it is not overwritten in recursive calls
@@ -214,7 +214,7 @@ foreach(depend ${depends})
   list(APPEND nao_control_EXPORTED_TARGETS ${${nao_control_dep}_EXPORTED_TARGETS})
 endforeach()
 
-set(pkg_cfg_extras "")
+set(pkg_cfg_extras "nao_control-msg-extras.cmake")
 foreach(extra ${pkg_cfg_extras})
   if(NOT IS_ABSOLUTE ${extra})
     set(extra ${nao_control_DIR}/${extra})

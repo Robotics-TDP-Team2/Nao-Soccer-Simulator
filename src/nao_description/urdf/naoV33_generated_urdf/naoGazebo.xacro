@@ -77,7 +77,7 @@
             <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
         </plugin>
 
-<!--        <plugin filename="libgazebo_ros_imu.so" name="gazebo_ros_imu_controller">
+<!--        <plugin filename="libgazebo_ros_imu.so" name="">
             <robotNamespace>/nao_dcm</robotNamespace>
             <topicName>imu_data</topicName>
             <bodyName>imu</bodyName>
@@ -92,7 +92,7 @@
             <alwaysOn>true</alwaysOn>
         </plugin>
 -->
-<!--        <plugin name="gazebo_ros_imu_controller" filename="${imu_plugin}">
+<!--        <plugin name="gazebo_ros_imu_controller" filename="">
             <robotNamespace>/nao_dcm</robotNamespace>
             <topicName>imu_data</topicName>
             <bodyName>imu</bodyName>

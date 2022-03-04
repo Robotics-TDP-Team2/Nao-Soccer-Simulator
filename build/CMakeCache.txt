@@ -234,7 +234,10 @@ CMAKE_STRIP:FILEPATH=/usr/bin/strip
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
 //Path to a program.
-DOXYGEN_EXECUTABLE:FILEPATH=DOXYGEN_EXECUTABLE-NOTFOUND
+DOXYGEN_EXECUTABLE:FILEPATH=/usr/bin/doxygen
+
+//Doxygen found
+DOXYGEN_FOUND:BOOL=TRUE
 
 //Path to a program.
 EMPY_EXECUTABLE:FILEPATH=/usr/bin/empy
@@ -459,9 +462,6 @@ interactive_markers_DIR:PATH=/opt/ros/melodic/share/interactive_markers/cmake
 //The directory containing a CMake configuration file for joint_limits_interface.
 joint_limits_interface_DIR:PATH=/opt/ros/melodic/share/joint_limits_interface/cmake
 
-//The directory containing a CMake configuration file for joint_state_controller.
-joint_state_controller_DIR:PATH=/opt/ros/melodic/share/joint_state_controller/cmake
-
 //The directory containing a CMake configuration file for kdl_parser.
 kdl_parser_DIR:PATH=/opt/ros/melodic/share/kdl_parser/cmake
 
@@ -476,9 +476,6 @@ message_generation_DIR:PATH=/opt/ros/melodic/share/message_generation/cmake
 
 //The directory containing a CMake configuration file for message_runtime.
 message_runtime_DIR:PATH=/opt/ros/melodic/share/message_runtime/cmake
-
-//The directory containing a CMake configuration file for moveit.
-moveit_DIR:PATH=moveit_DIR-NOTFOUND
 
 //The directory containing a CMake configuration file for moveit_core.
 moveit_core_DIR:PATH=/opt/ros/melodic/share/moveit_core/cmake
@@ -552,9 +549,6 @@ random_numbers_DIR:PATH=/opt/ros/melodic/share/random_numbers/cmake
 //The directory containing a CMake configuration file for realtime_tools.
 realtime_tools_DIR:PATH=/opt/ros/melodic/share/realtime_tools/cmake
 
-//The directory containing a CMake configuration file for robot_state_publisher.
-robot_state_publisher_DIR:PATH=/opt/ros/melodic/share/robot_state_publisher/cmake
-
 //The directory containing a CMake configuration file for rosconsole.
 rosconsole_DIR:PATH=/opt/ros/melodic/share/rosconsole/cmake
 
@@ -614,9 +608,6 @@ tf2_eigen_DIR:PATH=/opt/ros/melodic/share/tf2_eigen/cmake
 
 //The directory containing a CMake configuration file for tf2_geometry_msgs.
 tf2_geometry_msgs_DIR:PATH=/opt/ros/melodic/share/tf2_geometry_msgs/cmake
-
-//The directory containing a CMake configuration file for tf2_kdl.
-tf2_kdl_DIR:PATH=/opt/ros/melodic/share/tf2_kdl/cmake
 
 //The directory containing a CMake configuration file for tf2_msgs.
 tf2_msgs_DIR:PATH=/opt/ros/melodic/share/tf2_msgs/cmake
