@@ -144,14 +144,14 @@ nao:
             d: 2.0
 
         LElbowYaw:
-            p: 100.0
-            i: 100.0
+            p: 110.0
+            i: 0.0
             d: 0.0
 
         LElbowRoll:
-            p: 100.0
-            i: 100.0
-            d: 0.0
+            p: 30.0
+            i: 0.7
+            d: 0.3
 
         LShoulderRoll:
             p: 50.0
@@ -164,9 +164,9 @@ nao:
             d: 0.01
 
         LHand:
-            p: 0.0
-            i: 0.0
-            d: 0.0
+            p: 100.0
+            i: 100.0
+            d: 3.0
 
         RShoulderPitch:
             p: 80.0
@@ -174,14 +174,14 @@ nao:
             d: 2.0
 
         RElbowYaw:
-            p: 100.0
-            i: 100.0
+            p: 110.0
+            i: 0.0
             d: 0.0
 
         RElbowRoll:
-            p: 100.0
-            i: 100.0
-            d: 0.0
+            p: 30.0
+            i: 0.7
+            d: 0.3
 
         RShoulderRoll:
             p: 50.0
@@ -194,9 +194,9 @@ nao:
             d: 0.01
 
         RHand:
-            p: 0.0
-            i: 0.0
-            d: 0.0
+            p: 100.0
+            i: 100.0
+            d: 3.0
 
         LHipYawPitch:
             p: 500.0
