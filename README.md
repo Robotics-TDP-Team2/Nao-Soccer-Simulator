@@ -41,7 +41,7 @@ As a team design project, we aim to develop a set of robust algorithms to simula
 
 In this section, we illustrate few tutorials to guide users.
 
-## [Changelog](#Nao-Soccer-Simulator)
+## [Milestones](#Nao-Soccer-Simulator)
 
 Latest milestones achieved in the project are listed in this section.
 
