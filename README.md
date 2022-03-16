@@ -13,6 +13,7 @@
 * [Milestones](#milestones)
 * [Contribution Guidelines](#contribution-guidelines)
 * [Credits](#credits)
+* [Directory Tree](#directory-tree)
 
 ## [Synopsis](#Nao-Soccer-Simulator)
 
@@ -49,7 +50,7 @@ Latest milestones achieved in the project are listed in this section.
 
 Thank you for your interest in our project. We strongly encourage reading the contribution guidelines before you be begin which can be found [here](https://github.com/Robotics-TDP-Team2/Nao-Soccer-Simulator/blob/devel/CONTRIBUTION_GUIDELINES.md).
 
-## [Credits](#Nao-Soccer-Simulator )
+## [Credits](#Nao-Soccer-Simulator)
 
 `Nao-Soccer-Simulator ` is maintained by the RTDP-Project-Team2. Contributors include:
 
@@ -59,3 +60,50 @@ Thank you for your interest in our project. We strongly encourage reading the co
 * Evelyn Onyi Anyebe
 * Shijia Liu
 * Xinhe Zheng
+
+## [Directory Tree](#Nao-Soccer-Simulator)
+
+    |–– cmake
+    |–– src
+    | |–– nao_control
+    | | |–– config
+    | | |–– launch
+    | | |–– msg
+    | | |–– scripts
+    | | |–– src
+    | | |–– srv
+    | |–– nao_description
+    | | |–– config
+    | | |–– launch
+    | | |–– models
+    | | | |–– materials
+    | | | | |–– textures
+    | | | |–– meshes
+    | | |–– nao_meshes
+    | | | |–– meshes
+    | | | | |–– V40
+    | | | | |–– V41
+    | | | |–– rollbackBackupDirectory
+    | | | | |–– home
+    | | | | | |–– vincent
+    | | | |–– texture
+    | | |–– scripts
+    | | |–– src
+    | | |–– urdf
+    | | | |–– naoV32_generated_urdf
+    | | | |–– naoV33_generated_urdf
+    | | | |–– naoV40_generated_urdf
+    | | | |–– naoV41_generated_urdf
+    | | | |–– naoV42_generated_urdf
+    | | | |–– naoV50_generated_urdf
+    | |–– nao_gazebo
+    | | |–– config
+    | | |–– controller
+    | | |–– launch
+    | | |–– worlds
+    | |–– nao_moveit_config
+    | | |–– config
+    | | |–– launch
+    |–– utils
+    | |–– codes
+    | |–– flowcharts
