@@ -1,0 +1,37 @@
+name: Ubuntu CI Test
+
+on:
+  push:
+    branches: [ main]
+  pull_request:
+    branches: [ main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python 3.8
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.8
+    - name: install
+      run: |
+        make install
+    - name: setup
+      run: |
+        make setup
+    - name: prepare
+      run: |
+        make prepare
+    - name: configure
+      run: |
+        cmake -H. -Bbuild -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Coverage -DENABLE_COVERAGE=On
+    - name: building
+      run: |
+        cmake --build build --config Coverage --target CppTemplate_unit_tests -j4
+    - name: testing
+      run: |
+        cd build
+        ctest -C Debug -T test -j4
+        bash <(curl -s https://codecov.io/bash)
