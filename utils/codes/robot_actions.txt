@@ -1,0 +1,32 @@
+// Copyright 2019 RTDP Team2. All rights reserved. GNU General Public License v3.0.
+
+Robot's Actions;
+branch(Dribbling)
+[DribblingAction drba] 
+{ /*Dribbling is an attacking move, where the player should retain the ball with them, until the opponent is defeated*/
+  Speed Dribble;
+  Low Dribble;
+  Reverse Dribble.
+}
+branch(Shooting)
+[ShootingAction sa] 
+{ /*shooting is hitting the ball in an attempt to score a goal.*/
+  Standard Shot;
+  Straight Shot;
+  Inside Shot;
+}
+branch(Aiming)
+[AimingAction aa] 
+{ /*This action is responsible for the robot to set the target before shooting, dribbling or diving for the soccer ball.*/
+  Top-Left Corner of the Net;
+  Top-Right Corner of the Net;
+  Bottom-Left Corner of the Net;
+  Bottom-Left Corner of the Net;
+}
+branch(Diving)
+[DivingAction da] 
+{ /*diving is an attempt by a player to gain an unfair advantage by falling to the ground and, often, feigning injury to give the impression that a foul has been committed*/
+  Foul Dive;
+  GoalKeeper Dive;
+}
+

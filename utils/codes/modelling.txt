@@ -1,0 +1,21 @@
+
+// Copyright 2019 RTDP Team2. All rights reserved. GNU General Public License v3.0.
+
+Phase2: Modelling, Simulation, and Algorithm Development;
+Stage: Modelling;
+branch(nao_robot)
+  [NaoRobotModelling nrm] {
+    /*Modelling the nao humanoid robot with reference to the specifications given in the aldebaran documentation.*/
+      NaoRed.urdf files for Red robots.
+      NaoBlue.urdf files for Blue robots.
+}
+branch(soccer_field)
+  [SoccerFieldModelling sfm] {
+    /*modelling the soccer field for roboocup with the dimensions given in the project specification document.*/
+      SoccerField.urdf or Soccerfield.world files.
+}
+branch(soccer_ball)
+  [SoccerBallModelling sbm] {
+    /*Modelling the soccer ball for roboocup with the radiusof14.3 cm as given in the project specification document.*/
+      SoccerBall.urdf file.
+}
