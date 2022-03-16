@@ -1,7 +1,3 @@
 {
-  "**/*.cpp": "// Copyright 2019 RTDP Team2. All rights reserved. GNU General Public License v3.0."
-}
-
-{
   "utils/**/*.txt": "// Copyright 2019 RTDP Team2. All rights reserved. GNU General Public License v3.0."
 }
