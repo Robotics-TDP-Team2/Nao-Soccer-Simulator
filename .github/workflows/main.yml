@@ -1,3 +1,6 @@
+# Copyright 2019 RTDP Team2. All rights reserved. GNU General Public License v3.0.
+# This is a basic workflow to check the license lines.
+
 name: Check License Lines
 on:
   push:
