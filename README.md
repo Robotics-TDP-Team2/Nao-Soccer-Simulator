@@ -22,21 +22,16 @@ As a team design project, we aim to develop a set of robust algorithms to simula
 ## [Phases and Roadmap](#Nao-Soccer-Simulator)
 
 * Phase1: Requirements
-
-![2](https://user-images.githubusercontent.com/29406906/155030636-ad122c04-d5ef-414e-bb6f-703d3019cc5d.png)
+![1](https://github.com/Robotics-TDP-Team2/Nao-Soccer-Simulator/blob/main/utils/flowcharts/requirement_stage.png)
 
 * Phase2: Algorithm Development
-
-![1](https://user-images.githubusercontent.com/29406906/155030644-b1b4ddf2-bff0-45e4-9b40-c730305316b3.png)
+![2](https://github.com/Robotics-TDP-Team2/Nao-Soccer-Simulator/blob/main/utils/flowcharts/modelling_stage.png)
 
 * Robot Positions
-
-![Screenshot 2022-02-23 at 01 02 15](https://user-images.githubusercontent.com/29406906/155245779-9cb18ecc-8355-4756-b203-15778066361d.png)
+![3](https://github.com/Robotics-TDP-Team2/Nao-Soccer-Simulator/blob/main/utils/flowcharts/roadmap.png)
 
 * Robot Actions
-
-![Screenshot 2022-02-23 at 01 01 31](https://user-images.githubusercontent.com/29406906/155245772-b053aff6-fc61-4eda-83d0-4a862ecb071e.png)
-
+![4](https://github.com/Robotics-TDP-Team2/Nao-Soccer-Simulator/blob/main/utils/flowcharts/robot_actions.png)
 
 ## [Usage Examples](#Nao-Soccer-Simulator)
 
