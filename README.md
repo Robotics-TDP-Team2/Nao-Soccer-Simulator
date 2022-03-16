@@ -8,7 +8,7 @@
 
 #### Contents
 * [Synopsis](#synopsis)
-* [Conceptualisation and Roadmap](#conceptualisation-and-roadmap)
+* [Phases and Roadmap](#phases-and-roadmap)
 * [Usage Examples](#usage-examples)
 * [Milestones](#milestones)
 * [Contribution Guidelines](#contribution-guidelines)
@@ -18,13 +18,11 @@
 
 As a team design project, we aim to develop a set of robust algorithms to simulate Nao humanoid robot autonomously to play soccer. The project involves designing a pipeline for robot manipulation, path planning, perception, and control. The game is supposed to be played between two teams of Nao robots with each team consisting of 4 players.
 
-## [Conceptualisation and Roadmap](#Nao-Soccer-Simulator)
+## [Phases and Roadmap](#Nao-Soccer-Simulator)
 
 * Phase1: Requirements
 
-
 ![2](https://user-images.githubusercontent.com/29406906/155030636-ad122c04-d5ef-414e-bb6f-703d3019cc5d.png)
-
 
 * Phase2: Algorithm Development
 
