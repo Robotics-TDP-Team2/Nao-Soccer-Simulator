@@ -1,0 +1,259 @@
+nao:
+  # Publish all joint states -----------------------------------
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 50  
+
+  # Controllers ------------------------------------------------
+  Head_controller:
+    type: position_controllers/JointTrajectoryController
+    joints:
+      - HeadYaw
+      - HeadPitch
+    constraints:
+      goal_time: 0.6
+      stopped_velocity_tolerance: 0.5
+      HeadYaw: {trajectory: 0.3, goal: 0.1}
+      HeadPitch: {trajectory: 0.3, goal: 0.2}
+
+  LeftArm_controller:
+    type: position_controllers/JointTrajectoryController
+    joints:
+      - LShoulderPitch
+      - LShoulderRoll
+      - LElbowYaw
+      - LElbowRoll
+      - LWristYaw
+    constraints:
+      goal_time: 0.8
+      stopped_velocity_tolerance: 0.5
+      LShoulderPitch: {trajectory: 0.1, goal: 0.1}
+      LShoulderRoll: {trajectory: 0.3, goal: 0.2}
+      LElbowYaw: {trajectory: 0.2, goal: 0.1}
+      LElbowRoll: {trajectory: 0.3, goal: 0.1}
+      LWristYaw: {trajectory: 0.1, goal: 0.1}
+
+  RightArm_controller:
+    type: position_controllers/JointTrajectoryController
+    joints:
+      - RShoulderPitch
+      - RShoulderRoll
+      - RElbowYaw
+      - RElbowRoll
+      - RWristYaw
+    constraints:
+      goal_time: 0.6
+      stopped_velocity_tolerance: 0.5
+      RShoulderPitch: {trajectory: 0.3, goal: 0.1}
+      RShoulderRoll: {trajectory: 0.3, goal: 0.2}
+      RElbowYaw: {trajectory: 0.3, goal: 0.1}
+      RElbowRoll: {trajectory: 0.5, goal: 0.2}
+      RWristYaw: {trajectory: 0.5, goal: 0.2}
+
+  LeftHand_controller:
+    type: position_controllers/JointTrajectoryController
+    joints:
+      - LHand
+    constraints:
+      goal_time: 0.6
+      stopped_velocity_tolerance: 0.5
+      LHand: {trajectory: 0.3, goal: 0.1}
+
+  RightHand_controller:
+    type: position_controllers/JointTrajectoryController
+    joints:
+      - RHand
+    constraints:
+      goal_time: 0.6
+      stopped_velocity_tolerance: 0.5
+      RHand: {trajectory: 0.3, goal: 0.1}
+
+  Pelvis_controller:
+    type: position_controllers/JointTrajectoryController
+    joints:
+      - LHipYawPitch
+    constraints:
+      goal_time: 0.6
+      stopped_velocity_tolerance: 0.5
+      LHipYawPitch: {trajectory: 0.3, goal: 0.1}
+
+  LeftLeg_controller:
+    type: position_controllers/JointTrajectoryController
+    joints:
+      - LHipRoll
+      - LHipPitch
+      - LKneePitch
+    constraints:
+      goal_time: 0.6
+      stopped_velocity_tolerance: 0.5
+      LHipRoll: {trajectory: 0.3, goal: 0.1}
+      LHipPitch: {trajectory: 0.3, goal: 0.1}
+      LKneePitch: {trajectory: 0.3, goal: 0.1}
+
+  RightLeg_controller:
+    type: position_controllers/JointTrajectoryController
+    joints:
+      - RHipRoll
+      - RHipPitch
+      - RKneePitch
+    constraints:
+      goal_time: 0.6
+      stopped_velocity_tolerance: 0.5
+      RHipRoll: {trajectory: 0.3, goal: 0.1}
+      RHipPitch: {trajectory: 0.3, goal: 0.1}
+      RKneePitch: {trajectory: 0.3, goal: 0.1}
+
+  LeftFoot_controller:
+    type: position_controllers/JointTrajectoryController
+    joints:
+      - LAnklePitch
+      - LAnkleRoll
+    constraints:
+      goal_time: 0.6
+      stopped_velocity_tolerance: 0.5
+      LAnklePitch: {trajectory: 0.3, goal: 0.1}
+      LAnkleRoll: {trajectory: 0.3, goal: 0.1}
+
+  RightFoot_controller:
+    type: position_controllers/JointTrajectoryController
+    joints:
+      - RAnklePitch
+      - RAnkleRoll
+    constraints:
+      goal_time: 0.6
+      stopped_velocity_tolerance: 0.5
+      RAnklePitch: {trajectory: 0.3, goal: 0.1}
+      RAnkleRoll: {trajectory: 0.3, goal: 0.1}
+
+
+    /gazebo_ros_control:
+      pid_gains:
+        HeadYaw: 
+            p: 1000.0
+            i: 100.0
+            d: 1.0
+
+        HeadPitch:
+            p: 1000.0
+            i: 100.0
+            d: 1.0
+
+        LShoulderPitch:
+            p: 80.0
+            i: 4.0
+            d: 2.0
+
+        LElbowYaw:
+            p: 110.0
+            i: 0.0
+            d: 0.0
+
+        LElbowRoll:
+            p: 30.0
+            i: 0.7
+            d: 0.3
+
+        LShoulderRoll:
+            p: 50.0
+            i: 5.0
+            d: 0.7
+
+        LWristYaw:
+            p: 1.0
+            i: 0.13
+            d: 0.01
+
+        LHand:
+            p: 100.0
+            i: 100.0
+            d: 3.0
+
+        RShoulderPitch:
+            p: 80.0
+            i: 4.0
+            d: 2.0
+
+        RElbowYaw:
+            p: 110.0
+            i: 0.0
+            d: 0.0
+
+        RElbowRoll:
+            p: 30.0
+            i: 0.7
+            d: 0.3
+
+        RShoulderRoll:
+            p: 50.0
+            i: 5.0
+            d: 0.7
+
+        RWristYaw:
+            p: 1.0
+            i: 0.13
+            d: 0.01
+
+        RHand:
+            p: 100.0
+            i: 100.0
+            d: 3.0
+
+        LHipYawPitch:
+            p: 500.0
+            i: 0.0
+            d: 0.1
+
+        LHipRoll:
+            p: 500.0
+            i: 0.0
+            d: 0.1
+
+        LHipPitch:
+            p: 500.0
+            i: 0.0
+            d: 0.1
+
+        LKneePitch:
+            p: 500.0
+            i: 0.0
+            d: 0.1
+
+        LAnklePitch:
+            p: 500.0
+            i: 0.0
+            d: 0.1
+
+        LAnkleRoll:
+            p: 500.0
+            i: 0.0
+            d: 0.1
+
+        RHipYawPitch:
+            p: 500.0
+            i: 0.0
+            d: 0.1
+
+        RHipRoll:
+            p: 500.0
+            i: 0.0
+            d: 0.1
+
+        RHipPitch:
+            p: 500.0
+            i: 0.0
+            d: 0.1
+
+        RKneePitch:
+            p: 500.0
+            i: 0.0
+            d: 0.1
+
+        RAnklePitch:
+            p: 500.0
+            i: 0.0
+            d: 0.1
+
+        RAnkleRoll:
+            p: 500.0
+            i: 0.0
+            d: 0.1

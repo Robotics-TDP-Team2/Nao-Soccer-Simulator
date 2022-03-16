@@ -1,0 +1,92 @@
+<launch>
+
+    <arg name="paused" default="true"/>
+    <arg name="use_sim_time" default="true"/>
+    <arg name="gui" default="true"/>
+    <arg name="headless" default="false"/>
+    <arg name="debug" default="false"/>
+    <arg name="version" default="V40" />
+    <arg name="version1" default="V41" />
+    <arg name="robot_name"/>
+    <arg name="init_pose"/>
+
+    
+    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+        <arg name="world_name" value="$(find nao_gazebo)/worlds/naoFoot.world"/>
+        <arg name="gui" value="$(arg gui)" />
+        <arg name="paused" value="$(arg paused)"/>
+    </include>
+
+    <group ns="nao_1">
+	<param name="tf_prefix" value="nao_1_tf" />
+	<param name="robot_description" command="$(find xacro)/xacro '$(find nao_description)/urdf/nao$(arg version)_generated_urdf/nao_robot.xacro' ns:=nao_1"/>
+	<include file="$(find nao_gazebo)/launch/base.launch">
+	    <arg name="robot_name" value="nao_1" />
+	    <arg name="init_pose" value="-x -0.7 -y 0.2 -z 0.35" />
+	</include>
+    </group>
+
+    <group ns="nao_2">
+	<param name="tf_prefix" value="nao_2_tf" />
+	<param name="robot_description" command="$(find xacro)/xacro '$(find nao_description)/urdf/nao$(arg version)_generated_urdf/nao_robot.xacro' ns:=nao_2"/>
+	<include file="$(find nao_gazebo)/launch/base.launch">
+	    <arg name="robot_name" value="nao_2" />
+	    <arg name="init_pose" value="-x -0.7 -y 0.7 -z 0.35" />
+	</include>
+    </group>
+
+    <group ns="nao_3">
+	<param name="tf_prefix" value="nao_3_tf" />
+	<param name="robot_description" command="$(find xacro)/xacro '$(find nao_description)/urdf/nao$(arg version)_generated_urdf/nao_robot.xacro' ns:=nao_3"/>
+	<include file="$(find nao_gazebo)/launch/base.launch">
+	    <arg name="robot_name" value="nao_3" />
+	    <arg name="init_pose" value="-x -0.7 -y 1.2 -z 0.35" />
+	</include>
+    </group>
+
+    <group ns="nao_4">
+	<param name="tf_prefix" value="nao_4_tf" />
+	<param name="robot_description" command="$(find xacro)/xacro '$(find nao_description)/urdf/nao$(arg version)_generated_urdf/nao_robot.xacro' ns:=nao_4"/>
+	<include file="$(find nao_gazebo)/launch/base.launch">
+	    <arg name="robot_name" value="nao_4" />
+	    <arg name="init_pose" value="-x -0.7 -y 1.7 -z 0.35" />
+	</include>
+    </group>
+
+    <group ns="nao_5">
+	<param name="tf_prefix" value="nao_5_tf" />
+	<param name="robot_description" command="$(find xacro)/xacro '$(find nao_description)/urdf/nao$(arg version1)_generated_urdf/nao_robot.xacro' ns:=nao_5"/>
+	<include file="$(find nao_gazebo)/launch/base.launch" >
+	    <arg name="robot_name" value="nao_5" />
+	    <arg name="init_pose" value="-x 0.7 -y 0.2 -z 0.35 -R 0 -P 0 -Y 3.2" />
+	</include>
+    </group>
+
+    <group ns="nao_6">
+	<param name="tf_prefix" value="nao_6_tf" />
+	<param name="robot_description" command="$(find xacro)/xacro '$(find nao_description)/urdf/nao$(arg version1)_generated_urdf/nao_robot.xacro' ns:=nao_6"/>
+	<include file="$(find nao_gazebo)/launch/base.launch" >
+	    <arg name="robot_name" value="nao_6" />
+	    <arg name="init_pose" value="-x 0.7 -y 0.7 -z 0.35 -R 0 -P 0 -Y 3.2" />
+	</include>
+    </group>
+
+    <group ns="nao_7">
+	<param name="tf_prefix" value="nao_7_tf" />
+	<param name="robot_description" command="$(find xacro)/xacro '$(find nao_description)/urdf/nao$(arg version1)_generated_urdf/nao_robot.xacro' ns:=nao_7"/>
+	<include file="$(find nao_gazebo)/launch/base.launch" >
+	    <arg name="robot_name" value="nao_7" />
+	    <arg name="init_pose" value="-x 0.7 -y 1.2 -z 0.35 -R 0 -P 0 -Y 3.2" />
+	</include>
+    </group>
+
+    <group ns="nao_8">
+	<param name="tf_prefix" value="nao_8_tf" />
+	<param name="robot_description" command="$(find xacro)/xacro '$(find nao_description)/urdf/nao$(arg version1)_generated_urdf/nao_robot.xacro' ns:=nao_8"/>
+	<include file="$(find nao_gazebo)/launch/base.launch" >
+	    <arg name="robot_name" value="nao_8" />
+	    <arg name="init_pose" value="-x 0.7 -y 1.7 -z 0.35 -R 0 -P 0 -Y 3.2" />
+	</include>
+    </group>
+
+</launch>

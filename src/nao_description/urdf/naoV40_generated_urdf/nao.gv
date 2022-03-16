@@ -1,0 +1,251 @@
+digraph G {
+node [shape=box];
+"base_link" [label="base_link"];
+"torso" [label="torso"];
+"ImuTorsoAccelerometer_frame" [label="ImuTorsoAccelerometer_frame"];
+"ChestButton_frame" [label="ChestButton_frame"];
+"ImuTorsoGyrometer_frame" [label="ImuTorsoGyrometer_frame"];
+"Neck" [label="Neck"];
+"Head" [label="Head"];
+"CameraBottom_frame" [label="CameraBottom_frame"];
+"CameraBottom_optical_frame" [label="CameraBottom_optical_frame"];
+"CameraTop_frame" [label="CameraTop_frame"];
+"CameraTop_optical_frame" [label="CameraTop_optical_frame"];
+"HeadTouchFront_frame" [label="HeadTouchFront_frame"];
+"HeadTouchMiddle_frame" [label="HeadTouchMiddle_frame"];
+"HeadTouchRear_frame" [label="HeadTouchRear_frame"];
+"LInfraRed_frame" [label="LInfraRed_frame"];
+"RInfraRed_frame" [label="RInfraRed_frame"];
+"MicroFrontCenter_frame" [label="MicroFrontCenter_frame"];
+"MicroSurroundLeft_frame" [label="MicroSurroundLeft_frame"];
+"MicroRearCenter_frame" [label="MicroRearCenter_frame"];
+"MicroSurroundRight_frame" [label="MicroSurroundRight_frame"];
+"gaze" [label="gaze"];
+"LPelvis" [label="LPelvis"];
+"LHip" [label="LHip"];
+"LThigh" [label="LThigh"];
+"LTibia" [label="LTibia"];
+"LAnklePitch" [label="LAnklePitch"];
+"l_ankle" [label="l_ankle"];
+"LFootBumperLeft_frame" [label="LFootBumperLeft_frame"];
+"LFootBumperRight_frame" [label="LFootBumperRight_frame"];
+"LFsrFL_frame" [label="LFsrFL_frame"];
+"LFsrFR_frame" [label="LFsrFR_frame"];
+"LFsrRL_frame" [label="LFsrRL_frame"];
+"LFsrRR_frame" [label="LFsrRR_frame"];
+"l_sole" [label="l_sole"];
+"LShoulder" [label="LShoulder"];
+"LBicep" [label="LBicep"];
+"LElbow" [label="LElbow"];
+"LForeArm" [label="LForeArm"];
+"l_wrist" [label="l_wrist"];
+"LFinger11_link" [label="LFinger11_link"];
+"LFinger12_link" [label="LFinger12_link"];
+"LFinger13_link" [label="LFinger13_link"];
+"LFinger21_link" [label="LFinger21_link"];
+"LFinger22_link" [label="LFinger22_link"];
+"LFinger23_link" [label="LFinger23_link"];
+"l_gripper" [label="l_gripper"];
+"LHandTouchBack_frame" [label="LHandTouchBack_frame"];
+"LHandTouchLeft_frame" [label="LHandTouchLeft_frame"];
+"LHandTouchRight_frame" [label="LHandTouchRight_frame"];
+"LThumb1_link" [label="LThumb1_link"];
+"LThumb2_link" [label="LThumb2_link"];
+"RPelvis" [label="RPelvis"];
+"RHip" [label="RHip"];
+"RThigh" [label="RThigh"];
+"RTibia" [label="RTibia"];
+"RAnklePitch" [label="RAnklePitch"];
+"r_ankle" [label="r_ankle"];
+"RFootBumperLeft_frame" [label="RFootBumperLeft_frame"];
+"RFootBumperRight_frame" [label="RFootBumperRight_frame"];
+"RFsrFL_frame" [label="RFsrFL_frame"];
+"RFsrFR_frame" [label="RFsrFR_frame"];
+"RFsrRL_frame" [label="RFsrRL_frame"];
+"RFsrRR_frame" [label="RFsrRR_frame"];
+"r_sole" [label="r_sole"];
+"RShoulder" [label="RShoulder"];
+"RBicep" [label="RBicep"];
+"RElbow" [label="RElbow"];
+"RForeArm" [label="RForeArm"];
+"r_wrist" [label="r_wrist"];
+"RFinger11_link" [label="RFinger11_link"];
+"RFinger12_link" [label="RFinger12_link"];
+"RFinger13_link" [label="RFinger13_link"];
+"RFinger21_link" [label="RFinger21_link"];
+"RFinger22_link" [label="RFinger22_link"];
+"RFinger23_link" [label="RFinger23_link"];
+"r_gripper" [label="r_gripper"];
+"RHandTouchBack_frame" [label="RHandTouchBack_frame"];
+"RHandTouchLeft_frame" [label="RHandTouchLeft_frame"];
+"RHandTouchRight_frame" [label="RHandTouchRight_frame"];
+"RThumb1_link" [label="RThumb1_link"];
+"RThumb2_link" [label="RThumb2_link"];
+"LSonar_frame" [label="LSonar_frame"];
+"RSonar_frame" [label="RSonar_frame"];
+node [shape=ellipse, color=blue, fontcolor=blue];
+"base_link" -> "base_link_fixedjoint" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"base_link_fixedjoint" -> "torso"
+"torso" -> "Accelerometer_sensor_fixedjoint" [label="xyz: -0.008 0.00606 0.027 \nrpy: 0 -0 0"]
+"Accelerometer_sensor_fixedjoint" -> "ImuTorsoAccelerometer_frame"
+"torso" -> "ChestBoard/Button_sensor_fixedjoint" [label="xyz: 0.049871 0.001588 0.055163 \nrpy: 0 -0 0"]
+"ChestBoard/Button_sensor_fixedjoint" -> "ChestButton_frame"
+"torso" -> "Gyrometer_sensor_fixedjoint" [label="xyz: -0.008 0.006 0.029 \nrpy: 0 -0 0"]
+"Gyrometer_sensor_fixedjoint" -> "ImuTorsoGyrometer_frame"
+"torso" -> "HeadYaw" [label="xyz: 0 0 0.1265 \nrpy: 0 -0 0"]
+"HeadYaw" -> "Neck"
+"Neck" -> "HeadPitch" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"HeadPitch" -> "Head"
+"Head" -> "CameraBottom_sensor_fixedjoint" [label="xyz: 0.05071 0 0.01774 \nrpy: 0 0.692896 0"]
+"CameraBottom_sensor_fixedjoint" -> "CameraBottom_frame"
+"CameraBottom_frame" -> "CameraBottom_optical_frame_fixedjoint" [label="xyz: 0 0 0 \nrpy: -1.5708 -5.55112e-17 -1.5708"]
+"CameraBottom_optical_frame_fixedjoint" -> "CameraBottom_optical_frame"
+"Head" -> "CameraTop_sensor_fixedjoint" [label="xyz: 0.05871 0 0.06364 \nrpy: 0 0.0209435 0"]
+"CameraTop_sensor_fixedjoint" -> "CameraTop_frame"
+"CameraTop_frame" -> "CameraTop_optical_frame_fixedjoint" [label="xyz: 0 0 0 \nrpy: -1.5708 -5.55112e-17 -1.5708"]
+"CameraTop_optical_frame_fixedjoint" -> "CameraTop_optical_frame"
+"Head" -> "Head/Touch/Front_sensor_fixedjoint" [label="xyz: 0.0312 0 0.1014 \nrpy: 0 -1.1861 0"]
+"Head/Touch/Front_sensor_fixedjoint" -> "HeadTouchFront_frame"
+"Head" -> "Head/Touch/Middle_sensor_fixedjoint" [label="xyz: 0.001 0 0.1099 \nrpy: 0 -1.5708 1.67887e-11"]
+"Head/Touch/Middle_sensor_fixedjoint" -> "HeadTouchMiddle_frame"
+"Head" -> "Head/Touch/Rear_sensor_fixedjoint" [label="xyz: -0.0257 0 0.1045 \nrpy: 3.14159 -1.33319 -3.14159"]
+"Head/Touch/Rear_sensor_fixedjoint" -> "HeadTouchRear_frame"
+"Head" -> "InfraredL_sensor_fixedjoint" [label="xyz: 0.0441 0.0257 0.0466 \nrpy: 0 -0 0"]
+"InfraredL_sensor_fixedjoint" -> "LInfraRed_frame"
+"Head" -> "InfraredR_sensor_fixedjoint" [label="xyz: 0.0441 -0.0257 0.0466 \nrpy: 0 -0 0"]
+"InfraredR_sensor_fixedjoint" -> "RInfraRed_frame"
+"Head" -> "MicroFront_sensor_fixedjoint" [label="xyz: 0.041 0 0.091 \nrpy: 0 -0 0"]
+"MicroFront_sensor_fixedjoint" -> "MicroFrontCenter_frame"
+"Head" -> "MicroLeft_sensor_fixedjoint" [label="xyz: -0.0195 0.0606 0.0331 \nrpy: 0 -0 0"]
+"MicroLeft_sensor_fixedjoint" -> "MicroSurroundLeft_frame"
+"Head" -> "MicroRear_sensor_fixedjoint" [label="xyz: -0.0577 0 0.0693 \nrpy: 0 -0 0"]
+"MicroRear_sensor_fixedjoint" -> "MicroRearCenter_frame"
+"Head" -> "MicroRight_sensor_fixedjoint" [label="xyz: -0.0195 -0.0606 0.0331 \nrpy: 0 -0 0"]
+"MicroRight_sensor_fixedjoint" -> "MicroSurroundRight_frame"
+"Head" -> "gaze_joint" [label="xyz: 0.05871 0 0.06364 \nrpy: 0 -0 0"]
+"gaze_joint" -> "gaze"
+"torso" -> "LHipYawPitch" [label="xyz: 0 0.05 -0.085 \nrpy: 0 -0 0"]
+"LHipYawPitch" -> "LPelvis"
+"LPelvis" -> "LHipRoll" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"LHipRoll" -> "LHip"
+"LHip" -> "LHipPitch" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"LHipPitch" -> "LThigh"
+"LThigh" -> "LKneePitch" [label="xyz: 0 0 -0.1 \nrpy: 0 -0 0"]
+"LKneePitch" -> "LTibia"
+"LTibia" -> "LAnklePitch" [label="xyz: 0 0 -0.1029 \nrpy: 0 -0 0"]
+"LAnklePitch" -> "LAnklePitch"
+"LAnklePitch" -> "LAnkleRoll" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"LAnkleRoll" -> "l_ankle"
+"l_ankle" -> "LFoot/Bumper/Left_sensor_fixedjoint" [label="xyz: 0.0876 0.019 -0.0353 \nrpy: 0 -0 0"]
+"LFoot/Bumper/Left_sensor_fixedjoint" -> "LFootBumperLeft_frame"
+"l_ankle" -> "LFoot/Bumper/Right_sensor_fixedjoint" [label="xyz: 0.0876 -0.014 -0.0353 \nrpy: 0 -0 0"]
+"LFoot/Bumper/Right_sensor_fixedjoint" -> "LFootBumperRight_frame"
+"l_ankle" -> "LFoot/FSR/FrontLeft_sensor_fixedjoint" [label="xyz: 0.07025 0.0299 -0.04511 \nrpy: 0 -0 0"]
+"LFoot/FSR/FrontLeft_sensor_fixedjoint" -> "LFsrFL_frame"
+"l_ankle" -> "LFoot/FSR/FrontRight_sensor_fixedjoint" [label="xyz: 0.07025 -0.0231 -0.04511 \nrpy: 0 -0 0"]
+"LFoot/FSR/FrontRight_sensor_fixedjoint" -> "LFsrFR_frame"
+"l_ankle" -> "LFoot/FSR/RearLeft_sensor_fixedjoint" [label="xyz: -0.03025 0.0299 -0.04511 \nrpy: 0 -0 0"]
+"LFoot/FSR/RearLeft_sensor_fixedjoint" -> "LFsrRL_frame"
+"l_ankle" -> "LFoot/FSR/RearRight_sensor_fixedjoint" [label="xyz: -0.02965 -0.0191 -0.04511 \nrpy: 0 -0 0"]
+"LFoot/FSR/RearRight_sensor_fixedjoint" -> "LFsrRR_frame"
+"l_ankle" -> "LLeg_effector_fixedjoint" [label="xyz: 0 0 -0.04511 \nrpy: 0 -0 0"]
+"LLeg_effector_fixedjoint" -> "l_sole"
+"torso" -> "LShoulderPitch" [label="xyz: 0 0.098 0.1 \nrpy: 0 -0 0"]
+"LShoulderPitch" -> "LShoulder"
+"LShoulder" -> "LShoulderRoll" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"LShoulderRoll" -> "LBicep"
+"LBicep" -> "LElbowYaw" [label="xyz: 0.105 0.015 0 \nrpy: 0 -0 0"]
+"LElbowYaw" -> "LElbow"
+"LElbow" -> "LElbowRoll" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"LElbowRoll" -> "LForeArm"
+"LForeArm" -> "LWristYaw" [label="xyz: 0.05595 0 0 \nrpy: 0 -0 0"]
+"LWristYaw" -> "l_wrist"
+"l_wrist" -> "LFinger11" [label="xyz: 0.06907 0.01157 -0.00304 \nrpy: 1.8862 0.976662 0.264067"]
+"LFinger11" -> "LFinger11_link"
+"LFinger11_link" -> "LFinger12" [label="xyz: 0.01436 0 0 \nrpy: 0 0 -0.999899"]
+"LFinger12" -> "LFinger12_link"
+"LFinger12_link" -> "LFinger13" [label="xyz: 0.01436 0 0 \nrpy: 0 0 -0.999899"]
+"LFinger13" -> "LFinger13_link"
+"l_wrist" -> "LFinger21" [label="xyz: 0.06907 -0.01157 -0.00304 \nrpy: 1.25539 0.976662 -0.264067"]
+"LFinger21" -> "LFinger21_link"
+"LFinger21_link" -> "LFinger22" [label="xyz: 0.01436 0 0 \nrpy: 0 0 -0.999899"]
+"LFinger22" -> "LFinger22_link"
+"LFinger22_link" -> "LFinger23" [label="xyz: 0.01436 0 0 \nrpy: 0 0 -0.999899"]
+"LFinger23" -> "LFinger23_link"
+"l_wrist" -> "LHand" [label="xyz: 0.05775 0 -0.01231 \nrpy: 0 -0 0"]
+"LHand" -> "l_gripper"
+"l_wrist" -> "LHand/Touch/Back_sensor_fixedjoint" [label="xyz: 0.038 0 0.025 \nrpy: 0 -1.5708 6.28318"]
+"LHand/Touch/Back_sensor_fixedjoint" -> "LHandTouchBack_frame"
+"l_wrist" -> "LHand/Touch/Left_sensor_fixedjoint" [label="xyz: 0.032 0.025 0.003 \nrpy: 0 -0 1.5708"]
+"LHand/Touch/Left_sensor_fixedjoint" -> "LHandTouchLeft_frame"
+"l_wrist" -> "LHand/Touch/Right_sensor_fixedjoint" [label="xyz: 0.035 -0.025 0.0035 \nrpy: 0 0 -1.5708"]
+"LHand/Touch/Right_sensor_fixedjoint" -> "LHandTouchRight_frame"
+"l_wrist" -> "LThumb1" [label="xyz: 0.04895 0 -0.02638 \nrpy: -1.5708 0.0472984 -3.26826e-08"]
+"LThumb1" -> "LThumb1_link"
+"LThumb1_link" -> "LThumb2" [label="xyz: 0.01436 0 0 \nrpy: 0 0 -0.999899"]
+"LThumb2" -> "LThumb2_link"
+"torso" -> "RHipYawPitch" [label="xyz: 0 -0.05 -0.085 \nrpy: 0 -0 0"]
+"RHipYawPitch" -> "RPelvis"
+"RPelvis" -> "RHipRoll" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"RHipRoll" -> "RHip"
+"RHip" -> "RHipPitch" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"RHipPitch" -> "RThigh"
+"RThigh" -> "RKneePitch" [label="xyz: 0 0 -0.1 \nrpy: 0 -0 0"]
+"RKneePitch" -> "RTibia"
+"RTibia" -> "RAnklePitch" [label="xyz: 0 0 -0.1029 \nrpy: 0 -0 0"]
+"RAnklePitch" -> "RAnklePitch"
+"RAnklePitch" -> "RAnkleRoll" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"RAnkleRoll" -> "r_ankle"
+"r_ankle" -> "RFoot/Bumper/Left_sensor_fixedjoint" [label="xyz: 0.0876 0.014 -0.0353 \nrpy: 0 -0 0"]
+"RFoot/Bumper/Left_sensor_fixedjoint" -> "RFootBumperLeft_frame"
+"r_ankle" -> "RFoot/Bumper/Right_sensor_fixedjoint" [label="xyz: 0.0876 -0.019 -0.0353 \nrpy: 0 -0 0"]
+"RFoot/Bumper/Right_sensor_fixedjoint" -> "RFootBumperRight_frame"
+"r_ankle" -> "RFoot/FSR/FrontLeft_sensor_fixedjoint" [label="xyz: 0.07025 0.0231 -0.04511 \nrpy: 0 -0 0"]
+"RFoot/FSR/FrontLeft_sensor_fixedjoint" -> "RFsrFL_frame"
+"r_ankle" -> "RFoot/FSR/FrontRight_sensor_fixedjoint" [label="xyz: 0.07025 -0.0299 -0.04511 \nrpy: 0 -0 0"]
+"RFoot/FSR/FrontRight_sensor_fixedjoint" -> "RFsrFR_frame"
+"r_ankle" -> "RFoot/FSR/RearLeft_sensor_fixedjoint" [label="xyz: -0.03025 0.0191 -0.04511 \nrpy: 0 -0 0"]
+"RFoot/FSR/RearLeft_sensor_fixedjoint" -> "RFsrRL_frame"
+"r_ankle" -> "RFoot/FSR/RearRight_sensor_fixedjoint" [label="xyz: -0.02965 -0.0299 -0.04511 \nrpy: 0 -0 0"]
+"RFoot/FSR/RearRight_sensor_fixedjoint" -> "RFsrRR_frame"
+"r_ankle" -> "RLeg_effector_fixedjoint" [label="xyz: 0 0 -0.04511 \nrpy: 0 -0 0"]
+"RLeg_effector_fixedjoint" -> "r_sole"
+"torso" -> "RShoulderPitch" [label="xyz: 0 -0.098 0.1 \nrpy: 0 -0 0"]
+"RShoulderPitch" -> "RShoulder"
+"RShoulder" -> "RShoulderRoll" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"RShoulderRoll" -> "RBicep"
+"RBicep" -> "RElbowYaw" [label="xyz: 0.105 -0.015 0 \nrpy: 0 -0 0"]
+"RElbowYaw" -> "RElbow"
+"RElbow" -> "RElbowRoll" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"RElbowRoll" -> "RForeArm"
+"RForeArm" -> "RWristYaw" [label="xyz: 0.05595 0 0 \nrpy: 0 -0 0"]
+"RWristYaw" -> "r_wrist"
+"r_wrist" -> "RFinger11" [label="xyz: 0.06907 0.01157 -0.00304 \nrpy: 1.8862 0.976662 0.264067"]
+"RFinger11" -> "RFinger11_link"
+"RFinger11_link" -> "RFinger12" [label="xyz: 0.01436 0 0 \nrpy: 0 0 -0.999899"]
+"RFinger12" -> "RFinger12_link"
+"RFinger12_link" -> "RFinger13" [label="xyz: 0.01436 0 0 \nrpy: 0 0 -0.999899"]
+"RFinger13" -> "RFinger13_link"
+"r_wrist" -> "RFinger21" [label="xyz: 0.06907 -0.01157 -0.00304 \nrpy: 1.25539 0.976662 -0.264067"]
+"RFinger21" -> "RFinger21_link"
+"RFinger21_link" -> "RFinger22" [label="xyz: 0.01436 0 0 \nrpy: 0 0 -0.999899"]
+"RFinger22" -> "RFinger22_link"
+"RFinger22_link" -> "RFinger23" [label="xyz: 0.01436 0 0 \nrpy: 0 0 -0.999899"]
+"RFinger23" -> "RFinger23_link"
+"r_wrist" -> "RHand" [label="xyz: 0.05775 0 -0.01213 \nrpy: 0 -0 0"]
+"RHand" -> "r_gripper"
+"r_wrist" -> "RHand/Touch/Back_sensor_fixedjoint" [label="xyz: 0.038 0 0.025 \nrpy: 0 -1.5708 6.28318"]
+"RHand/Touch/Back_sensor_fixedjoint" -> "RHandTouchBack_frame"
+"r_wrist" -> "RHand/Touch/Left_sensor_fixedjoint" [label="xyz: 0.032 0.025 0.003 \nrpy: 0 -0 1.5708"]
+"RHand/Touch/Left_sensor_fixedjoint" -> "RHandTouchLeft_frame"
+"r_wrist" -> "RHand/Touch/Right_sensor_fixedjoint" [label="xyz: 0.035 -0.025 0.0035 \nrpy: 0 0 -1.5708"]
+"RHand/Touch/Right_sensor_fixedjoint" -> "RHandTouchRight_frame"
+"r_wrist" -> "RThumb1" [label="xyz: 0.04895 0 -0.02638 \nrpy: -1.5708 0.0472984 -3.26826e-08"]
+"RThumb1" -> "RThumb1_link"
+"RThumb1_link" -> "RThumb2" [label="xyz: 0.01436 0 0 \nrpy: 0 0 -0.999899"]
+"RThumb2" -> "RThumb2_link"
+"torso" -> "Sonar/Left_sensor_fixedjoint" [label="xyz: 0.00558253 0.0192068 0.0623853 \nrpy: -0.00478508 0.0436497 0.392441"]
+"Sonar/Left_sensor_fixedjoint" -> "LSonar_frame"
+"torso" -> "Sonar/Right_sensor_fixedjoint" [label="xyz: 0.00558253 -0.0192068 0.0623853 \nrpy: 0.00478508 0.0436497 -0.392441"]
+"Sonar/Right_sensor_fixedjoint" -> "RSonar_frame"
+}

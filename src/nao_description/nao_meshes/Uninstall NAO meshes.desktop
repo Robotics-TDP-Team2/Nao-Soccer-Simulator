@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Version=0.9.4
+Name=Uninstall NAO meshes
+Comment=Uninstall
+Icon=
+Exec=/home/vincent/.ros/nao_meshes/uninstall
+Terminal=false
+Path=/home/vincent/.ros/nao_meshes

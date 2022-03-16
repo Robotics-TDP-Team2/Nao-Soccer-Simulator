@@ -1,0 +1,150 @@
+<launch>
+
+    
+    <arg name="world_name" value="$(find nao_gazebo)/worlds/playground.world"/>
+    <arg name="paused" default="true"/>
+    <arg name="use_sim_time" default="true"/>
+    <arg name="gui" default="true"/>
+    <arg name="headless" default="false"/>
+    <arg name="debug" default="false"/>
+    <arg name="version" default="V40" />
+    <arg name="version1" default="V41" />
+    <arg name="robot_name"/>
+    <arg name="init_pose"/>
+
+    
+    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+        <arg name="gui" value="$(arg gui)" />
+        <arg name="paused" value="$(arg paused)"/>
+    </include>
+   
+    <param name="robot_description" command="$(find xacro)/xacro --inorder $(find nao_description)/urdf/nao$(arg version)_generated_urdf/nao_robot.xacro"/>
+    
+    <group ns="nao_1">
+	<param name="tf_prefix" value="robot1_tf" />
+	<param name="robot_description" command="$(find xacro)/xacro --inorder $(find nao_description)/urdf/nao$(arg version)_generated_urdf/nao_robot.xacro"/>
+	<!-- Load PID values for joints -->
+	<rosparam file="$(find nao_gazebo)/config/gazebo_ros_control_params.yaml" command="load" />
+	<!-- complete robot model with base_footprint -->
+	<node pkg="nao_description" type="base_footprint" name="base_footprint" />
+	<node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" ></node> 
+	<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"  output="screen" >
+	    <param name="publish_frequency" type="double" value="50.0" />
+	</node>
+	
+	<!-- Spawn NAO into Gazebo -->
+	<node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-param robot_description -urdf -x -0.5 -y 1 -z 0.33 -model nao_1" />
+    </group>
+
+    <group ns="nao_2">
+	<param name="tf_prefix" value="robot2_tf" />
+	<param name="robot_description" command="$(find xacro)/xacro --inorder $(find nao_description)/urdf/nao$(arg version)_generated_urdf/nao_robot.xacro"/>
+	<!-- Load PID values for joints -->
+	<rosparam file="$(find nao_gazebo)/config/gazebo_ros_control_params.yaml" command="load" />
+	<!-- complete robot model with base_footprint -->
+	<node pkg="nao_description" type="base_footprint" name="base_footprint" />
+	<node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" ></node> 
+	<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"  output="screen" >
+	    <param name="publish_frequency" type="double" value="50.0" />
+	</node>
+	
+	<!-- Spawn NAO into Gazebo -->
+	<node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-param robot_description -urdf -x -0.5 -y 2 -z 0.33 -model nao_2" />
+    </group>
+    
+    <group ns="nao_3">
+	<param name="tf_prefix" value="robot3_tf" />
+	<param name="robot_description" command="$(find xacro)/xacro --inorder $(find nao_description)/urdf/nao$(arg version)_generated_urdf/nao_robot.xacro"/>
+	<!-- Load PID values for joints -->
+	<rosparam file="$(find nao_gazebo)/config/gazebo_ros_control_params.yaml" command="load"/>
+	<!-- complete robot model with base_footprint -->
+	<node pkg="nao_description" type="base_footprint" name="base_footprint" />
+	<node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" ></node> 
+	<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"  output="screen" >
+	    <param name="publish_frequency" type="double" value="50.0" />
+	</node>
+	
+	<!-- Spawn NAO into Gazebo -->
+	<node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-param robot_description -urdf -x -0.5 -y 3 -z 0.33 -model nao_3" />
+    </group>
+
+    <group ns="nao_4">
+	<param name="tf_prefix" value="robot4_tf" />
+	<param name="robot_description" command="$(find xacro)/xacro --inorder $(find nao_description)/urdf/nao$(arg version)_generated_urdf/nao_robot.xacro"/>
+	<!-- Load PID values for joints -->
+	<rosparam file="$(find nao_gazebo)/config/gazebo_ros_control_params.yaml" command="load" />
+	<!-- complete robot model with base_footprint -->
+	<node pkg="nao_description" type="base_footprint" name="base_footprint" />
+	<node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" ></node> 
+	<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"  output="screen" >
+	    <param name="publish_frequency" type="double" value="50.0" />
+	</node>
+	
+	<!-- Spawn NAO into Gazebo -->
+	<node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-param robot_description -urdf -x -0.5 -y 4 -z 0.33 -model nao_4" />
+    </group>
+ 
+    <group ns="nao_5">
+	<param name="tf_prefix" value="robot5_tf" />
+	<param name="robot_description" command="$(find xacro)/xacro --inorder $(find nao_description)/urdf/nao$(arg version1)_generated_urdf/nao_robot.xacro"/>
+	<!-- Load PID values for joints -->
+	<rosparam file="$(find nao_gazebo)/config/gazebo_ros_control_params.yaml" command="load" />
+	<!-- complete robot model with base_footprint -->
+	<node pkg="nao_description" type="base_footprint" name="base_footprint" />
+	<node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" ></node> 
+	<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"  output="screen" >
+	    <param name="publish_frequency" type="double" value="50.0" />
+	</node>
+	
+	<!-- Spawn NAO into Gazebo -->
+	<node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-param robot_description -urdf -x 0.5 -y 1 -z 0.33 -model nao_5" />
+    </group>
+
+    <group ns="nao_6">
+	<param name="tf_prefix" value="robot6_tf" />
+	<param name="robot_description" command="$(find xacro)/xacro --inorder $(find nao_description)/urdf/nao$(arg version1)_generated_urdf/nao_robot.xacro"/>
+	<!-- Load PID values for joints -->
+	<rosparam file="$(find nao_gazebo)/config/gazebo_ros_control_params.yaml" command="load" />
+	<!-- complete robot model with base_footprint -->
+	<node pkg="nao_description" type="base_footprint" name="base_footprint" />
+	<node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" ></node> 
+	<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"  output="screen" >
+	    <param name="publish_frequency" type="double" value="50.0" />
+	</node>
+	
+	<!-- Spawn NAO into Gazebo -->
+	<node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-param robot_description -urdf -x 0.5 -y 2 -z 0.33 -model nao_6" />
+    </group>
+ 
+    <group ns="nao_7">
+	<param name="tf_prefix" value="robot7_tf" />
+	<param name="robot_description" command="$(find xacro)/xacro --inorder $(find nao_description)/urdf/nao$(arg version1)_generated_urdf/nao_robot.xacro"/>
+	<!-- Load PID values for joints -->
+	<rosparam file="$(find nao_gazebo)/config/gazebo_ros_control_params.yaml" command="load" />
+	<!-- complete robot model with base_footprint -->
+	<node pkg="nao_description" type="base_footprint" name="base_footprint" />
+	<node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" ></node> 
+	<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"  output="screen" >
+	    <param name="publish_frequency" type="double" value="50.0" />
+	</node>
+	
+	<!-- Spawn NAO into Gazebo -->
+	<node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-param robot_description -urdf -x 0.5 -y 3 -z 0.33 -model nao_7" />
+    </group>
+
+    <group ns="nao_8">
+	<param name="tf_prefix" value="robot8_tf" />
+	<param name="robot_description" command="$(find xacro)/xacro --inorder $(find nao_description)/urdf/nao$(arg version1)_generated_urdf/nao_robot.xacro"/>
+	<!-- Load PID values for joints -->
+	<rosparam file="$(find nao_gazebo)/config/gazebo_ros_control_params.yaml" command="load" />
+	<!-- complete robot model with base_footprint -->
+	<node pkg="nao_description" type="base_footprint" name="base_footprint" />
+	<node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" ></node> 
+	<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"  output="screen" >
+	    <param name="publish_frequency" type="double" value="50.0" />
+	</node>
+	
+	<!-- Spawn NAO into Gazebo -->
+	<node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-param robot_description -urdf -x 0.5 -y 4 -z 0.33 -model nao_8" />
+    </group>
+</launch>

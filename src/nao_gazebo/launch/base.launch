@@ -1,0 +1,28 @@
+<launch>
+	
+    <arg name="robot_name"/>
+    <arg name="init_pose"/>
+
+    <node pkg="nao_description" type="base_footprint" name="base_footprint" />
+    <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" /> 
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"  output="screen" >
+       <param name="publish_frequency" type="double" value="50.0" />
+    </node>
+    <!-- Load PID values for joints -->
+    <rosparam file="$(find nao_gazebo)/config/gazebo_ros_control_params.yaml" command="load" />
+
+<!--
+    <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
+      output="screen" args="
+      /nao_dcm/Head_controller 
+      /nao_dcm/RightArm_controller /nao_dcm/LeftArm_controller 
+      /nao_dcm/LeftLeg_controller /nao_dcm/RightLeg_controller 
+      /nao_dcm/RightHand_controller /nao_dcm/LeftHand_controller 
+      /nao_dcm/Pelvis_controller /nao_dcm/LeftFoot_controller /nao_dcm/RightFoot_controller
+      /nao_dcm/joint_state_controller "/>	
+-->
+
+    <!-- Spawn NAO into Gazebo -->
+    <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-param robot_description -urdf $(arg init_pose) -model $(arg robot_name)" />
+
+</launch>
