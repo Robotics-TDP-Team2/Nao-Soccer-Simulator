@@ -15,12 +15,6 @@ jobs:
       uses: actions/setup-python@v2
       with:
         python-version: 3.8
-    - name: setup
-      run: |
-        make setup
-    - name: prepare
-      run: |
-        make prepare
     - name: configure
       run: |
         cmake -H. -Bbuild -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Coverage -DENABLE_COVERAGE=On
