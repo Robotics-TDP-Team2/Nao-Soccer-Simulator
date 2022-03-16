@@ -10,7 +10,7 @@
 * [Synopsis](#synopsis)
 * [Conceptualisation and Roadmap](#conceptualisation-and-roadmap)
 * [Usage Examples](#usage-examples)
-* [Changelog](#changelog)
+* [Milestones](#milestones)
 * [Contribution Guidelines](#contribution-guidelines)
 * [Credits](#credits)
 
@@ -45,7 +45,7 @@ In this section, we illustrate few tutorials to guide users.
 
 ## [Changelog](#Nao-Soccer-Simulator)
 
-Latest changes to the project are listed in this section.
+Latest milestones achieved in the project are listed in this section.
 
 ## [Contribution Guidelines](#Nao-Soccer-Simulator)
 
