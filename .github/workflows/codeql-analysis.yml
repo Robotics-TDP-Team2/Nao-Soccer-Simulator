@@ -2,15 +2,12 @@ name: "CodeQL"
 
 on:
   push:
-    paths:
-    - 'Source/**'
+    branches:  [ main ]
   pull_request:
-    paths:
-    - 'Source/**'
+    branches: [ main ]
   schedule:
     - cron: '0 8 * * *'
   workflow_dispatch:
-
 
 jobs:
   analyse:
@@ -23,10 +20,9 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
-      with:
         # We must fetch at least the immediate parents so that if this is
         # a pull request then we can checkout the head.
-        fetch-depth: 2
+
 
     # Initializes the CodeQL tools for scanning.
     - name: Initialize CodeQL
