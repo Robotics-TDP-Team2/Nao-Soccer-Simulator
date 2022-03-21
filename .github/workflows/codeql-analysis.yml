@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        language: ['java']
+        language: ['cpp']
 
     steps:
     - name: Checkout repository
