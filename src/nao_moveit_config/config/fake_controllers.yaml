@@ -44,22 +44,94 @@ controller_list:
       - RHipRoll
       - RHipPitch
       - RKneePitch
-  - name: fake_LeftFoot_controller
+  - name: fake_LeftAnkle_controller
     type: $(arg fake_execution_type)
     joints:
       - LAnklePitch
+  - name: fake_RightAnkle_controller
+    type: $(arg fake_execution_type)
+    joints:
+      - RAnklePitch
+  - name: fake_LeftFoot_controller
+    type: $(arg fake_execution_type)
+    joints:
       - LAnkleRoll
   - name: fake_RightFoot_controller
     type: $(arg fake_execution_type)
     joints:
-      - RAnklePitch
       - RAnkleRoll
-initial:  # Define initial robot poses.
-  - group: Head
-    pose: look_up
-  - group: LeftArm
-    pose: llower_arm
-  - group: RightArm
-    pose: rlift_arm
-  - group: RightHand
-    pose: say_hi
+  - name: fake_DualArms_controller
+    type: $(arg fake_execution_type)
+    joints:
+      - LShoulderPitch
+      - LShoulderRoll
+      - LElbowYaw
+      - LElbowRoll
+      - LWristYaw
+      - RShoulderPitch
+      - RShoulderRoll
+      - RElbowYaw
+      - RElbowRoll
+      - RWristYaw
+  - name: fake_DualLegs_controller
+    type: $(arg fake_execution_type)
+    joints:
+      - LHipRoll
+      - LHipPitch
+      - LKneePitch
+      - RHipRoll
+      - RHipPitch
+      - RKneePitch
+  - name: fake_DualAnkles_controller
+    type: $(arg fake_execution_type)
+    joints:
+      - LAnklePitch
+      - RAnklePitch
+  - name: fake_DualLegNfoot_controller
+    type: $(arg fake_execution_type)
+    joints:
+      - LHipRoll
+      - LHipPitch
+      - LKneePitch
+      - LAnklePitch
+      - RHipRoll
+      - RHipPitch
+      - RKneePitch
+      - RAnklePitch
+  - name: fake_LeftLegNFoot_controller
+    type: $(arg fake_execution_type)
+    joints:
+      - LHipRoll
+      - LHipPitch
+      - LKneePitch
+      - LAnklePitch
+  - name: fake_RightLegNFoot_controller
+    type: $(arg fake_execution_type)
+    joints:
+      - RHipRoll
+      - RHipPitch
+      - RKneePitch
+      - RAnklePitch
+  - name: fake_LeftArmNRightLeg_controller
+    type: $(arg fake_execution_type)
+    joints:
+      - LShoulderPitch
+      - LShoulderRoll
+      - LElbowYaw
+      - LElbowRoll
+      - LWristYaw
+      - RHipRoll
+      - RHipPitch
+      - RKneePitch
+  - name: fake_RightArmNLeftLeg_controller
+    type: $(arg fake_execution_type)
+    joints:
+      - LHipRoll
+      - LHipPitch
+      - LKneePitch
+      - RShoulderPitch
+      - RShoulderRoll
+      - RElbowYaw
+      - RElbowRoll
+      - RWristYaw
+

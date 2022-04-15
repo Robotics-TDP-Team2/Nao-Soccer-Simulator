@@ -1,0 +1,2352 @@
+Panels:
+  - Class: rviz/Displays
+    Help Height: 78
+    Name: Displays
+    Property Tree Widget:
+      Expanded:
+        - /Global Options1
+      Splitter Ratio: 0.6526610255241394
+    Tree Height: 616
+  - Class: rviz/Selection
+    Name: Selection
+  - Class: rviz/Tool Properties
+    Expanded:
+      - /Interact1
+      - /2D Pose Estimate1
+      - /2D Nav Goal1
+    Name: Tool Properties
+    Splitter Ratio: 0.4285709857940674
+  - Class: rviz/Views
+    Expanded:
+      - /Current View1
+    Name: Views
+    Splitter Ratio: 0.5
+  - Class: rviz/Time
+    Experimental: false
+    Name: Time
+    SyncMode: 0
+    SyncSource: LaserScan
+Preferences:
+  PromptSaveOnExit: true
+Toolbars:
+  toolButtonStyle: 2
+Visualization Manager:
+  Class: ""
+  Displays:
+    - Alpha: 0.5
+      Cell Size: 0.5
+      Class: rviz/Grid
+      Color: 0; 0; 0
+      Enabled: true
+      Line Style:
+        Line Width: 0.029999999329447746
+        Value: Lines
+      Name: Grid
+      Normal Cell Count: 0
+      Offset:
+        X: 0
+        Y: 0
+        Z: 0
+      Plane: XY
+      Plane Cell Count: 80
+      Reference Frame: map
+      Value: true
+    - Angle Tolerance: 0.10000000149011612
+      Class: rviz/Odometry
+      Covariance:
+        Orientation:
+          Alpha: 0.5
+          Color: 255; 255; 127
+          Color Style: Unique
+          Frame: Local
+          Offset: 1
+          Scale: 1
+          Value: true
+        Position:
+          Alpha: 0.30000001192092896
+          Color: 204; 51; 204
+          Scale: 1
+          Value: true
+        Value: true
+      Enabled: false
+      Keep: 100
+      Name: Odometry
+      Position Tolerance: 0.10000000149011612
+      Shape:
+        Alpha: 1
+        Axes Length: 1
+        Axes Radius: 0.10000000149011612
+        Color: 255; 25; 0
+        Head Length: 0.30000001192092896
+        Head Radius: 0.10000000149011612
+        Shaft Length: 1
+        Shaft Radius: 0.05000000074505806
+        Value: Arrow
+      Topic: /odom
+      Unreliable: false
+      Value: false
+    - Angle Tolerance: 0.10000000149011612
+      Class: rviz/Odometry
+      Covariance:
+        Orientation:
+          Alpha: 0.5
+          Color: 255; 255; 127
+          Color Style: Unique
+          Frame: Local
+          Offset: 1
+          Scale: 1
+          Value: true
+        Position:
+          Alpha: 0.30000001192092896
+          Color: 204; 51; 204
+          Scale: 1
+          Value: true
+        Value: true
+      Enabled: false
+      Keep: 100
+      Name: Odometry EKF
+      Position Tolerance: 0.10000000149011612
+      Shape:
+        Alpha: 1
+        Axes Length: 1
+        Axes Radius: 0.10000000149011612
+        Color: 255; 25; 0
+        Head Length: 0.30000001192092896
+        Head Radius: 0.10000000149011612
+        Shaft Length: 1
+        Shaft Radius: 0.05000000074505806
+        Value: Arrow
+      Topic: /odom
+      Unreliable: false
+      Value: false
+    - Alpha: 0.699999988079071
+      Class: rviz/Map
+      Color Scheme: map
+      Draw Behind: true
+      Enabled: true
+      Name: Map
+      Topic: /nao_1/move_base/global_costmap/costmap
+      Unreliable: false
+      Use Timestamp: false
+      Value: true
+    - Alpha: 1
+      Autocompute Intensity Bounds: true
+      Autocompute Value Bounds:
+        Max Value: 0.30399999022483826
+        Min Value: 0.30399999022483826
+        Value: true
+      Axis: Z
+      Channel Name: intensity
+      Class: rviz/LaserScan
+      Color: 255; 0; 0
+      Color Transformer: FlatColor
+      Decay Time: 0
+      Enabled: true
+      Invert Rainbow: false
+      Max Color: 255; 255; 255
+      Min Color: 0; 0; 0
+      Name: LaserScan
+      Position Transformer: XYZ
+      Queue Size: 10
+      Selectable: true
+      Size (Pixels): 3
+      Size (m): 0.009999999776482582
+      Style: Points
+      Topic: /nao_1/scan
+      Unreliable: false
+      Use Fixed Frame: true
+      Use rainbow: true
+      Value: true
+    - Alpha: 1
+      Arrow Length: 0.30000001192092896
+      Axes Length: 0.30000001192092896
+      Axes Radius: 0.009999999776482582
+      Class: rviz/PoseArray
+      Color: 170; 255; 127
+      Enabled: true
+      Head Length: 0.07000000029802322
+      Head Radius: 0.029999999329447746
+      Name: Pose Array
+      Shaft Length: 0.23000000417232513
+      Shaft Radius: 0.009999999776482582
+      Shape: Arrow (Flat)
+      Topic: /nao_1/particlecloud
+      Unreliable: false
+      Value: true
+    - Class: rviz/Marker
+      Enabled: true
+      Marker Topic: /waypoint_markers
+      Name: Marker
+      Namespaces:
+        {}
+      Queue Size: 100
+      Value: true
+    - Alpha: 1
+      Class: rviz/RobotModel
+      Collision Enabled: false
+      Enabled: true
+      Links:
+        All Links Enabled: true
+        Expand Joint Details: false
+        Expand Link Details: false
+        Expand Tree: false
+        Link Tree Style: Links in Alphabetic Order
+        nao_1/CameraBottom_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_1/CameraBottom_optical_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_1/CameraTop_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_1/CameraTop_optical_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_1/ChestButton_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_1/Head:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_1/HeadTouchFront_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_1/HeadTouchMiddle_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_1/HeadTouchRear_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_1/ImuTorsoAccelerometer_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_1/ImuTorsoGyrometer_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_1/LAnklePitch:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_1/LBicep:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_1/LElbow:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_1/LFinger11_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_1/LFinger12_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_1/LFinger13_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_1/LFinger21_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_1/LFinger22_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_1/LFinger23_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_1/LFootBumperLeft_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_1/LFootBumperRight_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_1/LForeArm:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_1/LFsrFL_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_1/LFsrFR_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_1/LFsrRL_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_1/LFsrRR_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_1/LHandTouchBack_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_1/LHandTouchLeft_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_1/LHandTouchRight_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_1/LHip:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_1/LInfraRed_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_1/LPelvis:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_1/LShoulder:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_1/LSonar_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_1/LThigh:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_1/LThumb1_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_1/LThumb2_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_1/LTibia:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_1/MicroFrontCenter_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_1/MicroRearCenter_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_1/MicroSurroundLeft_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_1/MicroSurroundRight_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_1/Neck:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_1/RAnklePitch:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_1/RBicep:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_1/RElbow:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_1/RFinger11_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_1/RFinger12_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_1/RFinger13_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_1/RFinger21_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_1/RFinger22_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_1/RFinger23_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_1/RFootBumperLeft_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_1/RFootBumperRight_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_1/RForeArm:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_1/RFsrFL_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_1/RFsrFR_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_1/RFsrRL_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_1/RFsrRR_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_1/RHandTouchBack_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_1/RHandTouchLeft_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_1/RHandTouchRight_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_1/RHip:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_1/RInfraRed_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_1/RPelvis:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_1/RShoulder:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_1/RSonar_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_1/RThigh:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_1/RThumb1_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_1/RThumb2_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_1/RTibia:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_1/Rplidar_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_1/base_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_1/front_left_motor:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_1/front_left_wheel_link_l:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_1/front_left_wheel_link_r:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_1/front_right_motor:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_1/front_right_wheel_link_l:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_1/front_right_wheel_link_r:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_1/gaze:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_1/l_ankle:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_1/l_gripper:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_1/l_sole:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_1/l_wrist:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_1/left_motor:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_1/left_wheel_link_l:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_1/left_wheel_link_r:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_1/r_ankle:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_1/r_gripper:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_1/r_sole:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_1/r_wrist:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_1/right_motor:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_1/right_wheel_link_l:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_1/right_wheel_link_r:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_1/torso:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+      Name: nao_1
+      Robot Description: nao_1/robot_description
+      TF Prefix: ""
+      Update Interval: 0
+      Value: true
+      Visual Enabled: true
+    - Alpha: 1
+      Buffer Length: 1
+      Class: rviz/Path
+      Color: 25; 255; 0
+      Enabled: true
+      Head Diameter: 0.30000001192092896
+      Head Length: 0.20000000298023224
+      Length: 0.30000001192092896
+      Line Style: Lines
+      Line Width: 0.029999999329447746
+      Name: nao_1/Navfn Plan
+      Offset:
+        X: 0
+        Y: 0
+        Z: 0
+      Pose Color: 255; 85; 255
+      Pose Style: None
+      Radius: 0.029999999329447746
+      Shaft Diameter: 0.10000000149011612
+      Shaft Length: 0.10000000149011612
+      Topic: /nao_1/move_base/NavfnROS/plan
+      Unreliable: false
+      Value: true
+    - Alpha: 1
+      Buffer Length: 1
+      Class: rviz/Path
+      Color: 255; 0; 0
+      Enabled: true
+      Head Diameter: 0.30000001192092896
+      Head Length: 0.20000000298023224
+      Length: 0.30000001192092896
+      Line Style: Lines
+      Line Width: 0.029999999329447746
+      Name: nao_1/Local Plan
+      Offset:
+        X: 0
+        Y: 0
+        Z: 0
+      Pose Color: 255; 85; 255
+      Pose Style: None
+      Radius: 0.029999999329447746
+      Shaft Diameter: 0.10000000149011612
+      Shaft Length: 0.10000000149011612
+      Topic: /nao_1/move_base/TrajectoryPlannerROS/local_plan
+      Unreliable: false
+      Value: true
+    - Alpha: 1
+      Buffer Length: 1
+      Class: rviz/Path
+      Color: 255; 87; 83
+      Enabled: true
+      Head Diameter: 0.30000001192092896
+      Head Length: 0.20000000298023224
+      Length: 0.30000001192092896
+      Line Style: Lines
+      Line Width: 0.029999999329447746
+      Name: nao_1/Global Plan
+      Offset:
+        X: 0
+        Y: 0
+        Z: 0
+      Pose Color: 255; 85; 255
+      Pose Style: None
+      Radius: 0.029999999329447746
+      Shaft Diameter: 0.10000000149011612
+      Shaft Length: 0.10000000149011612
+      Topic: /nao_1/move_base/TrajectoryPlannerROS/global_plan
+      Unreliable: false
+      Value: true
+    - Alpha: 0.30000001192092896
+      Buffer Length: 1
+      Class: rviz/Range
+      Color: 255; 0; 0
+      Enabled: true
+      Name: nao_1/RightRange
+      Queue Size: 100
+      Topic: /nao_1/sonar_right
+      Unreliable: false
+      Value: true
+    - Alpha: 0.30000001192092896
+      Buffer Length: 1
+      Class: rviz/Range
+      Color: 255; 0; 0
+      Enabled: true
+      Name: nao_1/LeftRange
+      Queue Size: 100
+      Topic: /nao_1/sonar_left
+      Unreliable: false
+      Value: true
+    - Alpha: 0.699999988079071
+      Class: rviz/Map
+      Color Scheme: costmap
+      Draw Behind: false
+      Enabled: true
+      Name: nao_1/Inflated Obstacles
+      Topic: /nao_1/move_base/local_costmap/costmap
+      Unreliable: false
+      Use Timestamp: false
+      Value: true
+    - Alpha: 1
+      Axes Length: 1
+      Axes Radius: 0.10000000149011612
+      Class: rviz/Pose
+      Color: 0; 255; 0
+      Enabled: true
+      Head Length: 0.10000000149011612
+      Head Radius: 0.15000000596046448
+      Name: nao_1/Goal Pose
+      Shaft Length: 0.5
+      Shaft Radius: 0.029999999329447746
+      Shape: Arrow
+      Topic: /nao_1/move_base_simple/goal
+      Unreliable: false
+      Value: true
+    - Alpha: 1
+      Class: rviz/RobotModel
+      Collision Enabled: false
+      Enabled: true
+      Links:
+        All Links Enabled: true
+        Expand Joint Details: false
+        Expand Link Details: false
+        Expand Tree: false
+        Link Tree Style: Links in Alphabetic Order
+        nao_2/CameraBottom_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_2/CameraBottom_optical_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_2/CameraTop_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_2/CameraTop_optical_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_2/ChestButton_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_2/Head:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_2/HeadTouchFront_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_2/HeadTouchMiddle_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_2/HeadTouchRear_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_2/ImuTorsoAccelerometer_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_2/ImuTorsoGyrometer_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_2/LAnklePitch:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_2/LBicep:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_2/LElbow:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_2/LFinger11_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_2/LFinger12_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_2/LFinger13_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_2/LFinger21_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_2/LFinger22_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_2/LFinger23_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_2/LFootBumperLeft_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_2/LFootBumperRight_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_2/LForeArm:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_2/LFsrFL_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_2/LFsrFR_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_2/LFsrRL_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_2/LFsrRR_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_2/LHandTouchBack_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_2/LHandTouchLeft_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_2/LHandTouchRight_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_2/LHip:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_2/LInfraRed_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_2/LPelvis:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_2/LShoulder:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_2/LSonar_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_2/LThigh:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_2/LThumb1_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_2/LThumb2_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_2/LTibia:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_2/MicroFrontCenter_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_2/MicroRearCenter_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_2/MicroSurroundLeft_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_2/MicroSurroundRight_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_2/Neck:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_2/RAnklePitch:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_2/RBicep:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_2/RElbow:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_2/RFinger11_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_2/RFinger12_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_2/RFinger13_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_2/RFinger21_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_2/RFinger22_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_2/RFinger23_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_2/RFootBumperLeft_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_2/RFootBumperRight_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_2/RForeArm:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_2/RFsrFL_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_2/RFsrFR_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_2/RFsrRL_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_2/RFsrRR_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_2/RHandTouchBack_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_2/RHandTouchLeft_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_2/RHandTouchRight_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_2/RHip:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_2/RInfraRed_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_2/RPelvis:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_2/RShoulder:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_2/RSonar_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_2/RThigh:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_2/RThumb1_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_2/RThumb2_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_2/RTibia:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_2/Rplidar_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_2/base_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_2/front_left_motor:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_2/front_left_wheel_link_l:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_2/front_left_wheel_link_r:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_2/front_right_motor:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_2/front_right_wheel_link_l:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_2/front_right_wheel_link_r:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_2/gaze:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_2/l_ankle:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_2/l_gripper:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_2/l_sole:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_2/l_wrist:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_2/left_motor:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_2/left_wheel_link_l:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_2/left_wheel_link_r:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_2/r_ankle:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_2/r_gripper:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_2/r_sole:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_2/r_wrist:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_2/right_motor:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_2/right_wheel_link_l:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_2/right_wheel_link_r:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_2/torso:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+      Name: nao_2
+      Robot Description: nao_2/robot_description
+      TF Prefix: ""
+      Update Interval: 0
+      Value: true
+      Visual Enabled: true
+    - Alpha: 1
+      Buffer Length: 1
+      Class: rviz/Path
+      Color: 255; 0; 0
+      Enabled: true
+      Head Diameter: 0.30000001192092896
+      Head Length: 0.20000000298023224
+      Length: 0.30000001192092896
+      Line Style: Lines
+      Line Width: 0.029999999329447746
+      Name: nao_2/Local Plan
+      Offset:
+        X: 0
+        Y: 0
+        Z: 0
+      Pose Color: 255; 85; 255
+      Pose Style: None
+      Radius: 0.029999999329447746
+      Shaft Diameter: 0.10000000149011612
+      Shaft Length: 0.10000000149011612
+      Topic: /nao_2/move_base/TrajectoryPlannerROS/local_plan
+      Unreliable: false
+      Value: true
+    - Alpha: 1
+      Buffer Length: 1
+      Class: rviz/Path
+      Color: 25; 255; 0
+      Enabled: true
+      Head Diameter: 0.30000001192092896
+      Head Length: 0.20000000298023224
+      Length: 0.30000001192092896
+      Line Style: Lines
+      Line Width: 0.029999999329447746
+      Name: nao_2/Navfn Plan
+      Offset:
+        X: 0
+        Y: 0
+        Z: 0
+      Pose Color: 255; 85; 255
+      Pose Style: None
+      Radius: 0.029999999329447746
+      Shaft Diameter: 0.10000000149011612
+      Shaft Length: 0.10000000149011612
+      Topic: /nao_2/move_base/NavfnROS/plan
+      Unreliable: false
+      Value: true
+    - Alpha: 1
+      Buffer Length: 1
+      Class: rviz/Path
+      Color: 0; 213; 0
+      Enabled: true
+      Head Diameter: 0.30000001192092896
+      Head Length: 0.20000000298023224
+      Length: 0.30000001192092896
+      Line Style: Lines
+      Line Width: 0.029999999329447746
+      Name: nao_2/Global Plan
+      Offset:
+        X: 0
+        Y: 0
+        Z: 0
+      Pose Color: 255; 85; 255
+      Pose Style: None
+      Radius: 0.029999999329447746
+      Shaft Diameter: 0.10000000149011612
+      Shaft Length: 0.10000000149011612
+      Topic: /nao_2/move_base/TrajectoryPlannerROS/global_plan
+      Unreliable: false
+      Value: true
+    - Alpha: 0.30000001192092896
+      Buffer Length: 1
+      Class: rviz/Range
+      Color: 255; 2; 0
+      Enabled: true
+      Name: nao_2/RightRange
+      Queue Size: 100
+      Topic: /nao_2/sonar_right
+      Unreliable: false
+      Value: true
+    - Alpha: 0.30000001192092896
+      Buffer Length: 1
+      Class: rviz/Range
+      Color: 255; 0; 0
+      Enabled: true
+      Name: nao_2/LeftRange
+      Queue Size: 100
+      Topic: /nao_2/sonar_left
+      Unreliable: false
+      Value: true
+    - Alpha: 1
+      Axes Length: 1
+      Axes Radius: 0.10000000149011612
+      Class: rviz/Pose
+      Color: 0; 255; 0
+      Enabled: true
+      Head Length: 0.10000000149011612
+      Head Radius: 0.15000000596046448
+      Name: nao_2/Goal Pose
+      Shaft Length: 0.5
+      Shaft Radius: 0.029999999329447746
+      Shape: Arrow
+      Topic: /nao_2/move_base/current_goal
+      Unreliable: false
+      Value: true
+    - Alpha: 0.699999988079071
+      Class: rviz/Map
+      Color Scheme: costmap
+      Draw Behind: false
+      Enabled: true
+      Name: nao_2/Inflated Obstacles
+      Topic: /nao_2/move_base/global_costmap/costmap
+      Unreliable: false
+      Use Timestamp: false
+      Value: true
+    - Alpha: 1
+      Class: rviz/RobotModel
+      Collision Enabled: false
+      Enabled: true
+      Links:
+        All Links Enabled: true
+        Expand Joint Details: false
+        Expand Link Details: false
+        Expand Tree: false
+        Link Tree Style: Links in Alphabetic Order
+        nao_3/CameraBottom_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_3/CameraBottom_optical_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_3/CameraTop_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_3/CameraTop_optical_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_3/ChestButton_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_3/Head:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_3/HeadTouchFront_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_3/HeadTouchMiddle_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_3/HeadTouchRear_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_3/ImuTorsoAccelerometer_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_3/ImuTorsoGyrometer_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_3/LAnklePitch:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_3/LBicep:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_3/LElbow:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_3/LFinger11_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_3/LFinger12_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_3/LFinger13_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_3/LFinger21_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_3/LFinger22_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_3/LFinger23_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_3/LFootBumperLeft_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_3/LFootBumperRight_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_3/LForeArm:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_3/LFsrFL_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_3/LFsrFR_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_3/LFsrRL_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_3/LFsrRR_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_3/LHandTouchBack_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_3/LHandTouchLeft_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_3/LHandTouchRight_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_3/LHip:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_3/LInfraRed_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_3/LPelvis:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_3/LShoulder:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_3/LSonar_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_3/LThigh:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_3/LThumb1_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_3/LThumb2_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_3/LTibia:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_3/MicroFrontCenter_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_3/MicroRearCenter_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_3/MicroSurroundLeft_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_3/MicroSurroundRight_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_3/Neck:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_3/RAnklePitch:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_3/RBicep:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_3/RElbow:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_3/RFinger11_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_3/RFinger12_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_3/RFinger13_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_3/RFinger21_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_3/RFinger22_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_3/RFinger23_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_3/RFootBumperLeft_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_3/RFootBumperRight_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_3/RForeArm:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_3/RFsrFL_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_3/RFsrFR_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_3/RFsrRL_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_3/RFsrRR_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_3/RHandTouchBack_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_3/RHandTouchLeft_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_3/RHandTouchRight_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_3/RHip:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_3/RInfraRed_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_3/RPelvis:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_3/RShoulder:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_3/RSonar_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_3/RThigh:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_3/RThumb1_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_3/RThumb2_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_3/RTibia:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_3/Rplidar_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_3/base_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_3/front_left_motor:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_3/front_left_wheel_link_l:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_3/front_left_wheel_link_r:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_3/front_right_motor:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_3/front_right_wheel_link_l:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_3/front_right_wheel_link_r:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_3/gaze:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_3/l_ankle:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_3/l_gripper:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_3/l_sole:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_3/l_wrist:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_3/left_motor:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_3/left_wheel_link_l:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_3/left_wheel_link_r:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_3/r_ankle:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_3/r_gripper:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_3/r_sole:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_3/r_wrist:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_3/right_motor:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_3/right_wheel_link_l:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_3/right_wheel_link_r:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_3/torso:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+      Name: nao_3
+      Robot Description: nao_3/robot_description
+      TF Prefix: ""
+      Update Interval: 0
+      Value: true
+      Visual Enabled: true
+    - Alpha: 0.30000001192092896
+      Buffer Length: 1
+      Class: rviz/Range
+      Color: 255; 0; 0
+      Enabled: true
+      Name: nao_3/RightRange
+      Queue Size: 100
+      Topic: /nao_3/sonar_right
+      Unreliable: false
+      Value: true
+    - Alpha: 0.30000001192092896
+      Buffer Length: 1
+      Class: rviz/Range
+      Color: 255; 0; 0
+      Enabled: true
+      Name: nao_3/LeftRange
+      Queue Size: 100
+      Topic: /nao_3/sonar_left
+      Unreliable: false
+      Value: true
+    - Alpha: 1
+      Class: rviz/RobotModel
+      Collision Enabled: false
+      Enabled: true
+      Links:
+        All Links Enabled: true
+        Expand Joint Details: false
+        Expand Link Details: false
+        Expand Tree: false
+        Link Tree Style: Links in Alphabetic Order
+        nao_4/CameraBottom_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_4/CameraBottom_optical_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_4/CameraTop_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_4/CameraTop_optical_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_4/ChestButton_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_4/Head:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_4/HeadTouchFront_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_4/HeadTouchMiddle_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_4/HeadTouchRear_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_4/ImuTorsoAccelerometer_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_4/ImuTorsoGyrometer_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_4/LAnklePitch:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_4/LBicep:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_4/LElbow:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_4/LFinger11_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_4/LFinger12_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_4/LFinger13_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_4/LFinger21_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_4/LFinger22_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_4/LFinger23_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_4/LFootBumperLeft_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_4/LFootBumperRight_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_4/LForeArm:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_4/LFsrFL_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_4/LFsrFR_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_4/LFsrRL_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_4/LFsrRR_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_4/LHandTouchBack_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_4/LHandTouchLeft_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_4/LHandTouchRight_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_4/LHip:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_4/LInfraRed_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_4/LPelvis:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_4/LShoulder:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_4/LSonar_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_4/LThigh:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_4/LThumb1_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_4/LThumb2_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_4/LTibia:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_4/MicroFrontCenter_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_4/MicroRearCenter_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_4/MicroSurroundLeft_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_4/MicroSurroundRight_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_4/Neck:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_4/RAnklePitch:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_4/RBicep:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_4/RElbow:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_4/RFinger11_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_4/RFinger12_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_4/RFinger13_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_4/RFinger21_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_4/RFinger22_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_4/RFinger23_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_4/RFootBumperLeft_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_4/RFootBumperRight_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_4/RForeArm:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_4/RFsrFL_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_4/RFsrFR_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_4/RFsrRL_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_4/RFsrRR_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_4/RHandTouchBack_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_4/RHandTouchLeft_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_4/RHandTouchRight_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_4/RHip:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_4/RInfraRed_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_4/RPelvis:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_4/RShoulder:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_4/RSonar_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_4/RThigh:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_4/RThumb1_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_4/RThumb2_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_4/RTibia:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_4/Rplidar_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_4/base_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_4/front_left_motor:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_4/front_left_wheel_link_l:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_4/front_left_wheel_link_r:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_4/front_right_motor:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_4/front_right_wheel_link_l:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_4/front_right_wheel_link_r:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_4/gaze:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_4/l_ankle:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_4/l_gripper:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_4/l_sole:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_4/l_wrist:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_4/left_motor:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_4/left_wheel_link_l:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_4/left_wheel_link_r:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_4/r_ankle:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_4/r_gripper:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_4/r_sole:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        nao_4/r_wrist:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_4/right_motor:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_4/right_wheel_link_l:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_4/right_wheel_link_r:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nao_4/torso:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+      Name: nao_4
+      Robot Description: nao_4/robot_description
+      TF Prefix: ""
+      Update Interval: 0
+      Value: true
+      Visual Enabled: true
+    - Alpha: 0.30000001192092896
+      Buffer Length: 1
+      Class: rviz/Range
+      Color: 255; 0; 0
+      Enabled: true
+      Name: nao_4/LeftRange
+      Queue Size: 100
+      Topic: /nao_4/sonar_left
+      Unreliable: false
+      Value: true
+    - Alpha: 0.30000001192092896
+      Buffer Length: 1
+      Class: rviz/Range
+      Color: 255; 0; 0
+      Enabled: true
+      Name: nao_4/RightRange
+      Queue Size: 100
+      Topic: /nao_4/sonar_right
+      Unreliable: false
+      Value: true
+  Enabled: true
+  Global Options:
+    Background Color: 0; 0; 0
+    Default Light: true
+    Fixed Frame: map
+    Frame Rate: 30
+  Name: root
+  Tools:
+    - Class: rviz/MoveCamera
+    - Class: rviz/Interact
+      Hide Inactive Objects: false
+    - Class: rviz/Select
+    - Class: rviz/SetInitialPose
+      Theta std deviation: 0.2617993950843811
+      Topic: /initialpose
+      X std deviation: 0.5
+      Y std deviation: 0.5
+    - Class: rviz/SetGoal
+      Topic: /nao_1/move_base_simple/goal
+  Value: true
+  Views:
+    Current:
+      Class: rviz/Orbit
+      Distance: 7.846381187438965
+      Enable Stereo Rendering:
+        Stereo Eye Separation: 0.05999999865889549
+        Stereo Focal Distance: 1
+        Swap Stereo Eyes: false
+        Value: false
+      Focal Point:
+        X: -1.4376249313354492
+        Y: 1.2381237745285034
+        Z: 1.0980634689331055
+      Focal Shape Fixed Size: true
+      Focal Shape Size: 0.05000000074505806
+      Invert Z Axis: false
+      Name: Current View
+      Near Clip Distance: 0.009999999776482582
+      Pitch: 0.4607970118522644
+      Target Frame: <Fixed Frame>
+      Value: Orbit (rviz)
+      Yaw: 4.273497104644775
+    Saved: ~
+Window Geometry:
+  Displays:
+    collapsed: false
+  Height: 845
+  Hide Left Dock: false
+  Hide Right Dock: false
+  QMainWindow State: 000000ff00000000fd00000004000000000000016a000002f3fc0200000004fb0000001200530065006c0065006300740069006f006e00000001e10000009b0000005c00fffffffb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c006100790073010000003d000002f3000000c900ffffff000000010000010f000002f3fc0200000003fb0000001e0054006f006f006c002000500072006f0070006500720074006900650073010000003d000001310000005c00fffffffc00000174000001bc000000a400fffffffa000000010100000002fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000000ffffffff0000000000000000fb0000000a00560069006500770073010000044e0000010f0000010000fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000490000000a9fc0100000001fb0000000a00560069006500770073030000004e00000080000002e10000019700000003000004a00000003efc0100000002fb0000000800540069006d00650000000000000004a0000004f300fffffffb0000000800540069006d00650100000000000004500000000000000000000002d8000002f300000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  Selection:
+    collapsed: false
+  Time:
+    collapsed: false
+  Tool Properties:
+    collapsed: false
+  Views:
+    collapsed: false
+  Width: 1373
+  X: 67
+  Y: 27

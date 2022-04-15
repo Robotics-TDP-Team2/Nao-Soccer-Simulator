@@ -715,12 +715,14 @@
 				<origin rpy="0 0 0" xyz="0 0 0.02075"/>
 				<material name="LightGrey"/>
 			</visual>
+<!--
 			<collision>
 				<geometry>
 					<cylinder length="0.2115" radius="0.015"/>
 				</geometry>
 				<origin rpy="0 0 0" xyz="0 0 0.02075"/>
 			</collision>
+-->
 		</xacro:unless>
 		<xacro:if value="${meshes_installed}">
 			<visual>
@@ -729,12 +731,14 @@
 				</geometry>
 				<origin rpy="0 0 0" xyz="0 0 0"/>
 			</visual>
+<!--
 			<collision>
 				<geometry>
 					<mesh filename="package://nao_description/nao_meshes/meshes/V41/Torso_0.10.stl" scale="0.1 0.1 0.1"/>
 				</geometry>
 				<origin rpy="0 0 0" xyz="0 0 0"/>
 			</collision>
+-->
 		</xacro:if>
 	</xacro:macro>
 	<xacro:macro name="insert_visu_r_ankle">

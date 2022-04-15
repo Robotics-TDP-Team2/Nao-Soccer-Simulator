@@ -1,9 +1,9 @@
 <launch>
 
   <!-- This file makes it easy to include the settings for sensor managers -->
-
+  <arg name="ns" default=""/>
   <!-- Params for 3D sensors config -->
-  <rosparam command="load" file="$(find nao_moveit_config)/config/sensors_3d.yaml" />
+  <rosparam command="load" file="$(find nao_moveit_config)/config/$(arg ns)_sensors_3d.yaml" />
 
   <!-- Params for the octomap monitor -->
   <!--  <param name="octomap_frame" type="string" value="some frame in which the robot moves" /> -->

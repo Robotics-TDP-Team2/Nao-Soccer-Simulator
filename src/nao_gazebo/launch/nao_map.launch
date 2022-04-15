@@ -1,0 +1,66 @@
+<launch>
+
+  <param name="/use_sim_time" value="true" />
+  <arg name="version" default="V40" />
+  <arg name="nao_1" default="nao_1" />
+  <arg name="nao_2" default="nao_2" />
+    <!-- We do not have a robot connected, so publish fake joint states -->
+
+<group ns="nao_1">
+
+  <param name="tf_prefix" value="/" />
+
+  
+
+  <param name="robot_description" command="$(find xacro)/xacro '$(find nao_description)/urdf/nao$(arg version)_generated_urdf/nao_robot.xacro' ns:=$(arg nao_1)/"/>  
+
+    <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
+   	 <param name="use_gui" value="false"/>
+    </node> 
+
+    <!-- convert joint states to TF transforms for rviz, etc -->
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen">
+    </node>
+
+    <include file="$(find nao_navigation)/launch/gmapping.launch">
+      <arg name="ns" value="$(arg nao_1)"/>
+    </include>
+
+</group>
+ 
+<!--
+    <include file="$(find nao_navigation)/launch/$(arg nao_1)_hector.launch">
+      <arg name="ns" value="$(arg nao_1)"/>
+    </include>
+-->
+
+<group ns="nao_2">
+
+  <param name="tf_prefix" value="/" />
+
+  
+
+  <param name="robot_description" command="$(find xacro)/xacro '$(find nao_description)/urdf/nao$(arg version)_generated_urdf/nao_robot.xacro' ns:=$(arg nao_2)/"/>   
+
+
+    <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
+   	 <param name="use_gui" value="false"/> 
+    </node>
+    
+   <!-- convert joint states to TF transforms for rviz, etc -->
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen">
+    </node>
+
+    <include file="$(find nao_navigation)/launch/gmapping.launch">
+     <arg name="ns" value="$(arg nao_2)"/>
+    </include>
+
+</group>
+
+<!--
+    <include file="$(find nao_navigation)/launch/$(arg nao_2)_hector.launch">
+      <arg name="ns" value="$(arg nao_2)"/>
+    </include>
+-->
+
+</launch>

@@ -1,0 +1,75 @@
+<launch>
+
+    <param name="use_sim_time" value="true" />
+
+    <arg name="map" default="map.yaml" />
+    <arg name="nao_1" default="nao_1" />
+    <arg name="nao_2" default="nao_2" />
+    <arg name="nao_3" default="nao_3" />
+    <arg name="nao_4" default="nao_4" />
+    <arg name="nao_5" default="nao_5" />
+    <arg name="nao_6" default="nao_6" />
+    <arg name="nao_7" default="nao_7" />
+    <arg name="nao_8" default="nao_8" />
+    <arg name="ns" default="" />
+
+    
+
+    <!-- run move_base node -->
+    <group ns="nao_1">
+ 
+    <node name="map_server" pkg="map_server" type="map_server" args="$(find nao_navigation)/maps/$(arg map)"/>
+   
+    <include file="$(find nao_navigation)/launch/nao_move_base.launch" >
+	<arg name="ns" default="$(arg nao_1)" />
+    </include>
+<!--
+    <include file="$(find nao_navigation)/launch/gmapping_kinect.launch">
+    	<arg name="ns" value="$(arg nao_1)"/>
+
+    </include>
+-->
+    <!-- launch AMCL node -->
+    <node pkg="fake_localization" type="fake_localization" name="fake_localization" output="screen" >
+	<param name="odom_frame_id" value="$(arg nao_1)/odom" />
+        <param name="base_frame_id" value="$(arg nao_1)/base_link" />
+    </node>
+
+    <node pkg="tf" type="static_transform_publisher" name="map_odom_broadcaster" args="0 0 0 0 0 0 map $(arg nao_1)/odom 100" />
+    
+    
+    </group>
+
+
+    <!-- run move_base node -->
+    <group ns="nao_2">
+
+    <node name="map_server" pkg="map_server" type="map_server" args="$(find nao_navigation)/maps/$(arg map)"/>
+
+    <include file="$(find nao_navigation)/launch/nao_move_base.launch" >
+	<arg name="ns" default="$(arg nao_2)" />
+    </include>
+<!--
+    <include file="$(find nao_navigation)/launch/gmapping_kinect.launch">
+    	<arg name="ns" value="$(arg nao_2)"/>
+
+    </include>
+-->
+
+    <!-- launch AMCL node -->
+    <node pkg="fake_localization" type="fake_localization" name="fake_localization" output="screen" />
+
+    <node pkg="tf" type="static_transform_publisher" name="map_odom_broadcaster" args="0 0 0 0 0 0 map $(arg nao_2)/odom 100" />
+
+    
+    
+    </group>
+
+
+
+
+    <!-- run rviz -->
+    
+    <node pkg="rviz" type="rviz" name="rviz" args="-d $(find nao_navigation)/rviz/nav.rviz" />
+
+</launch>

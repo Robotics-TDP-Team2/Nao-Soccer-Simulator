@@ -477,6 +477,9 @@ message_generation_DIR:PATH=/opt/ros/melodic/share/message_generation/cmake
 //The directory containing a CMake configuration file for message_runtime.
 message_runtime_DIR:PATH=/opt/ros/melodic/share/message_runtime/cmake
 
+//The directory containing a CMake configuration file for move_base_msgs.
+move_base_msgs_DIR:PATH=/opt/ros/melodic/share/move_base_msgs/cmake
+
 //The directory containing a CMake configuration file for moveit_core.
 moveit_core_DIR:PATH=/opt/ros/melodic/share/moveit_core/cmake
 
@@ -505,6 +508,12 @@ moveit_ros_planning_interface_DIR:PATH=/opt/ros/melodic/share/moveit_ros_plannin
 moveit_ros_warehouse_DIR:PATH=/opt/ros/melodic/share/moveit_ros_warehouse/cmake
 
 //Value Computed by CMake
+mrobot_navigation_BINARY_DIR:STATIC=/home/lucas/nao_soccer_ws/build/nao_navigation
+
+//Value Computed by CMake
+mrobot_navigation_SOURCE_DIR:STATIC=/home/lucas/nao_soccer_ws/src/nao_navigation
+
+//Value Computed by CMake
 nao_control_BINARY_DIR:STATIC=/home/lucas/nao_soccer_ws/build/nao_control
 
 //Value Computed by CMake
@@ -517,6 +526,12 @@ nao_description_BINARY_DIR:STATIC=/home/lucas/nao_soccer_ws/build/nao_descriptio
 nao_description_SOURCE_DIR:STATIC=/home/lucas/nao_soccer_ws/src/nao_description
 
 //Value Computed by CMake
+nao_extras_BINARY_DIR:STATIC=/home/lucas/nao_soccer_ws/build/nao_extras/nao_extras
+
+//Value Computed by CMake
+nao_extras_SOURCE_DIR:STATIC=/home/lucas/nao_soccer_ws/src/nao_extras/nao_extras
+
+//Value Computed by CMake
 nao_gazebo_BINARY_DIR:STATIC=/home/lucas/nao_soccer_ws/build/nao_gazebo
 
 //Value Computed by CMake
@@ -527,6 +542,21 @@ nao_moveit_config_BINARY_DIR:STATIC=/home/lucas/nao_soccer_ws/build/nao_moveit_c
 
 //Value Computed by CMake
 nao_moveit_config_SOURCE_DIR:STATIC=/home/lucas/nao_soccer_ws/src/nao_moveit_config
+
+//Value Computed by CMake
+nao_navigation_BINARY_DIR:STATIC=/home/lucas/nao_soccer_ws/build/nao_navigation
+
+//Value Computed by CMake
+nao_navigation_SOURCE_DIR:STATIC=/home/lucas/nao_soccer_ws/src/nao_navigation
+
+//Value Computed by CMake
+nao_teleop_BINARY_DIR:STATIC=/home/lucas/nao_soccer_ws/build/nao_extras/nao_teleop
+
+//Value Computed by CMake
+nao_teleop_SOURCE_DIR:STATIC=/home/lucas/nao_soccer_ws/src/nao_extras/nao_teleop
+
+//The directory containing a CMake configuration file for naoqi_bridge_msgs.
+naoqi_bridge_msgs_DIR:PATH=naoqi_bridge_msgs_DIR-NOTFOUND
 
 //The directory containing a CMake configuration file for nav_msgs.
 nav_msgs_DIR:PATH=/opt/ros/melodic/share/nav_msgs/cmake
@@ -548,6 +578,12 @@ random_numbers_DIR:PATH=/opt/ros/melodic/share/random_numbers/cmake
 
 //The directory containing a CMake configuration file for realtime_tools.
 realtime_tools_DIR:PATH=/opt/ros/melodic/share/realtime_tools/cmake
+
+//Value Computed by CMake
+reem_moveit_config_BINARY_DIR:STATIC=/home/lucas/nao_soccer_ws/build/reem_moveit_config
+
+//Value Computed by CMake
+reem_moveit_config_SOURCE_DIR:STATIC=/home/lucas/nao_soccer_ws/src/reem_moveit_config
 
 //The directory containing a CMake configuration file for rosconsole.
 rosconsole_DIR:PATH=/opt/ros/melodic/share/rosconsole/cmake
@@ -765,7 +801,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=8
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=9
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

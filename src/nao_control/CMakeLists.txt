@@ -20,6 +20,7 @@ find_package(catkin REQUIRED COMPONENTS
     std_msgs 
     message_generation 
     geometry_msgs
+    nav_msgs
 )
 
 ## System dependencies are found with CMake's conventions
@@ -120,7 +121,7 @@ generate_messages(
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES nao_control
-   CATKIN_DEPENDS interactive_markers moveit_core moveit_ros_perception moveit_ros_planning_interface pluginlib roscpp rospy std_msgs moveit_ros_planning geometry_msgs message_runtime
+   CATKIN_DEPENDS interactive_markers moveit_core moveit_ros_perception moveit_ros_planning_interface pluginlib roscpp rospy std_msgs moveit_ros_planning geometry_msgs message_runtime nav_msgs
 #  DEPENDS system_lib
 )
 
@@ -134,6 +135,7 @@ include_directories(
   include
   ${catkin_INCLUDE_DIRS}
   ${Boost_INCLUDE_DIRS}
+  ${PROJECT_SOURCE_DIR}/include/nao_control
 )
 
 link_directories(
@@ -170,9 +172,13 @@ link_directories(
 #   ${catkin_LIBRARIES}
 # )
 
-add_executable(nao_control src/nao_control.cpp)
-target_link_libraries(nao_control ${catkin_LIBRARIES})
-target_link_libraries(nao_control ${Boost_LIBRARIES})
+add_executable(nao_odometry 
+  src/nao_odometry.cpp 
+  
+  )
+
+target_link_libraries(nao_odometry ${catkin_LIBRARIES})
+target_link_libraries(nao_odometry ${Boost_LIBRARIES})
 
 #############
 ## Install ##

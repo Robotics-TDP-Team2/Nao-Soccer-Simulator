@@ -1,0 +1,10 @@
+local_costmap:
+   global_frame: nao_8/odom
+   robot_base_frame: nao_8/base_link
+   update_frequency: 3.0
+   publish_frequency: 1.0
+   rolling_window: false
+   width: 6.0
+   height: 6.0
+   resolution: 0.01
+   transform_tolerance: 1.0

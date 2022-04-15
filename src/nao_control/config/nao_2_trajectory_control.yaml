@@ -1,0 +1,326 @@
+  # Publish all joint states -----------------------------------
+joint_state_controller:
+  type: joint_state_controller/JointStateController
+  publish_rate: 50  
+
+  # Controllers ------------------------------------------------
+Head_controller:
+  type: position_controllers/JointTrajectoryController
+  joints:
+    - nao_2/HeadYaw
+    - nao_2/HeadPitch
+  constraints:
+    goal_time: 0.6
+    stopped_velocity_tolerance: 0
+
+LeftArm_controller:
+  type: position_controllers/JointTrajectoryController
+  joints:
+    - nao_2/LShoulderPitch
+    - nao_2/LShoulderRoll
+    - nao_2/LElbowYaw
+    - nao_2/LElbowRoll
+    - nao_2/LWristYaw
+  constraints:
+    goal_time: 0.8
+    stopped_velocity_tolerance: 0
+    nao_2/LShoulderPitch: {trajectory: 0.1, goal: 0.1}
+    nao_2/LShoulderRoll: {trajectory: 0.3, goal: 0.2}
+    nao_2/LElbowYaw: {trajectory: 0.2, goal: 0.1}
+    nao_2/LElbowRoll: {trajectory: 0.3, goal: 0.1}
+    nao_2/LWristYaw: {trajectory: 0.1, goal: 0.1}
+
+RightArm_controller:
+  type: position_controllers/JointTrajectoryController
+  joints:
+    - nao_2/RShoulderPitch
+    - nao_2/RShoulderRoll
+    - nao_2/RElbowYaw
+    - nao_2/RElbowRoll
+    - nao_2/RWristYaw
+  constraints:
+    goal_time: 0.6
+    stopped_velocity_tolerance: 0
+    nao_2/RShoulderPitch: {trajectory: 0.3, goal: 0.1}
+    nao_2/RShoulderRoll: {trajectory: 0.3, goal: 0.2}
+    nao_2/RElbowYaw: {trajectory: 0.3, goal: 0.1}
+    nao_2/RElbowRoll: {trajectory: 0.5, goal: 0.2}
+    nao_2/RWristYaw: {trajectory: 0.5, goal: 0.2}
+
+LeftHand_controller:
+  type: position_controllers/JointTrajectoryController
+  joints:
+    - nao_2/LHand
+  constraints:
+    goal_time: 0.6
+    stopped_velocity_tolerance: 0
+    nao_2/LHand: {trajectory: 0.3, goal: 0.1}
+
+RightHand_controller:
+  type: position_controllers/JointTrajectoryController
+  joints:
+    - nao_2/RHand
+  constraints:
+    goal_time: 0.6
+    stopped_velocity_tolerance: 0
+    nao_2/RHand: {trajectory: 0.3, goal: 0.1}
+
+Pelvis_controller:
+  type: position_controllers/JointTrajectoryController
+  joints:
+    - nao_2/LHipYawPitch
+  constraints:
+    goal_time: 0.6
+    stopped_velocity_tolerance: 0
+    nao_2/LHipYawPitch: {trajectory: 0.3, goal: 0.1}
+
+LeftLeg_controller:
+  type: position_controllers/JointTrajectoryController
+  joints:
+    - nao_2/LHipRoll
+    - nao_2/LHipPitch
+    - nao_2/LKneePitch
+  constraints:
+    goal_time: 0.6
+    stopped_velocity_tolerance: 0
+    nao_2/LHipRoll: {trajectory: 0.3, goal: 0.1}
+    nao_2/LHipPitch: {trajectory: 0.3, goal: 0.1}
+    nao_2/LKneePitch: {trajectory: 0.3, goal: 0.1}
+
+RightLeg_controller:
+  type: position_controllers/JointTrajectoryController
+  joints:
+    - nao_2/RHipRoll
+    - nao_2/RHipPitch
+    - nao_2/RKneePitch
+  constraints:
+    goal_time: 0.6
+    stopped_velocity_tolerance: 0
+    nao_2/RHipRoll: {trajectory: 0.3, goal: 0.1}
+    nao_2/RHipPitch: {trajectory: 0.3, goal: 0.1}
+    nao_2/RKneePitch: {trajectory: 0.3, goal: 0.1}
+
+LeftAnkle_controller:
+  type: position_controllers/JointTrajectoryController
+  joints:
+    - nao_2/LAnklePitch
+  constraints:
+    goal_time: 0.6
+    stopped_velocity_tolerance: 0
+    nao_2/LAnklePitch: {trajectory: 0.3, goal: 0.1}
+
+RightAnkle_controller:
+  type: position_controllers/JointTrajectoryController
+  joints:
+    - nao_2/RAnklePitch
+  constraints:
+    goal_time: 0.6
+    stopped_velocity_tolerance: 0
+    nao_2/RAnklePitch: {trajectory: 0.3, goal: 0.1}
+
+LeftFoot_controller:
+  type: position_controllers/JointTrajectoryController
+  joints:
+    - nao_2/LAnkleRoll
+  constraints:
+    goal_time: 0.6
+    stopped_velocity_tolerance: 0
+    nao_2/LAnkleRoll: {trajectory: 0.3, goal: 0.1}
+
+RightFoot_controller:
+  type: position_controllers/JointTrajectoryController
+  joints:
+    - nao_2/RAnkleRoll
+  constraints:
+    goal_time: 0.6
+    stopped_velocity_tolerance: 0
+    nao_2/RAnkleRoll: {trajectory: 0.3, goal: 0.1}
+
+LeftWheels_controller:
+  type: velocity_controllers/JointGroupVelocityController
+  joints:
+   - nao_2/left_wheel_joint_l
+   - nao_2/left_wheel_joint_r
+   - nao_2/front_left_wheel_joint_l
+   - nao_2/front_left_wheel_joint_l
+
+RightWheels_controller:
+  type: velocity_controllers/JointGroupVelocityController
+  joints:
+   - nao_2/right_wheel_joint_l
+   - nao_2/right_wheel_joint_r
+   - nao_2/front_right_wheel_joint_l
+   - nao_2/front_right_wheel_joint_r
+
+
+gazebo_ros_control:
+    pid_gains:
+      nao_2/HeadYaw: 
+          p: 1000.0
+          i: 100.0
+          d: 1.0
+
+      nao_2/HeadPitch:
+          p: 1000.0
+          i: 100.0
+          d: 1.0
+
+      nao_2/LShoulderPitch:
+          p: 80.0
+          i: 4.0
+          d: 2.0
+
+      nao_2/LElbowYaw:
+          p: 100.0
+          i: 100.0
+          d: 0.0
+
+      nao_2/LElbowRoll:
+          p: 100.0
+          i: 100.0
+          d: 0.0
+
+      nao_2/LShoulderRoll:
+          p: 50.0
+          i: 5.0
+          d: 0.7
+
+      nao_2/LWristYaw:
+          p: 1.0
+          i: 0.13
+          d: 0.01
+
+      nao_2/LHand:
+          p: 0.0
+          i: 0.0
+          d: 0.0
+
+      nao_2/RShoulderPitch:
+          p: 80.0
+          i: 4.0
+          d: 2.0
+
+      nao_2/RElbowYaw:
+          p: 100.0
+          i: 100.0
+          d: 0.0
+
+      nao_2/RElbowRoll:
+          p: 100.0
+          i: 100.0
+          d: 0.0
+
+      nao_2/RShoulderRoll:
+          p: 50.0
+          i: 5.0
+          d: 0.7
+
+      nao_2/RWristYaw:
+          p: 1.0
+          i: 0.13
+          d: 0.01
+
+      nao_2/RHand:
+          p: 0.0
+          i: 0.0
+          d: 0.0
+
+      nao_2/LHipYawPitch:
+          p: 500.0
+          i: 0.0
+          d: 0.1
+
+      nao_2/LHipRoll:
+          p: 500.0
+          i: 0.0
+          d: 0.1
+
+      nao_2/LHipPitch:
+          p: 500.0
+          i: 0.0
+          d: 0.1
+
+      nao_2/LKneePitch:
+          p: 500.0
+          i: 0.0
+          d: 0.0
+
+      nao_2/LAnklePitch:
+          p: 500.0
+          i: 0.0
+          d: 0.0
+
+      nao_2/LAnkleRoll:
+          p: 500.0
+          i: 0.0
+          d: 0.0
+
+      nao_2/left_wheel_joint_l:
+          p: 0.0
+          i: 0.0
+          d: 0.0
+
+      nao_2/left_wheel_joint_r:
+          p: 0.0
+          i: 0.0
+          d: 0.0
+        
+      nao_2/right_wheel_joint_l:
+          p: 0.0
+          i: 0.0
+          d: 0.0
+        
+      nao_2/right_wheel_joint_r:
+          p: 0.0
+          i: 0.0
+          d: 0.0
+
+      nao_2/RHipYawPitch:
+          p: 500.0
+          i: 0.0
+          d: 0.1
+
+      nao_2/RHipRoll:
+          p: 500.0
+          i: 0.0
+          d: 0.1
+
+      nao_2/RHipPitch:
+          p: 500.0
+          i: 0.0
+          d: 0.1
+
+      nao_2/RKneePitch:
+          p: 500.0
+          i: 0.0
+          d: 0.0
+
+      nao_2/RAnklePitch:
+          p: 500.0
+          i: 0.0
+          d: 0.0
+
+      nao_2/RAnkleRoll:
+          p: 500.0
+          i: 0.0
+          d: 0.0
+        
+      nao_2/front_left_wheel_joint_l:
+          p: 0.0
+          i: 0.0
+          d: 0.0
+
+      nao_2/front_left_wheel_joint_r:
+          p: 0.0
+          i: 0.0
+          d: 0.0
+
+      nao_2/front_right_wheel_joint_l:
+          p: 0.0
+          i: 0.0
+          d: 0.0
+
+      nao_2/front_right_wheel_joint_r:
+          p: 0.0
+          i: 0.0
+          d: 0.0

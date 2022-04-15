@@ -185,7 +185,7 @@ foreach(t ${nao_control_EXPORTED_TARGETS})
   endif()
 endforeach()
 
-set(depends "interactive_markers;moveit_core;moveit_ros_perception;moveit_ros_planning_interface;pluginlib;roscpp;rospy;std_msgs;moveit_ros_planning;geometry_msgs;message_runtime")
+set(depends "interactive_markers;moveit_core;moveit_ros_perception;moveit_ros_planning_interface;pluginlib;roscpp;rospy;std_msgs;moveit_ros_planning;geometry_msgs;message_runtime;nav_msgs")
 foreach(depend ${depends})
   string(REPLACE " " ";" depend_list ${depend})
   # the package name of the dependency must be kept in a unique variable so that it is not overwritten in recursive calls

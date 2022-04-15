@@ -4,6 +4,7 @@
        It is assumed that all planning pipelines are named XXX_planning_pipeline.launch  -->
 
   <arg name="pipeline" default="ompl" />
+  <arg name="ns" default="" />
 
   <!-- define capabilites that are loaded on start (space seperated) -->
   <arg name="capabilities" default=""/>
@@ -14,6 +15,7 @@
   <include file="$(find nao_moveit_config)/launch/$(arg pipeline)_planning_pipeline.launch.xml">
     <arg name="capabilities" value="$(arg capabilities)"/>
     <arg name="disable_capabilities" value="$(arg disable_capabilities)"/>
+    <arg name="ns" value="$(arg ns)" />
   </include>
 
 </launch>

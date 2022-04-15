@@ -12,7 +12,7 @@
     <!-- HEAD -->
 	<transmission name="HeadYaw_Transmission">
 		<type>transmission_interface/SimpleTransmission</type>
-		<joint name="HeadYaw">
+		<joint name="$(arg ns)HeadYaw">
         	<hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
 		</joint>
         <actuator name="HeadYaw_Motor">
@@ -23,7 +23,7 @@
 	</transmission>
 	<transmission name="HeadPitch_Transmission">
 		<type>transmission_interface/SimpleTransmission</type>
-		<joint name="HeadPitch">
+		<joint name="$(arg ns)HeadPitch">
             <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
         </joint>
 		<actuator name="HeadPitch_Motor">
@@ -34,10 +34,10 @@
 	</transmission>
 	<!-- ARMS -->
 	<!-- XACRO -->
-	<xacro:macro name="arm_joints_transmissions" params="side">
+	<xacro:macro name="arm_joints_transmissions" params="side ns">
 		<transmission name="${side}ShoulderPitch_Transmission">
 			<type>transmission_interface/SimpleTransmission</type>
-			<joint name="${side}ShoulderPitch">
+			<joint name="${ns}${side}ShoulderPitch">
               <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
             </joint>
 			<actuator name="${side}ShoulderPitch_Motor">
@@ -47,7 +47,7 @@
 		</transmission>
 		<transmission name="${side}ShoulderRoll_Transmission">
 			<type>transmission_interface/SimpleTransmission</type>
-			<joint name="${side}ShoulderRoll">
+			<joint name="${ns}${side}ShoulderRoll">
      			<hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
             </joint>
 			<actuator name="${side}ShoulderRoll_Motor">
@@ -57,7 +57,7 @@
 		</transmission>
 		<transmission name="${side}ElbowYaw_Transmission">
 			<type>transmission_interface/SimpleTransmission</type>
-			<joint name="${side}ElbowYaw">
+			<joint name="${ns}${side}ElbowYaw">
               <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
             </joint>
 			<actuator name="${side}ElbowYaw_Motor">
@@ -67,7 +67,7 @@
 		</transmission>
 	    <transmission name="${side}ElbowRoll_Transmission">
 			<type>transmission_interface/SimpleTransmission</type>
-			<joint name="${side}ElbowRoll">
+			<joint name="${ns}${side}ElbowRoll">
     			<hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
             </joint>
 			<actuator name="${side}ElbowRoll_Motor">
@@ -78,7 +78,7 @@
 
 		<transmission name="${side}WristYaw_Transmission">
 			<type>transmission_interface/SimpleTransmission</type>
-			<joint name="${side}WristYaw">
+			<joint name="${ns}${side}WristYaw">
               <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
             </joint>
 			<actuator name="${side}WristYaw_Motor">
@@ -88,7 +88,7 @@
 		</transmission>
 		<transmission name="${side}Hand_Transmission">
 			<type>transmission_interface/SimpleTransmission</type>
-			<joint name="${side}Hand">
+			<joint name="${ns}${side}Hand">
   			  <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
             </joint>
 			<actuator name="${side}Hand_Motor">
@@ -98,14 +98,14 @@
 		</transmission>
 
 		</xacro:macro>
-	<xacro:arm_joints_transmissions side="L"/>
-	<xacro:arm_joints_transmissions side="R"/>
+	<xacro:arm_joints_transmissions side="L" ns="$(arg ns)"/>
+	<xacro:arm_joints_transmissions side="R" ns="$(arg ns)"/>
 	<!-- LEGS -->
 	<!-- XACRO -->
-	<xacro:macro name="leg_joints_transmissions" params="side">
+	<xacro:macro name="leg_joints_transmissions" params="side ns">
 		<transmission name="${side}HipYawPitch_Transmission">
 			<type>transmission_interface/SimpleTransmission</type>
-			<joint name="${side}HipYawPitch">
+			<joint name="${ns}${side}HipYawPitch">
     			<hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
             </joint>
 			<actuator name="${side}HipYawPitch_Motor">
@@ -116,7 +116,7 @@
 		</transmission>
 		<transmission name="${side}HipRoll_Transmission">
 			<type>transmission_interface/SimpleTransmission</type>
-			<joint name="${side}HipRoll">
+			<joint name="${ns}${side}HipRoll">
 			  <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
             </joint>
 			<actuator name="${side}HipRoll_Motor">
@@ -127,7 +127,7 @@
 		</transmission>
 		<transmission name="${side}HipPitch_Transmission">
 			<type>transmission_interface/SimpleTransmission</type>
-			<joint name="${side}HipPitch">
+			<joint name="${ns}${side}HipPitch">
 			  <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
             </joint>
 			<actuator name="${side}HipPitch_Motor">
@@ -138,7 +138,7 @@
 		</transmission>
 		<transmission name="${side}KneePitch_Transmission">
 			<type>transmission_interface/SimpleTransmission</type>
-			<joint name="${side}KneePitch">
+			<joint name="${ns}${side}KneePitch">
        			<hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
             </joint>
 			<actuator name="${side}KneePitch_Motor">
@@ -149,7 +149,7 @@
 		</transmission>
 		<transmission name="${side}AnklePitch_Transmission">
 			<type>transmission_interface/SimpleTransmission</type>
-			<joint name="${side}AnklePitch">
+			<joint name="${ns}${side}AnklePitch">
   			  <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
             </joint>
 			<actuator name="${side}AnklePitch_Motor">
@@ -160,7 +160,7 @@
 		</transmission>
 		<transmission name="${side}AnkleRoll_Transmission">
 			<type>transmission_interface/SimpleTransmission</type>
-			<joint name="${side}AnkleRoll">
+			<joint name="${ns}${side}AnkleRoll">
       			<hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
             </joint>
 			<actuator name="${side}AnkleRoll_Motor">
@@ -170,6 +170,97 @@
 			</actuator>
 		</transmission>
 	</xacro:macro>
-	<xacro:leg_joints_transmissions side="L"/>
-	<xacro:leg_joints_transmissions side="R"/>
+	<xacro:leg_joints_transmissions side="L" ns="$(arg ns)"/>
+	<xacro:leg_joints_transmissions side="R" ns="$(arg ns)"/>
+
+
+	<transmission name="wheel_ll_joint_trans">
+            <type>transmission_interface/SimpleTransmission</type>
+            <joint name="$(arg ns)left_wheel_joint_l">
+                <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+            </joint>
+            <actuator name="left_motor">
+                <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+                <mechanicalReduction>${speed_red_type2A}</mechanicalReduction>
+            </actuator>
+    	</transmission>
+
+	<transmission name="wheel_lr_joint_trans">
+            <type>transmission_interface/SimpleTransmission</type>
+            <joint name="$(arg ns)left_wheel_joint_r">
+                <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+            </joint>
+            <actuator name="left_motor">
+                <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+                <mechanicalReduction>${speed_red_type2A}</mechanicalReduction>
+            </actuator>
+    	</transmission>
+
+
+	<transmission name="front_wheel_ll_joint_trans">
+            <type>transmission_interface/SimpleTransmission</type>
+            <joint name="$(arg ns)front_left_wheel_joint_l">
+                <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+            </joint>
+            <actuator name="front_left_motor">
+                <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+		<mechanicalReduction>${speed_red_type2A}</mechanicalReduction>
+            </actuator>
+    	</transmission>
+
+	<transmission name="front_wheel_lr_joint_trans">
+            <type>transmission_interface/SimpleTransmission</type>
+            <joint name="$(arg ns)front_left_wheel_joint_r">
+                <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+            </joint>
+            <actuator name="front_left_motor">
+                <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+		<mechanicalReduction>${speed_red_type2A}</mechanicalReduction>
+            </actuator>
+    	</transmission>
+
+
+	<transmission name="wheel_rl_joint_trans">
+            <type>transmission_interface/SimpleTransmission</type>
+            <joint name="$(arg ns)right_wheel_joint_l">
+                <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+            </joint>
+            <actuator name="right_motor">
+                <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+		<mechanicalReduction>${speed_red_type2A}</mechanicalReduction>
+            </actuator>
+    	</transmission>
+
+	<transmission name="wheel_rr_joint_trans">
+            <type>transmission_interface/SimpleTransmission</type>
+            <joint name="$(arg ns)right_wheel_joint_r">
+                <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+            </joint>
+            <actuator name="right_motor">
+                <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+		<mechanicalReduction>${speed_red_type2A}</mechanicalReduction>
+            </actuator>
+   	 </transmission>
+
+	<transmission name="front_wheel_rl_joint_trans">
+            <type>transmission_interface/SimpleTransmission</type>
+            <joint name="$(arg ns)front_right_wheel_joint_l">
+                <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+            </joint>
+            <actuator name="front_right_motor">
+                <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+		<mechanicalReduction>${speed_red_type2A}</mechanicalReduction>
+            </actuator>
+    	</transmission>
+
+	<transmission name="front_wheel_rr_joint_trans">
+            <type>transmission_interface/SimpleTransmission</type>
+            <joint name="$(arg ns)front_right_wheel_joint_r">
+                <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+            </joint>
+            <actuator name="front_right_motor">
+                <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+		<mechanicalReduction>${speed_red_type2A}</mechanicalReduction>            
+		</actuator>
+   	 </transmission>
 </robot>

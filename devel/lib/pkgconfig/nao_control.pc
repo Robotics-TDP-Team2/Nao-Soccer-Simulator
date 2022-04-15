@@ -5,4 +5,4 @@ Description: Description of nao_control
 Version: 0.0.0
 Cflags: -I/home/lucas/nao_soccer_ws/devel/include
 Libs: -L${prefix}/lib 
-Requires: interactive_markers moveit_core moveit_ros_perception moveit_ros_planning_interface pluginlib roscpp rospy std_msgs moveit_ros_planning geometry_msgs message_runtime
+Requires: interactive_markers moveit_core moveit_ros_perception moveit_ros_planning_interface pluginlib roscpp rospy std_msgs moveit_ros_planning geometry_msgs message_runtime nav_msgs

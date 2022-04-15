@@ -9,12 +9,12 @@
   </include>
 
   <!--The visualization component of MoveIt!-->
-  <!--
+  
   <include file="$(find nao_moveit_config)/launch/moveit_rviz.launch" if="true">
     <arg name="rviz_config" value="$(find nao_moveit_config)/launch/moveit.rviz"/>
     <arg name="debug" value="false"/>
   </include> 
-  -->
+
 
     <!-- We do not have a robot connected, so publish fake joint states -->
   <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
