@@ -1,0 +1,130 @@
+<launch>
+
+  <param name="/use_sim_time" value="true" />
+ 
+  <!-- these are the arguments you can pass this launch file, for example paused:=true -->
+  <arg name="world_name" value="$(find nao_gazebo)/worlds/naoFoot.world"/>
+  <arg name="paused" default="true"/>
+  <arg name="use_sim_time" default="true"/>
+  <arg name="gui" default="true"/>
+  <arg name="headless" default="false"/>
+  <arg name="debug" default="false"/>
+  <arg name="version" default="V40" />
+  <arg name="nao_1" default="nao_1" />
+  <arg name="nao_2" default="nao_2" />
+
+  <!-- We resume the logic in empty_world.launch, changing only the name of the world to be launched -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(arg world_name)"/>
+    <arg name="debug" value="$(arg debug)" />
+    <arg name="gui" value="$(arg gui)" />
+    <arg name="paused" value="$(arg paused)"/>
+    <arg name="use_sim_time" value="$(arg use_sim_time)"/>
+    <arg name="headless" value="$(arg headless)"/>
+  </include>
+
+
+    <!-- We do not have a robot connected, so publish fake joint states -->
+
+<group ns="nao_1">
+
+  <param name="tf_prefix" value="/" />
+
+  <include file="$(find nao_moveit_config)/launch/move_group.launch">
+    <arg name="publish_monitored_planning_scene" value="true" />
+    <arg name="fake_execution" value="false"/> 
+    <arg name="fake_execution_type" value="interpolate" />
+    <arg name="load_robot_description" value="false"/>
+    <arg name="ns" value="$(arg nao_1)"/>
+  </include>
+
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
+    <param name="use_gui" value="false"/>
+  </node>
+
+  <param name="robot_description" command="$(find xacro)/xacro '$(find nao_description)/urdf/nao$(arg version)_generated_urdf/nao_robot.xacro' ns:=$(arg nao_1)/"/>   
+
+    <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-param robot_description -urdf -x -3 -y 0 -z 0.36 -model nao_1" />
+
+    <!-- Load joint controller configurations from YAML file to parameter server -->
+    <rosparam file="$(find nao_control)/config/nao_1_trajectory_control.yaml" command="load"/>
+
+    <!-- load the controllers -->
+    <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
+    output="screen" args="/nao_1/joint_state_controller
+      /nao_1/Head_controller /nao_1/RightArm_controller 
+      /nao_1/LeftArm_controller /nao_1/RightFoot_controller
+      /nao_1/LeftLeg_controller /nao_1/RightLeg_controller 
+      /nao_1/RightHand_controller /nao_1/LeftHand_controller 
+      /nao_1/Pelvis_controller /nao_1/LeftFoot_controller
+      /nao_1/LeftAnkle_controller /nao_1/RightAnkle_controller
+      /nao_1/LeftWheels_controller /nao_1/RightWheels_controller"/>
+
+    <!-- convert joint states to TF transforms for rviz, etc -->
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen">
+    </node>
+
+    <include file="$(find nao_navigation)/launch/gmapping.launch">
+      <arg name="ns" value="$(arg nao_1)"/>
+    </include>
+
+</group>
+ 
+<!--
+    <include file="$(find nao_navigation)/launch/$(arg nao_1)_hector.launch">
+      <arg name="ns" value="$(arg nao_1)"/>
+    </include>
+-->
+
+<group ns="nao_2">
+
+  <param name="tf_prefix" value="/" />
+
+  <include file="$(find nao_moveit_config)/launch/move_group.launch">
+    <arg name="publish_monitored_planning_scene" value="true" />
+    <arg name="fake_execution" value="false"/> 
+    <arg name="fake_execution_type" value="interpolate" />
+    <arg name="load_robot_description" value="false"/>
+    <arg name="ns" value="$(arg nao_2)"/>
+  </include>
+
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
+    <param name="use_gui" value="false"/> 
+  </node>
+
+  <param name="robot_description" command="$(find xacro)/xacro '$(find nao_description)/urdf/nao$(arg version)_generated_urdf/nao_robot.xacro' ns:=$(arg nao_2)/"/>   
+
+    <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-param robot_description -urdf -x -3 -y 2 -z 0.36 -model nao_2" />
+
+    <!-- Load joint controller configurations from YAML file to parameter server -->
+    <rosparam file="$(find nao_control)/config/nao_2_trajectory_control.yaml" command="load"/>
+
+    <!-- load the controllers -->
+    <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" 
+    output="screen" args="/nao_2/joint_state_controller
+      /nao_2/Head_controller /nao_2/RightArm_controller 
+      /nao_2/LeftArm_controller /nao_2/RightFoot_controller
+      /nao_2/LeftLeg_controller /nao_2/RightLeg_controller 
+      /nao_2/RightHand_controller /nao_2/LeftHand_controller 
+      /nao_2/Pelvis_controller /nao_2/LeftFoot_controller
+      /nao_2/LeftAnkle_controller /nao_2/RightAnkle_controller
+      /nao_2/LeftWheels_controller /nao_2/RightWheels_controller"/>
+
+    
+   <!-- convert joint states to TF transforms for rviz, etc -->
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen">
+    </node>
+
+    <include file="$(find nao_navigation)/launch/gmapping.launch">
+     <arg name="ns" value="$(arg nao_2)"/>
+    </include>
+
+</group>
+
+<!--
+    <include file="$(find nao_navigation)/launch/$(arg nao_2)_hector.launch">
+      <arg name="ns" value="$(arg nao_2)"/>
+    </include>
+-->
+
+</launch>

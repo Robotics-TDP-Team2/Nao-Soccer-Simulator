@@ -1,0 +1,37 @@
+<launch>
+
+    <arg name="nao_1" default="nao_1" />
+    <arg name="nao_2" default="nao_2" />
+
+    <group ns="nao_1">
+
+    <node pkg="depthimage_to_laserscan" type="depthimage_to_laserscan" name="depthimage_to_laserscan" output="screen">
+      <remap from="image" to="/$(arg nao_1)/kinect_camera_Top/depth/image_raw" />
+      <remap from="camera_info" to="/$(arg nao_1)/kinect_camera_Top/depth/camera_info" />
+      <remap from="scan" to="/$(arg nao_1)/kinect/scan" />
+      <param name="output_frame_id" value="/$(arg nao_1)/CameraTop_frame" />
+    </node>
+
+
+    </group>
+
+
+    <group ns="nao_2">
+
+    <node pkg="depthimage_to_laserscan" type="depthimage_to_laserscan" name="depthimage_to_laserscan" output="screen">
+      <remap from="image" to="/$(arg nao_2)/kinect_camera_Top/depth/image_raw" />
+      <remap from="camera_info" to="/$(arg nao_2)/kinect_camera_Top/depth/camera_info" />
+      <remap from="scan" to="/$(arg nao_2)/kinect/scan" />
+      <param name="output_frame_id" value="/$(arg nao_2)/CameraTop_frame" />
+    </node>	
+
+
+    </group>
+
+    <node pkg="nao_control" type="nao_tf_football.py" name="nao_football_broadcaster" />
+    
+<!--
+    <node pkg="rviz" type="rviz" name="rviz" args="-d $(find nao_navigation)/rviz/gmapping.rviz"/>
+-->
+
+</launch>

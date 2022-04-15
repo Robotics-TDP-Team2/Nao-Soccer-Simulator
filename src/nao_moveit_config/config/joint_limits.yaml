@@ -34,7 +34,7 @@ joint_limits:
     max_acceleration: 0
   LHand:
     has_velocity_limits: true
-    max_velocity: 0
+    max_velocity: 8.33
     has_acceleration_limits: false
     max_acceleration: 0
   LHipPitch:
@@ -94,7 +94,7 @@ joint_limits:
     max_acceleration: 0
   RHand:
     has_velocity_limits: true
-    max_velocity: 0
+    max_velocity: 8.33
     has_acceleration_limits: false
     max_acceleration: 0
   RHipPitch:

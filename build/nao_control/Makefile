@@ -168,79 +168,19 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-nao_control/CMakeFiles/nao_control.dir/rule:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_control/CMakeFiles/nao_control.dir/rule
-.PHONY : nao_control/CMakeFiles/nao_control.dir/rule
+nao_control/CMakeFiles/octomap_msgs_generate_messages_cpp.dir/rule:
+	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_control/CMakeFiles/octomap_msgs_generate_messages_cpp.dir/rule
+.PHONY : nao_control/CMakeFiles/octomap_msgs_generate_messages_cpp.dir/rule
 
 # Convenience name for target.
-nao_control: nao_control/CMakeFiles/nao_control.dir/rule
+octomap_msgs_generate_messages_cpp: nao_control/CMakeFiles/octomap_msgs_generate_messages_cpp.dir/rule
 
-.PHONY : nao_control
+.PHONY : octomap_msgs_generate_messages_cpp
 
 # fast build rule for target.
-nao_control/fast:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_control/CMakeFiles/nao_control.dir/build.make nao_control/CMakeFiles/nao_control.dir/build
-.PHONY : nao_control/fast
-
-# Convenience name for target.
-nao_control/CMakeFiles/nao_control_genpy.dir/rule:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_control/CMakeFiles/nao_control_genpy.dir/rule
-.PHONY : nao_control/CMakeFiles/nao_control_genpy.dir/rule
-
-# Convenience name for target.
-nao_control_genpy: nao_control/CMakeFiles/nao_control_genpy.dir/rule
-
-.PHONY : nao_control_genpy
-
-# fast build rule for target.
-nao_control_genpy/fast:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_control/CMakeFiles/nao_control_genpy.dir/build.make nao_control/CMakeFiles/nao_control_genpy.dir/build
-.PHONY : nao_control_genpy/fast
-
-# Convenience name for target.
-nao_control/CMakeFiles/nao_control_generate_messages_py.dir/rule:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_control/CMakeFiles/nao_control_generate_messages_py.dir/rule
-.PHONY : nao_control/CMakeFiles/nao_control_generate_messages_py.dir/rule
-
-# Convenience name for target.
-nao_control_generate_messages_py: nao_control/CMakeFiles/nao_control_generate_messages_py.dir/rule
-
-.PHONY : nao_control_generate_messages_py
-
-# fast build rule for target.
-nao_control_generate_messages_py/fast:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_control/CMakeFiles/nao_control_generate_messages_py.dir/build.make nao_control/CMakeFiles/nao_control_generate_messages_py.dir/build
-.PHONY : nao_control_generate_messages_py/fast
-
-# Convenience name for target.
-nao_control/CMakeFiles/nao_control_gennodejs.dir/rule:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_control/CMakeFiles/nao_control_gennodejs.dir/rule
-.PHONY : nao_control/CMakeFiles/nao_control_gennodejs.dir/rule
-
-# Convenience name for target.
-nao_control_gennodejs: nao_control/CMakeFiles/nao_control_gennodejs.dir/rule
-
-.PHONY : nao_control_gennodejs
-
-# fast build rule for target.
-nao_control_gennodejs/fast:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_control/CMakeFiles/nao_control_gennodejs.dir/build.make nao_control/CMakeFiles/nao_control_gennodejs.dir/build
-.PHONY : nao_control_gennodejs/fast
-
-# Convenience name for target.
-nao_control/CMakeFiles/nao_control_generate_messages_nodejs.dir/rule:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_control/CMakeFiles/nao_control_generate_messages_nodejs.dir/rule
-.PHONY : nao_control/CMakeFiles/nao_control_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-nao_control_generate_messages_nodejs: nao_control/CMakeFiles/nao_control_generate_messages_nodejs.dir/rule
-
-.PHONY : nao_control_generate_messages_nodejs
-
-# fast build rule for target.
-nao_control_generate_messages_nodejs/fast:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_control/CMakeFiles/nao_control_generate_messages_nodejs.dir/build.make nao_control/CMakeFiles/nao_control_generate_messages_nodejs.dir/build
-.PHONY : nao_control_generate_messages_nodejs/fast
+octomap_msgs_generate_messages_cpp/fast:
+	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_control/CMakeFiles/octomap_msgs_generate_messages_cpp.dir/build.make nao_control/CMakeFiles/octomap_msgs_generate_messages_cpp.dir/build
+.PHONY : octomap_msgs_generate_messages_cpp/fast
 
 # Convenience name for target.
 nao_control/CMakeFiles/object_recognition_msgs_generate_messages_cpp.dir/rule:
@@ -273,6 +213,66 @@ moveit_msgs_generate_messages_py/fast:
 .PHONY : moveit_msgs_generate_messages_py/fast
 
 # Convenience name for target.
+nao_control/CMakeFiles/moveit_msgs_generate_messages_nodejs.dir/rule:
+	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_control/CMakeFiles/moveit_msgs_generate_messages_nodejs.dir/rule
+.PHONY : nao_control/CMakeFiles/moveit_msgs_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+moveit_msgs_generate_messages_nodejs: nao_control/CMakeFiles/moveit_msgs_generate_messages_nodejs.dir/rule
+
+.PHONY : moveit_msgs_generate_messages_nodejs
+
+# fast build rule for target.
+moveit_msgs_generate_messages_nodejs/fast:
+	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_control/CMakeFiles/moveit_msgs_generate_messages_nodejs.dir/build.make nao_control/CMakeFiles/moveit_msgs_generate_messages_nodejs.dir/build
+.PHONY : moveit_msgs_generate_messages_nodejs/fast
+
+# Convenience name for target.
+nao_control/CMakeFiles/object_recognition_msgs_generate_messages_lisp.dir/rule:
+	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_control/CMakeFiles/object_recognition_msgs_generate_messages_lisp.dir/rule
+.PHONY : nao_control/CMakeFiles/object_recognition_msgs_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+object_recognition_msgs_generate_messages_lisp: nao_control/CMakeFiles/object_recognition_msgs_generate_messages_lisp.dir/rule
+
+.PHONY : object_recognition_msgs_generate_messages_lisp
+
+# fast build rule for target.
+object_recognition_msgs_generate_messages_lisp/fast:
+	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_control/CMakeFiles/object_recognition_msgs_generate_messages_lisp.dir/build.make nao_control/CMakeFiles/object_recognition_msgs_generate_messages_lisp.dir/build
+.PHONY : object_recognition_msgs_generate_messages_lisp/fast
+
+# Convenience name for target.
+nao_control/CMakeFiles/nao_control_generate_messages_nodejs.dir/rule:
+	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_control/CMakeFiles/nao_control_generate_messages_nodejs.dir/rule
+.PHONY : nao_control/CMakeFiles/nao_control_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+nao_control_generate_messages_nodejs: nao_control/CMakeFiles/nao_control_generate_messages_nodejs.dir/rule
+
+.PHONY : nao_control_generate_messages_nodejs
+
+# fast build rule for target.
+nao_control_generate_messages_nodejs/fast:
+	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_control/CMakeFiles/nao_control_generate_messages_nodejs.dir/build.make nao_control/CMakeFiles/nao_control_generate_messages_nodejs.dir/build
+.PHONY : nao_control_generate_messages_nodejs/fast
+
+# Convenience name for target.
+nao_control/CMakeFiles/nao_control_gennodejs.dir/rule:
+	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_control/CMakeFiles/nao_control_gennodejs.dir/rule
+.PHONY : nao_control/CMakeFiles/nao_control_gennodejs.dir/rule
+
+# Convenience name for target.
+nao_control_gennodejs: nao_control/CMakeFiles/nao_control_gennodejs.dir/rule
+
+.PHONY : nao_control_gennodejs
+
+# fast build rule for target.
+nao_control_gennodejs/fast:
+	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_control/CMakeFiles/nao_control_gennodejs.dir/build.make nao_control/CMakeFiles/nao_control_gennodejs.dir/build
+.PHONY : nao_control_gennodejs/fast
+
+# Convenience name for target.
 nao_control/CMakeFiles/moveit_msgs_generate_messages_lisp.dir/rule:
 	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_control/CMakeFiles/moveit_msgs_generate_messages_lisp.dir/rule
 .PHONY : nao_control/CMakeFiles/moveit_msgs_generate_messages_lisp.dir/rule
@@ -288,49 +288,49 @@ moveit_msgs_generate_messages_lisp/fast:
 .PHONY : moveit_msgs_generate_messages_lisp/fast
 
 # Convenience name for target.
-nao_control/CMakeFiles/shape_msgs_generate_messages_py.dir/rule:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_control/CMakeFiles/shape_msgs_generate_messages_py.dir/rule
-.PHONY : nao_control/CMakeFiles/shape_msgs_generate_messages_py.dir/rule
+nao_control/CMakeFiles/shape_msgs_generate_messages_cpp.dir/rule:
+	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_control/CMakeFiles/shape_msgs_generate_messages_cpp.dir/rule
+.PHONY : nao_control/CMakeFiles/shape_msgs_generate_messages_cpp.dir/rule
 
 # Convenience name for target.
-shape_msgs_generate_messages_py: nao_control/CMakeFiles/shape_msgs_generate_messages_py.dir/rule
+shape_msgs_generate_messages_cpp: nao_control/CMakeFiles/shape_msgs_generate_messages_cpp.dir/rule
 
-.PHONY : shape_msgs_generate_messages_py
+.PHONY : shape_msgs_generate_messages_cpp
 
 # fast build rule for target.
-shape_msgs_generate_messages_py/fast:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_control/CMakeFiles/shape_msgs_generate_messages_py.dir/build.make nao_control/CMakeFiles/shape_msgs_generate_messages_py.dir/build
-.PHONY : shape_msgs_generate_messages_py/fast
+shape_msgs_generate_messages_cpp/fast:
+	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_control/CMakeFiles/shape_msgs_generate_messages_cpp.dir/build.make nao_control/CMakeFiles/shape_msgs_generate_messages_cpp.dir/build
+.PHONY : shape_msgs_generate_messages_cpp/fast
 
 # Convenience name for target.
-nao_control/CMakeFiles/shape_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_control/CMakeFiles/shape_msgs_generate_messages_nodejs.dir/rule
-.PHONY : nao_control/CMakeFiles/shape_msgs_generate_messages_nodejs.dir/rule
+nao_control/CMakeFiles/shape_msgs_generate_messages_eus.dir/rule:
+	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_control/CMakeFiles/shape_msgs_generate_messages_eus.dir/rule
+.PHONY : nao_control/CMakeFiles/shape_msgs_generate_messages_eus.dir/rule
 
 # Convenience name for target.
-shape_msgs_generate_messages_nodejs: nao_control/CMakeFiles/shape_msgs_generate_messages_nodejs.dir/rule
+shape_msgs_generate_messages_eus: nao_control/CMakeFiles/shape_msgs_generate_messages_eus.dir/rule
 
-.PHONY : shape_msgs_generate_messages_nodejs
+.PHONY : shape_msgs_generate_messages_eus
 
 # fast build rule for target.
-shape_msgs_generate_messages_nodejs/fast:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_control/CMakeFiles/shape_msgs_generate_messages_nodejs.dir/build.make nao_control/CMakeFiles/shape_msgs_generate_messages_nodejs.dir/build
-.PHONY : shape_msgs_generate_messages_nodejs/fast
+shape_msgs_generate_messages_eus/fast:
+	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_control/CMakeFiles/shape_msgs_generate_messages_eus.dir/build.make nao_control/CMakeFiles/shape_msgs_generate_messages_eus.dir/build
+.PHONY : shape_msgs_generate_messages_eus/fast
 
 # Convenience name for target.
-nao_control/CMakeFiles/nao_control_gencpp.dir/rule:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_control/CMakeFiles/nao_control_gencpp.dir/rule
-.PHONY : nao_control/CMakeFiles/nao_control_gencpp.dir/rule
+nao_control/CMakeFiles/moveit_ros_planning_gencfg.dir/rule:
+	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_control/CMakeFiles/moveit_ros_planning_gencfg.dir/rule
+.PHONY : nao_control/CMakeFiles/moveit_ros_planning_gencfg.dir/rule
 
 # Convenience name for target.
-nao_control_gencpp: nao_control/CMakeFiles/nao_control_gencpp.dir/rule
+moveit_ros_planning_gencfg: nao_control/CMakeFiles/moveit_ros_planning_gencfg.dir/rule
 
-.PHONY : nao_control_gencpp
+.PHONY : moveit_ros_planning_gencfg
 
 # fast build rule for target.
-nao_control_gencpp/fast:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_control/CMakeFiles/nao_control_gencpp.dir/build.make nao_control/CMakeFiles/nao_control_gencpp.dir/build
-.PHONY : nao_control_gencpp/fast
+moveit_ros_planning_gencfg/fast:
+	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_control/CMakeFiles/moveit_ros_planning_gencfg.dir/build.make nao_control/CMakeFiles/moveit_ros_planning_gencfg.dir/build
+.PHONY : moveit_ros_planning_gencfg/fast
 
 # Convenience name for target.
 nao_control/CMakeFiles/moveit_msgs_generate_messages_eus.dir/rule:
@@ -378,154 +378,64 @@ nao_control_generate_messages_lisp/fast:
 .PHONY : nao_control_generate_messages_lisp/fast
 
 # Convenience name for target.
-nao_control/CMakeFiles/shape_msgs_generate_messages_eus.dir/rule:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_control/CMakeFiles/shape_msgs_generate_messages_eus.dir/rule
-.PHONY : nao_control/CMakeFiles/shape_msgs_generate_messages_eus.dir/rule
+nao_control/CMakeFiles/nao_control_genpy.dir/rule:
+	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_control/CMakeFiles/nao_control_genpy.dir/rule
+.PHONY : nao_control/CMakeFiles/nao_control_genpy.dir/rule
 
 # Convenience name for target.
-shape_msgs_generate_messages_eus: nao_control/CMakeFiles/shape_msgs_generate_messages_eus.dir/rule
+nao_control_genpy: nao_control/CMakeFiles/nao_control_genpy.dir/rule
 
-.PHONY : shape_msgs_generate_messages_eus
+.PHONY : nao_control_genpy
 
 # fast build rule for target.
-shape_msgs_generate_messages_eus/fast:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_control/CMakeFiles/shape_msgs_generate_messages_eus.dir/build.make nao_control/CMakeFiles/shape_msgs_generate_messages_eus.dir/build
-.PHONY : shape_msgs_generate_messages_eus/fast
+nao_control_genpy/fast:
+	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_control/CMakeFiles/nao_control_genpy.dir/build.make nao_control/CMakeFiles/nao_control_genpy.dir/build
+.PHONY : nao_control_genpy/fast
 
 # Convenience name for target.
-nao_control/CMakeFiles/shape_msgs_generate_messages_cpp.dir/rule:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_control/CMakeFiles/shape_msgs_generate_messages_cpp.dir/rule
-.PHONY : nao_control/CMakeFiles/shape_msgs_generate_messages_cpp.dir/rule
+nao_control/CMakeFiles/shape_msgs_generate_messages_nodejs.dir/rule:
+	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_control/CMakeFiles/shape_msgs_generate_messages_nodejs.dir/rule
+.PHONY : nao_control/CMakeFiles/shape_msgs_generate_messages_nodejs.dir/rule
 
 # Convenience name for target.
-shape_msgs_generate_messages_cpp: nao_control/CMakeFiles/shape_msgs_generate_messages_cpp.dir/rule
+shape_msgs_generate_messages_nodejs: nao_control/CMakeFiles/shape_msgs_generate_messages_nodejs.dir/rule
 
-.PHONY : shape_msgs_generate_messages_cpp
+.PHONY : shape_msgs_generate_messages_nodejs
 
 # fast build rule for target.
-shape_msgs_generate_messages_cpp/fast:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_control/CMakeFiles/shape_msgs_generate_messages_cpp.dir/build.make nao_control/CMakeFiles/shape_msgs_generate_messages_cpp.dir/build
-.PHONY : shape_msgs_generate_messages_cpp/fast
+shape_msgs_generate_messages_nodejs/fast:
+	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_control/CMakeFiles/shape_msgs_generate_messages_nodejs.dir/build.make nao_control/CMakeFiles/shape_msgs_generate_messages_nodejs.dir/build
+.PHONY : shape_msgs_generate_messages_nodejs/fast
 
 # Convenience name for target.
-nao_control/CMakeFiles/moveit_ros_planning_gencfg.dir/rule:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_control/CMakeFiles/moveit_ros_planning_gencfg.dir/rule
-.PHONY : nao_control/CMakeFiles/moveit_ros_planning_gencfg.dir/rule
+nao_control/CMakeFiles/nao_control_gencpp.dir/rule:
+	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_control/CMakeFiles/nao_control_gencpp.dir/rule
+.PHONY : nao_control/CMakeFiles/nao_control_gencpp.dir/rule
 
 # Convenience name for target.
-moveit_ros_planning_gencfg: nao_control/CMakeFiles/moveit_ros_planning_gencfg.dir/rule
+nao_control_gencpp: nao_control/CMakeFiles/nao_control_gencpp.dir/rule
 
-.PHONY : moveit_ros_planning_gencfg
+.PHONY : nao_control_gencpp
 
 # fast build rule for target.
-moveit_ros_planning_gencfg/fast:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_control/CMakeFiles/moveit_ros_planning_gencfg.dir/build.make nao_control/CMakeFiles/moveit_ros_planning_gencfg.dir/build
-.PHONY : moveit_ros_planning_gencfg/fast
+nao_control_gencpp/fast:
+	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_control/CMakeFiles/nao_control_gencpp.dir/build.make nao_control/CMakeFiles/nao_control_gencpp.dir/build
+.PHONY : nao_control_gencpp/fast
 
 # Convenience name for target.
-nao_control/CMakeFiles/visualization_msgs_generate_messages_eus.dir/rule:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_control/CMakeFiles/visualization_msgs_generate_messages_eus.dir/rule
-.PHONY : nao_control/CMakeFiles/visualization_msgs_generate_messages_eus.dir/rule
+nao_control/CMakeFiles/object_recognition_msgs_generate_messages_py.dir/rule:
+	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_control/CMakeFiles/object_recognition_msgs_generate_messages_py.dir/rule
+.PHONY : nao_control/CMakeFiles/object_recognition_msgs_generate_messages_py.dir/rule
 
 # Convenience name for target.
-visualization_msgs_generate_messages_eus: nao_control/CMakeFiles/visualization_msgs_generate_messages_eus.dir/rule
+object_recognition_msgs_generate_messages_py: nao_control/CMakeFiles/object_recognition_msgs_generate_messages_py.dir/rule
 
-.PHONY : visualization_msgs_generate_messages_eus
+.PHONY : object_recognition_msgs_generate_messages_py
 
 # fast build rule for target.
-visualization_msgs_generate_messages_eus/fast:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_control/CMakeFiles/visualization_msgs_generate_messages_eus.dir/build.make nao_control/CMakeFiles/visualization_msgs_generate_messages_eus.dir/build
-.PHONY : visualization_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-nao_control/CMakeFiles/octomap_msgs_generate_messages_cpp.dir/rule:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_control/CMakeFiles/octomap_msgs_generate_messages_cpp.dir/rule
-.PHONY : nao_control/CMakeFiles/octomap_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-octomap_msgs_generate_messages_cpp: nao_control/CMakeFiles/octomap_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : octomap_msgs_generate_messages_cpp
-
-# fast build rule for target.
-octomap_msgs_generate_messages_cpp/fast:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_control/CMakeFiles/octomap_msgs_generate_messages_cpp.dir/build.make nao_control/CMakeFiles/octomap_msgs_generate_messages_cpp.dir/build
-.PHONY : octomap_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-nao_control/CMakeFiles/moveit_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_control/CMakeFiles/moveit_msgs_generate_messages_nodejs.dir/rule
-.PHONY : nao_control/CMakeFiles/moveit_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-moveit_msgs_generate_messages_nodejs: nao_control/CMakeFiles/moveit_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : moveit_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-moveit_msgs_generate_messages_nodejs/fast:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_control/CMakeFiles/moveit_msgs_generate_messages_nodejs.dir/build.make nao_control/CMakeFiles/moveit_msgs_generate_messages_nodejs.dir/build
-.PHONY : moveit_msgs_generate_messages_nodejs/fast
-
-# Convenience name for target.
-nao_control/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/rule:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_control/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/rule
-.PHONY : nao_control/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-visualization_msgs_generate_messages_lisp: nao_control/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : visualization_msgs_generate_messages_lisp
-
-# fast build rule for target.
-visualization_msgs_generate_messages_lisp/fast:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_control/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/build.make nao_control/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/build
-.PHONY : visualization_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-nao_control/CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_control/CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/rule
-.PHONY : nao_control/CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-visualization_msgs_generate_messages_nodejs: nao_control/CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : visualization_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-visualization_msgs_generate_messages_nodejs/fast:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_control/CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/build.make nao_control/CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/build
-.PHONY : visualization_msgs_generate_messages_nodejs/fast
-
-# Convenience name for target.
-nao_control/CMakeFiles/object_recognition_msgs_generate_messages_lisp.dir/rule:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_control/CMakeFiles/object_recognition_msgs_generate_messages_lisp.dir/rule
-.PHONY : nao_control/CMakeFiles/object_recognition_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-object_recognition_msgs_generate_messages_lisp: nao_control/CMakeFiles/object_recognition_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : object_recognition_msgs_generate_messages_lisp
-
-# fast build rule for target.
-object_recognition_msgs_generate_messages_lisp/fast:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_control/CMakeFiles/object_recognition_msgs_generate_messages_lisp.dir/build.make nao_control/CMakeFiles/object_recognition_msgs_generate_messages_lisp.dir/build
-.PHONY : object_recognition_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-nao_control/CMakeFiles/visualization_msgs_generate_messages_cpp.dir/rule:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_control/CMakeFiles/visualization_msgs_generate_messages_cpp.dir/rule
-.PHONY : nao_control/CMakeFiles/visualization_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-visualization_msgs_generate_messages_cpp: nao_control/CMakeFiles/visualization_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : visualization_msgs_generate_messages_cpp
-
-# fast build rule for target.
-visualization_msgs_generate_messages_cpp/fast:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_control/CMakeFiles/visualization_msgs_generate_messages_cpp.dir/build.make nao_control/CMakeFiles/visualization_msgs_generate_messages_cpp.dir/build
-.PHONY : visualization_msgs_generate_messages_cpp/fast
+object_recognition_msgs_generate_messages_py/fast:
+	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_control/CMakeFiles/object_recognition_msgs_generate_messages_py.dir/build.make nao_control/CMakeFiles/object_recognition_msgs_generate_messages_py.dir/build
+.PHONY : object_recognition_msgs_generate_messages_py/fast
 
 # Convenience name for target.
 nao_control/CMakeFiles/object_recognition_msgs_generate_messages_nodejs.dir/rule:
@@ -543,19 +453,19 @@ object_recognition_msgs_generate_messages_nodejs/fast:
 .PHONY : object_recognition_msgs_generate_messages_nodejs/fast
 
 # Convenience name for target.
-nao_control/CMakeFiles/object_recognition_msgs_generate_messages_py.dir/rule:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_control/CMakeFiles/object_recognition_msgs_generate_messages_py.dir/rule
-.PHONY : nao_control/CMakeFiles/object_recognition_msgs_generate_messages_py.dir/rule
+nao_control/CMakeFiles/shape_msgs_generate_messages_py.dir/rule:
+	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_control/CMakeFiles/shape_msgs_generate_messages_py.dir/rule
+.PHONY : nao_control/CMakeFiles/shape_msgs_generate_messages_py.dir/rule
 
 # Convenience name for target.
-object_recognition_msgs_generate_messages_py: nao_control/CMakeFiles/object_recognition_msgs_generate_messages_py.dir/rule
+shape_msgs_generate_messages_py: nao_control/CMakeFiles/shape_msgs_generate_messages_py.dir/rule
 
-.PHONY : object_recognition_msgs_generate_messages_py
+.PHONY : shape_msgs_generate_messages_py
 
 # fast build rule for target.
-object_recognition_msgs_generate_messages_py/fast:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_control/CMakeFiles/object_recognition_msgs_generate_messages_py.dir/build.make nao_control/CMakeFiles/object_recognition_msgs_generate_messages_py.dir/build
-.PHONY : object_recognition_msgs_generate_messages_py/fast
+shape_msgs_generate_messages_py/fast:
+	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_control/CMakeFiles/shape_msgs_generate_messages_py.dir/build.make nao_control/CMakeFiles/shape_msgs_generate_messages_py.dir/build
+.PHONY : shape_msgs_generate_messages_py/fast
 
 # Convenience name for target.
 nao_control/CMakeFiles/object_recognition_msgs_generate_messages_eus.dir/rule:
@@ -646,21 +556,6 @@ moveit_ros_manipulation_gencfg: nao_control/CMakeFiles/moveit_ros_manipulation_g
 moveit_ros_manipulation_gencfg/fast:
 	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_control/CMakeFiles/moveit_ros_manipulation_gencfg.dir/build.make nao_control/CMakeFiles/moveit_ros_manipulation_gencfg.dir/build
 .PHONY : moveit_ros_manipulation_gencfg/fast
-
-# Convenience name for target.
-nao_control/CMakeFiles/visualization_msgs_generate_messages_py.dir/rule:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_control/CMakeFiles/visualization_msgs_generate_messages_py.dir/rule
-.PHONY : nao_control/CMakeFiles/visualization_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-visualization_msgs_generate_messages_py: nao_control/CMakeFiles/visualization_msgs_generate_messages_py.dir/rule
-
-.PHONY : visualization_msgs_generate_messages_py
-
-# fast build rule for target.
-visualization_msgs_generate_messages_py/fast:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_control/CMakeFiles/visualization_msgs_generate_messages_py.dir/build.make nao_control/CMakeFiles/visualization_msgs_generate_messages_py.dir/build
-.PHONY : visualization_msgs_generate_messages_py/fast
 
 # Convenience name for target.
 nao_control/CMakeFiles/nao_control_genlisp.dir/rule:
@@ -782,32 +677,62 @@ nao_control_generate_messages_eus/fast:
 	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_control/CMakeFiles/nao_control_generate_messages_eus.dir/build.make nao_control/CMakeFiles/nao_control_generate_messages_eus.dir/build
 .PHONY : nao_control_generate_messages_eus/fast
 
-src/nao_control.o: src/nao_control.cpp.o
+# Convenience name for target.
+nao_control/CMakeFiles/nao_control_generate_messages_py.dir/rule:
+	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_control/CMakeFiles/nao_control_generate_messages_py.dir/rule
+.PHONY : nao_control/CMakeFiles/nao_control_generate_messages_py.dir/rule
 
-.PHONY : src/nao_control.o
+# Convenience name for target.
+nao_control_generate_messages_py: nao_control/CMakeFiles/nao_control_generate_messages_py.dir/rule
+
+.PHONY : nao_control_generate_messages_py
+
+# fast build rule for target.
+nao_control_generate_messages_py/fast:
+	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_control/CMakeFiles/nao_control_generate_messages_py.dir/build.make nao_control/CMakeFiles/nao_control_generate_messages_py.dir/build
+.PHONY : nao_control_generate_messages_py/fast
+
+# Convenience name for target.
+nao_control/CMakeFiles/nao_odometry.dir/rule:
+	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_control/CMakeFiles/nao_odometry.dir/rule
+.PHONY : nao_control/CMakeFiles/nao_odometry.dir/rule
+
+# Convenience name for target.
+nao_odometry: nao_control/CMakeFiles/nao_odometry.dir/rule
+
+.PHONY : nao_odometry
+
+# fast build rule for target.
+nao_odometry/fast:
+	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_control/CMakeFiles/nao_odometry.dir/build.make nao_control/CMakeFiles/nao_odometry.dir/build
+.PHONY : nao_odometry/fast
+
+src/nao_odometry.o: src/nao_odometry.cpp.o
+
+.PHONY : src/nao_odometry.o
 
 # target to build an object file
-src/nao_control.cpp.o:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_control/CMakeFiles/nao_control.dir/build.make nao_control/CMakeFiles/nao_control.dir/src/nao_control.cpp.o
-.PHONY : src/nao_control.cpp.o
+src/nao_odometry.cpp.o:
+	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_control/CMakeFiles/nao_odometry.dir/build.make nao_control/CMakeFiles/nao_odometry.dir/src/nao_odometry.cpp.o
+.PHONY : src/nao_odometry.cpp.o
 
-src/nao_control.i: src/nao_control.cpp.i
+src/nao_odometry.i: src/nao_odometry.cpp.i
 
-.PHONY : src/nao_control.i
+.PHONY : src/nao_odometry.i
 
 # target to preprocess a source file
-src/nao_control.cpp.i:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_control/CMakeFiles/nao_control.dir/build.make nao_control/CMakeFiles/nao_control.dir/src/nao_control.cpp.i
-.PHONY : src/nao_control.cpp.i
+src/nao_odometry.cpp.i:
+	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_control/CMakeFiles/nao_odometry.dir/build.make nao_control/CMakeFiles/nao_odometry.dir/src/nao_odometry.cpp.i
+.PHONY : src/nao_odometry.cpp.i
 
-src/nao_control.s: src/nao_control.cpp.s
+src/nao_odometry.s: src/nao_odometry.cpp.s
 
-.PHONY : src/nao_control.s
+.PHONY : src/nao_odometry.s
 
 # target to generate assembly for a file
-src/nao_control.cpp.s:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_control/CMakeFiles/nao_control.dir/build.make nao_control/CMakeFiles/nao_control.dir/src/nao_control.cpp.s
-.PHONY : src/nao_control.cpp.s
+src/nao_odometry.cpp.s:
+	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_control/CMakeFiles/nao_odometry.dir/build.make nao_control/CMakeFiles/nao_odometry.dir/src/nao_odometry.cpp.s
+.PHONY : src/nao_odometry.cpp.s
 
 # Help Target
 help:
@@ -818,33 +743,27 @@ help:
 	@echo "... install/local"
 	@echo "... install"
 	@echo "... list_install_components"
-	@echo "... nao_control"
-	@echo "... nao_control_genpy"
-	@echo "... nao_control_generate_messages_py"
-	@echo "... nao_control_gennodejs"
-	@echo "... nao_control_generate_messages_nodejs"
+	@echo "... octomap_msgs_generate_messages_cpp"
 	@echo "... object_recognition_msgs_generate_messages_cpp"
 	@echo "... moveit_msgs_generate_messages_py"
+	@echo "... moveit_msgs_generate_messages_nodejs"
+	@echo "... object_recognition_msgs_generate_messages_lisp"
+	@echo "... nao_control_generate_messages_nodejs"
+	@echo "... nao_control_gennodejs"
 	@echo "... moveit_msgs_generate_messages_lisp"
-	@echo "... shape_msgs_generate_messages_py"
-	@echo "... shape_msgs_generate_messages_nodejs"
-	@echo "... nao_control_gencpp"
+	@echo "... test"
+	@echo "... shape_msgs_generate_messages_cpp"
+	@echo "... shape_msgs_generate_messages_eus"
+	@echo "... moveit_ros_planning_gencfg"
 	@echo "... moveit_msgs_generate_messages_eus"
 	@echo "... shape_msgs_generate_messages_lisp"
 	@echo "... nao_control_generate_messages_lisp"
-	@echo "... shape_msgs_generate_messages_eus"
-	@echo "... test"
-	@echo "... shape_msgs_generate_messages_cpp"
-	@echo "... moveit_ros_planning_gencfg"
-	@echo "... visualization_msgs_generate_messages_eus"
-	@echo "... octomap_msgs_generate_messages_cpp"
-	@echo "... moveit_msgs_generate_messages_nodejs"
-	@echo "... visualization_msgs_generate_messages_lisp"
-	@echo "... visualization_msgs_generate_messages_nodejs"
-	@echo "... object_recognition_msgs_generate_messages_lisp"
-	@echo "... visualization_msgs_generate_messages_cpp"
-	@echo "... object_recognition_msgs_generate_messages_nodejs"
+	@echo "... nao_control_genpy"
+	@echo "... shape_msgs_generate_messages_nodejs"
+	@echo "... nao_control_gencpp"
 	@echo "... object_recognition_msgs_generate_messages_py"
+	@echo "... object_recognition_msgs_generate_messages_nodejs"
+	@echo "... shape_msgs_generate_messages_py"
 	@echo "... rebuild_cache"
 	@echo "... object_recognition_msgs_generate_messages_eus"
 	@echo "... octomap_msgs_generate_messages_eus"
@@ -853,7 +772,6 @@ help:
 	@echo "... octomap_msgs_generate_messages_nodejs"
 	@echo "... octomap_msgs_generate_messages_py"
 	@echo "... moveit_ros_manipulation_gencfg"
-	@echo "... visualization_msgs_generate_messages_py"
 	@echo "... nao_control_genlisp"
 	@echo "... nao_control_generate_messages"
 	@echo "... _nao_control_generate_messages_check_deps_Order"
@@ -863,9 +781,11 @@ help:
 	@echo "... edit_cache"
 	@echo "... nao_control_generate_messages_cpp"
 	@echo "... nao_control_generate_messages_eus"
-	@echo "... src/nao_control.o"
-	@echo "... src/nao_control.i"
-	@echo "... src/nao_control.s"
+	@echo "... nao_control_generate_messages_py"
+	@echo "... nao_odometry"
+	@echo "... src/nao_odometry.o"
+	@echo "... src/nao_odometry.i"
+	@echo "... src/nao_odometry.s"
 .PHONY : help
 
 

@@ -1,7 +1,7 @@
 # Simulation settings for using moveit_sim_controllers
 moveit_sim_hw_interface:
-  joint_model_group: Head
-  joint_model_group_pose: look_up
+  joint_model_group: todo_group_name
+  joint_model_group_pose: todo_state_name
 # Settings for ros_control_boilerplate control loop
 generic_hw_control_loop:
   loop_hz: 300
@@ -17,6 +17,10 @@ hardware_interface:
     - LKneePitch
     - LAnklePitch
     - LAnkleRoll
+    - left_wheel_joint_l
+    - left_wheel_joint_r
+    - front_left_wheel_joint_l
+    - front_left_wheel_joint_r
     - LShoulderPitch
     - LShoulderRoll
     - LElbowYaw
@@ -28,6 +32,10 @@ hardware_interface:
     - RKneePitch
     - RAnklePitch
     - RAnkleRoll
+    - right_wheel_joint_l
+    - right_wheel_joint_r
+    - front_right_wheel_joint_l
+    - front_right_wheel_joint_r
     - RShoulderPitch
     - RShoulderRoll
     - RElbowYaw
@@ -41,4 +49,178 @@ joint_state_controller:
   type: joint_state_controller/JointStateController
   publish_rate: 50
 controller_list:
-  []
+  - name: Head_controller
+    action_ns: follow_joint_trajectory
+    default: True
+    type: FollowJointTrajectory
+    joints:
+      - HeadYaw
+      - HeadPitch
+  - name: LeftArm_controller
+    action_ns: follow_joint_trajectory
+    default: True
+    type: FollowJointTrajectory
+    joints:
+      - LShoulderPitch
+      - LShoulderRoll
+      - LElbowYaw
+      - LElbowRoll
+      - LWristYaw
+  - name: RightArm_controller
+    action_ns: follow_joint_trajectory
+    default: True
+    type: FollowJointTrajectory
+    joints:
+      - RShoulderPitch
+      - RShoulderRoll
+      - RElbowYaw
+      - RElbowRoll
+      - RWristYaw
+  - name: LeftHand_controller
+    action_ns: follow_joint_trajectory
+    default: True
+    type: FollowJointTrajectory
+    joints:
+      []
+  - name: RightHand_controller
+    action_ns: follow_joint_trajectory
+    default: True
+    type: FollowJointTrajectory
+    joints:
+      []
+  - name: Pelvis_controller
+    action_ns: follow_joint_trajectory
+    default: True
+    type: FollowJointTrajectory
+    joints:
+      []
+  - name: LeftLeg_controller
+    action_ns: follow_joint_trajectory
+    default: True
+    type: FollowJointTrajectory
+    joints:
+      - LHipRoll
+      - LHipPitch
+      - LKneePitch
+  - name: RightLeg_controller
+    action_ns: follow_joint_trajectory
+    default: True
+    type: FollowJointTrajectory
+    joints:
+      - RHipRoll
+      - RHipPitch
+      - RKneePitch
+  - name: LeftAnkle_controller
+    action_ns: follow_joint_trajectory
+    default: True
+    type: FollowJointTrajectory
+    joints:
+      []
+  - name: RightAnkle_controller
+    action_ns: follow_joint_trajectory
+    default: True
+    type: FollowJointTrajectory
+    joints:
+      []
+  - name: LeftFoot_controller
+    action_ns: follow_joint_trajectory
+    default: True
+    type: FollowJointTrajectory
+    joints:
+      []
+  - name: RightFoot_controller
+    action_ns: follow_joint_trajectory
+    default: True
+    type: FollowJointTrajectory
+    joints:
+      []
+  - name: DualArms_controller
+    action_ns: follow_joint_trajectory
+    default: True
+    type: FollowJointTrajectory
+    joints:
+      - LShoulderPitch
+      - LShoulderRoll
+      - LElbowYaw
+      - LElbowRoll
+      - LWristYaw
+      - RShoulderPitch
+      - RShoulderRoll
+      - RElbowYaw
+      - RElbowRoll
+      - RWristYaw
+  - name: DualLegs_controller
+    action_ns: follow_joint_trajectory
+    default: True
+    type: FollowJointTrajectory
+    joints:
+      - LHipRoll
+      - LHipPitch
+      - LKneePitch
+      - RHipRoll
+      - RHipPitch
+      - RKneePitch
+  - name: DualAnkles_controller
+    action_ns: follow_joint_trajectory
+    default: True
+    type: FollowJointTrajectory
+    joints:
+      - LAnklePitch
+      - RAnklePitch
+  - name: DualLegNfoot_controller
+    action_ns: follow_joint_trajectory
+    default: True
+    type: FollowJointTrajectory
+    joints:
+      - LHipRoll
+      - LHipPitch
+      - LKneePitch
+      - LAnklePitch
+      - RHipRoll
+      - RHipPitch
+      - RKneePitch
+      - RAnklePitch
+  - name: LeftLegNFoot_controller
+    action_ns: follow_joint_trajectory
+    default: True
+    type: FollowJointTrajectory
+    joints:
+      - LHipRoll
+      - LHipPitch
+      - LKneePitch
+      - LAnklePitch
+  - name: RightLegNFoot_controller
+    action_ns: follow_joint_trajectory
+    default: True
+    type: FollowJointTrajectory
+    joints:
+      - RHipRoll
+      - RHipPitch
+      - RKneePitch
+      - RAnklePitch
+  - name: LeftArmNRightLeg_controller
+    action_ns: follow_joint_trajectory
+    default: True
+    type: FollowJointTrajectory
+    joints:
+      - LShoulderPitch
+      - LShoulderRoll
+      - LElbowYaw
+      - LElbowRoll
+      - LWristYaw
+      - RHipRoll
+      - RHipPitch
+      - RKneePitch
+  - name: RightArmNLeftLeg_controller
+    action_ns: follow_joint_trajectory
+    default: True
+    type: FollowJointTrajectory
+    joints:
+      - LHipRoll
+      - LHipPitch
+      - LKneePitch
+      - RShoulderPitch
+      - RShoulderRoll
+      - RElbowYaw
+      - RElbowRoll
+      - RWristYaw

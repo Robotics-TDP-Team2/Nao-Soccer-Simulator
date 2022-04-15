@@ -5,11 +5,17 @@
   <!-- The name of the parameter under which the URDF is loaded -->
   <arg name="robot_description" default="robot_description"/>
 
+  <arg name="ns" default=""/>
+
   <!-- Load universal robot description format (URDF) -->
-  <param if="$(arg load_robot_description)" name="$(arg robot_description)" textfile="$(find nao_description)/urdf/naoV40_generated_urdf/nao.urdf"/>
+  <param if="$(arg load_robot_description)" name="$(arg robot_description)" command="$(find xacro)/xacro '$(find nao_description)/urdf/naoV40_generated_urdf/nao_robot.xacro' ns:=$(arg ns)/"/>
 
   <!-- The semantic description that corresponds to the URDF -->
-  <param name="$(arg robot_description)_semantic" textfile="$(find nao_moveit_config)/config/nao.srdf" />
+  <!--
+  <param name="$(arg robot_description)_semantic" command="$(find xacro)/xacro '$(find nao_moveit_config)/config/nao.srdf.xacro' ns:=$(arg ns)"/>
+-->
+  <!-- The semantic description that corresponds to the URDF -->
+  <param name="$(arg robot_description)_semantic" textfile="$(find nao_moveit_config)/config/$(arg ns).srdf" />
 
   <!-- Load updated joint limits (override information from URDF) -->
   <group ns="$(arg robot_description)_planning">

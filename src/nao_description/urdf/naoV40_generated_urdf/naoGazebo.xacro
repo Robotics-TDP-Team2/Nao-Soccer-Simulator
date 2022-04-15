@@ -2,74 +2,142 @@
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
     <!-- MACROS FOR DISABLE LINKS -->
 	<xacro:property name="PI" value="3.14159265359" />
-    <xacro:macro name="DisabledLinks" params="side side_small">
+    <xacro:macro name="DisabledLinks" params="side side_small ns">
         <plugin name="${side}Finger11_link" filename="libroboticsgroup_gazebo_disable_link_plugin.so">
-            <link>${side}Finger11_link</link>
+            <link>${ns}${side}Finger11_link</link>
         </plugin>
         <plugin name="${side}Finger12_link" filename="libroboticsgroup_gazebo_disable_link_plugin.so">
-            <link>${side}Finger12_link</link>
+            <link>${ns}${side}Finger12_link</link>
         </plugin>
         <plugin name="${side}Finger13_link" filename="libroboticsgroup_gazebo_disable_link_plugin.so">
-            <link>${side}Finger13_link</link>
+            <link>${ns}${side}Finger13_link</link>
         </plugin>
         <plugin name="${side}Finger21_link" filename="libroboticsgroup_gazebo_disable_link_plugin.so">
-            <link>${side}Finger21_link</link>
+            <link>${ns}${side}Finger21_link</link>
         </plugin>
         <plugin name="${side}Finger22_link" filename="libroboticsgroup_gazebo_disable_link_plugin.so">
-            <link>${side}Finger22_link</link>
+            <link>${ns}${side}Finger22_link</link>
         </plugin>
         <plugin name="${side}Finger23_link" filename="libroboticsgroup_gazebo_disable_link_plugin.so">
-            <link>${side}Finger23_link</link>
+            <link>${ns}${side}Finger23_link</link>
         </plugin>
         <plugin name="${side}Thumb1_link" filename="libroboticsgroup_gazebo_disable_link_plugin.so">
-            <link>${side}Thumb1_link</link>
+            <link>${ns}${side}Thumb1_link</link>
         </plugin>
         <plugin name="${side}Thumb2_link" filename="libroboticsgroup_gazebo_disable_link_plugin.so">
-            <link>${side}Thumb2_link</link>
+            <link>${ns}${side}Thumb2_link</link>
         </plugin>
         <plugin name="${side_small}_gripper" filename="libroboticsgroup_gazebo_disable_link_plugin.so">
-            <link>${side_small}_gripper</link>
+            <link>${ns}${side_small}_gripper</link>
         </plugin>
     </xacro:macro>
     <!-- MACROS FOR MIMIC JOINTS -->
     <!-- Fingers -->
-    <xacro:macro name="FingerMimics" params="side num">
+    <xacro:macro name="FingerMimics" params="side num ns">
         <plugin name="mimic_${side}Finger${num}1" filename="libroboticsgroup_gazebo_mimic_joint_plugin.so">
-            <joint>${side}Hand</joint>
-            <mimicJoint>${side}Finger${num}1</mimicJoint>
+            <joint>${ns}${side}Hand</joint>
+            <mimicJoint>${ns}${side}Finger${num}1</mimicJoint>
             <multiplier>-${PI/4}</multiplier>
             <offset>${PI/4}</offset>
         </plugin>
         <plugin name="mimic_${side}Finger${num}2" filename="libroboticsgroup_gazebo_mimic_joint_plugin.so">
-            <joint>${side}Hand</joint>
-            <mimicJoint>${side}Finger${num}2</mimicJoint>
+            <joint>${ns}${side}Hand</joint>
+            <mimicJoint>${ns}${side}Finger${num}2</mimicJoint>
             <multiplier>-${PI/4}</multiplier>
             <offset>${PI/4}</offset>
         </plugin>
         <plugin name="mimic_${side}Finger${num}3" filename="libroboticsgroup_gazebo_mimic_joint_plugin.so">
-            <joint>${side}Hand</joint>
-            <mimicJoint>${side}Finger${num}3</mimicJoint>
+            <joint>${ns}${side}Hand</joint>
+            <mimicJoint>${ns}${side}Finger${num}3</mimicJoint>
             <multiplier>-${PI/4}</multiplier>
             <offset>${PI/4}</offset>
         </plugin>
     </xacro:macro>
     <!-- Thumbs -->
-    <xacro:macro name="ThumbMimics" params="side">
+    <xacro:macro name="ThumbMimics" params="side ns">
         <plugin name="${side}Thumb1" filename="libroboticsgroup_gazebo_mimic_joint_plugin.so">
-            <joint>${side}Hand</joint>
-            <mimicJoint>${side}Thumb1</mimicJoint>
+            <joint>${ns}${side}Hand</joint>
+            <mimicJoint>${ns}${side}Thumb1</mimicJoint>
             <multiplier>-${PI/4}</multiplier>
             <offset>${PI/4}</offset>
         </plugin>
         <plugin name="${side}Thumb2" filename="libroboticsgroup_gazebo_mimic_joint_plugin.so">
-            <joint>${side}Hand</joint>
-            <mimicJoint>${side}Thumb2</mimicJoint>
+            <joint>${ns}${side}Hand</joint>
+            <mimicJoint>${ns}${side}Thumb2</mimicJoint>
             <multiplier>-${PI/4}</multiplier>
             <offset>${PI/4}</offset>
         </plugin>
     </xacro:macro>
     <!-- GAZEBO ROS CONTROL AND IMU PLUGIN -->
 
+    <xacro:macro name="Wheels" params="side ns">
+
+	<plugin name="${side}_wheel_drive_controller" filename="/opt/ros/melodic/lib/libgazebo_ros_diff_drive.so">
+
+            <rosDebugLevel>Debug</rosDebugLevel>
+            <publishWheelTF>false</publishWheelTF>
+            <broadcastTF>true</broadcastTF>
+            <publishTf>true</publishTf>
+            <leftJoint>${ns}front_${side}_wheel_joint_l</leftJoint>
+            <rightJoint>${ns}front_${side}_wheel_joint_r</rightJoint>
+            <publishWheelJointState>true</publishWheelJointState>
+            <alwaysOn>true</alwaysOn>
+            <updateRate>100.0</updateRate>
+            <legacyMode>true</legacyMode>
+            <wheelSeparation>0.3</wheelSeparation>
+            <wheelDiameter>0.1</wheelDiameter>
+            <wheelTorque>20</wheelTorque>
+            <wheelAcceleration>2</wheelAcceleration>
+            <commandTopic>${side}/cmd_vel</commandTopic>
+            <robotBaseFrame>${ns}base_link</robotBaseFrame>
+            <publishOdomTF>true</publishOdomTF>
+            <publish_odom>true</publish_odom>
+            <odometryTopic>odom</odometryTopic>
+            <odometryFrame>${ns}odom</odometryFrame>
+	    <odometrySource>world</odometrySource>
+
+        </plugin>
+    </xacro:macro>
+    <xacro:macro name="GroundPose" params="ns">
+        <plugin name="p3d_base_controller" filename="libgazebo_ros_p3d.so">
+    	     <alwaysOn>true</alwaysOn>
+             <updateRate>50.0</updateRate>
+             <bodyName>${ns}base_link</bodyName>
+             <topicName>ground_truth_pose</topicName>
+             <gaussianNoise>0.01</gaussianNoise>
+             <frameName>world</frameName>
+             <xyzOffset>0 0 0</xyzOffset>
+             <rpyOffset>0 0 0</rpyOffset>
+        </plugin>
+
+	</xacro:macro>
+    
+
+    <gazebo>
+
+	<xacro:Wheels side="left" ns="$(arg ns)"/>
+	<xacro:Wheels side="right" ns="$(arg ns)"/>
+
+    </gazebo>
+<!--
+    <gazebo>
+      <plugin name="skid_steer_drive_controller" filename="libgazebo_ros_skid_steer_drive.so">
+        <rosDebugLevel>Debug</rosDebugLevel>
+        <updateRate>100.0</updateRate>
+        <robotNamespace>/</robotNamespace>
+        <leftJoint>front_left_wheel_joint_l</leftJoint>
+        <rightJoint>front_left_wheel_joint_r</rightJoint>
+        <leftJoint>front_right_wheel_joint_l</leftJoint>
+        <rightJoint>front_right_wheel_joint_r</rightJoint>
+        <wheelSeparation>0.3</wheelSeparation>
+        <wheelDiameter>0.1</wheelDiameter>
+        <robotBaseFrame>base_link</robotBaseFrame>
+        <torque>20</torque>
+        <topicName>cmd_vel</topicName>
+        <broadcastTF>true</broadcastTF>
+      </plugin>
+    </gazebo>
+-->
     <gazebo>
 
         <plugin filename="libgazebo_ros_control.so" name="gazebo_ros_control">
@@ -113,39 +181,39 @@
             <offset>0.0</offset>
         </plugin>
 
-        <xacro:FingerMimics side="L" num="0"/>
-        <xacro:FingerMimics side="L" num="0"/>
-        <xacro:FingerMimics side="R" num="0"/>
-        <xacro:FingerMimics side="R" num="0"/>
+        <xacro:FingerMimics side="L" num="0" ns="$(arg ns)"/>
+        <xacro:FingerMimics side="L" num="0" ns="$(arg ns)"/>
+        <xacro:FingerMimics side="R" num="0" ns="$(arg ns)"/>
+        <xacro:FingerMimics side="R" num="0" ns="$(arg ns)"/>
 
-        <xacro:ThumbMimics side="L"/>
-        <xacro:ThumbMimics side="R"/>
+        <xacro:ThumbMimics side="L" ns="$(arg ns)"/>
+        <xacro:ThumbMimics side="R" ns="$(arg ns)"/>
 
-        <xacro:DisabledLinks side="L" side_small="l"/>
-        <xacro:DisabledLinks side="R" side_small="r"/>
+        <xacro:DisabledLinks side="L" side_small="l" ns="$(arg ns)"/>
+        <xacro:DisabledLinks side="R" side_small="r" ns="$(arg ns)"/>
     </gazebo>
     <!-- END OF GAZEBO ROS CONTROL PLUGIN -->
     <!-- GAZEBO MATERIALS -->
-    <gazebo reference="torso">
+    <gazebo reference="$(arg ns)torso">
         <mu1>0.5</mu1>
         <mu2>0.5</mu2>
         <selfCollide>false</selfCollide>
         <turnGravityOff>false</turnGravityOff>
     </gazebo>
 
-    <gazebo reference="Neck">
+    <gazebo reference="$(arg ns)Neck">
         <mu1>0.5</mu1>
         <mu2>0.5</mu2>
         <selfCollide>false</selfCollide>
         <turnGravityOff>false</turnGravityOff>
     </gazebo>
-    <gazebo reference="Head">
+    <gazebo reference="$(arg ns)Head">
         <mu1>0.5</mu1>
         <mu2>0.5</mu2>
         <selfCollide>false</selfCollide>
         <turnGravityOff>false</turnGravityOff>
     </gazebo>
-    <gazebo reference="gaze">
+    <gazebo reference="$(arg ns)gaze">
         <mu1>0.5</mu1>
         <mu2>0.5</mu2>
         <selfCollide>false</selfCollide>
@@ -166,74 +234,74 @@
 
 
 <!-- ARMS -->
-    <gazebo reference="LShoulder">
+    <gazebo reference="$(arg ns)LShoulder">
         <mu1>0.5</mu1>
         <mu2>0.5</mu2>
         <selfCollide>false</selfCollide>
         <turnGravityOff>false</turnGravityOff>
     </gazebo>
-    <gazebo reference="LBicep">
+    <gazebo reference="$(arg ns)LBicep">
         <mu1>0.5</mu1>
         <mu2>0.5</mu2>
         <selfCollide>false</selfCollide>
         <turnGravityOff>false</turnGravityOff>
     </gazebo>
-    <gazebo reference="LElbow">
+    <gazebo reference="$(arg ns)LElbow">
         <mu1>0.5</mu1>
         <mu2>0.5</mu2>
         <selfCollide>false</selfCollide>
         <turnGravityOff>false</turnGravityOff>
     </gazebo>
-    <gazebo reference="LForeArm">
+    <gazebo reference="$(arg ns)LForeArm">
         <mu1>0.5</mu1>
         <mu2>0.5</mu2>
         <selfCollide>false</selfCollide>
         <turnGravityOff>false</turnGravityOff>
     </gazebo>
-    <gazebo reference="l_wrist">
+    <gazebo reference="$(arg ns)l_wrist">
         <mu1>0.5</mu1>
         <mu2>0.5</mu2>
         <selfCollide>false</selfCollide>
         <turnGravityOff>false</turnGravityOff>
     </gazebo>
-    <gazebo reference="l_gripper">
+    <gazebo reference="$(arg ns)l_gripper">
         <mu1>0.5</mu1>
         <mu2>0.5</mu2>
         <selfCollide>false</selfCollide>
         <turnGravityOff>true</turnGravityOff>
     </gazebo>
-    <gazebo reference="RShoulder">
+    <gazebo reference="$(arg ns)RShoulder">
         <mu1>0.5</mu1>
         <mu2>0.5</mu2>
         <selfCollide>false</selfCollide>
         <turnGravityOff>false</turnGravityOff>
     </gazebo>
 
-    <gazebo reference="RBicep">
+    <gazebo reference="$(arg ns)RBicep">
         <mu1>0.5</mu1>
         <mu2>0.5</mu2>
         <selfCollide>false</selfCollide>
         <turnGravityOff>false</turnGravityOff>
     </gazebo>
-    <gazebo reference="RElbow">
+    <gazebo reference="$(arg ns)RElbow">
         <mu1>0.5</mu1>
         <mu2>0.5</mu2>
         <selfCollide>false</selfCollide>
         <turnGravityOff>false</turnGravityOff>
     </gazebo>
-    <gazebo reference="RForeArm">
+    <gazebo reference="$(arg ns)RForeArm">
         <mu1>0.5</mu1>
         <mu2>0.5</mu2>
         <selfCollide>false</selfCollide>
         <turnGravityOff>false</turnGravityOff>
     </gazebo>
-    <gazebo reference="r_wrist">
+    <gazebo reference="$(arg ns)r_wrist">
         <mu1>0.5</mu1>
         <mu2>0.5</mu2>
         <selfCollide>false</selfCollide>
         <turnGravityOff>false</turnGravityOff>
     </gazebo>
-    <gazebo reference="r_gripper">
+    <gazebo reference="$(arg ns)r_gripper">
         <mu1>0.5</mu1>
         <mu2>0.5</mu2>
         <selfCollide>false</selfCollide>
@@ -248,86 +316,155 @@
         <turnGravityOff>false</turnGravityOff>
     </gazebo>
 -->
-    <gazebo reference="LFinger11_link">
+    <gazebo reference="$(arg ns)LFinger11_link">
         <mu1>0.5</mu1>
         <mu2>0.5</mu2>
         <selfCollide>false</selfCollide>
         <turnGravityOff>false</turnGravityOff>
     </gazebo>
-    <gazebo reference="LFinger12_link">
+    <gazebo reference="$(arg ns)LFinger12_link">
         <mu1>0.5</mu1>
         <mu2>0.5</mu2>
         <selfCollide>false</selfCollide>
         <turnGravityOff>false</turnGravityOff>
     </gazebo>
-    <gazebo reference="LFinger13_link">
+    <gazebo reference="$(arg ns)LFinger13_link">
         <mu1>0.5</mu1>
         <mu2>0.5</mu2>
         <selfCollide>false</selfCollide>
         <turnGravityOff>false</turnGravityOff>
     </gazebo>
-    <gazebo reference="LFinger21_link">
+    <gazebo reference="$(arg ns)LFinger21_link">
         <mu1>0.5</mu1>
         <mu2>0.5</mu2>
         <selfCollide>false</selfCollide>
         <turnGravityOff>false</turnGravityOff>
     </gazebo>
-    <gazebo reference="LFinger22_link">
+    <gazebo reference="$(arg ns)LFinger22_link">
         <mu1>0.5</mu1>
         <mu2>0.5</mu2>
         <selfCollide>false</selfCollide>
         <turnGravityOff>false</turnGravityOff>
     </gazebo>
-    <gazebo reference="LFinger23_link">
+    <gazebo reference="$(arg ns)LFinger23_link">
         <mu1>0.5</mu1>
         <mu2>0.5</mu2>
         <selfCollide>false</selfCollide>
         <turnGravityOff>false</turnGravityOff>
     </gazebo>
-    <gazebo reference="LThumb1_link">
+    <gazebo reference="$(arg ns)LThumb1_link">
         <mu1>0.5</mu1>
         <mu2>0.5</mu2>
         <selfCollide>false</selfCollide>
         <turnGravityOff>false</turnGravityOff>
     </gazebo>
-    <gazebo reference="LThumb2_link">
+    <gazebo reference="$(arg ns)LThumb2_link">
         <mu1>0.5</mu1>
         <mu2>0.5</mu2>
         <selfCollide>false</selfCollide>
         <turnGravityOff>false</turnGravityOff>
     </gazebo>
 
-    <gazebo reference="LPelvis">
+    <gazebo reference="$(arg ns)LPelvis">
         <mu1>0.5</mu1>
         <mu2>0.5</mu2>
         <selfCollide>false</selfCollide>
         <turnGravityOff>false</turnGravityOff>
     </gazebo>
-    <gazebo reference="LHip">
+    <gazebo reference="$(arg ns)LHip">
         <mu1>0.5</mu1>
         <mu2>0.5</mu2>
         <selfCollide>false</selfCollide>
         <turnGravityOff>false</turnGravityOff>
     </gazebo>
-    <gazebo reference="LThigh">
+    <gazebo reference="$(arg ns)LThigh">
         <mu1>0.5</mu1>
         <mu2>0.5</mu2>
         <selfCollide>false</selfCollide>
         <turnGravityOff>false</turnGravityOff>
     </gazebo>
-    <gazebo reference="LTibia">
+    <gazebo reference="$(arg ns)LTibia">
         <mu1>0.5</mu1>
         <mu2>0.5</mu2>
         <selfCollide>false</selfCollide>
         <turnGravityOff>false</turnGravityOff>
     </gazebo>
- <gazebo reference="LAnklePitch">
+<!-- left leg wheels -->
+
+    <gazebo reference="$(arg ns)left_wheel_link_l">
+        <mu1>0.5</mu1>
+        <mu2>0.5</mu2>
+        <selfCollide>false</selfCollide>
+        <turnGravityOff>false</turnGravityOff>
+        <material>Gazebo/Gray</material>
+    </gazebo>
+
+    <gazebo reference="$(arg ns)left_wheel_link_r">
+	<mu1>0.5</mu1>
+        <mu2>0.5</mu2>
+        <selfCollide>false</selfCollide>
+        <turnGravityOff>false</turnGravityOff>
+        <material>Gazebo/Gray</material>
+    </gazebo>
+
+    <gazebo reference="$(arg ns)front_left_wheel_link_l">
+	<mu1>0.5</mu1>
+        <mu2>0.5</mu2>
+        <selfCollide>false</selfCollide>
+        <turnGravityOff>false</turnGravityOff>
+        <material>Gazebo/Gray</material>
+    </gazebo>
+
+    <gazebo reference="$(arg ns)front_left_wheel_link_r">
+	<mu1>0.5</mu1>
+        <mu2>0.5</mu2>
+        <selfCollide>false</selfCollide>
+        <turnGravityOff>false</turnGravityOff>
+        <material>Gazebo/Gray</material>
+    </gazebo>
+
+
+<!-- right wheels -->
+
+    <gazebo reference="$(arg ns)right_wheel_link_l">
+	<mu1>0.5</mu1>
+        <mu2>0.5</mu2>
+        <selfCollide>false</selfCollide>
+        <turnGravityOff>false</turnGravityOff>
+        <material>Gazebo/Gray</material>
+    </gazebo>
+
+    <gazebo reference="$(arg ns)right_wheel_link_r">
+	<mu1>0.5</mu1>
+        <mu2>0.5</mu2>
+        <selfCollide>false</selfCollide>
+        <turnGravityOff>false</turnGravityOff>
+        <material>Gazebo/Gray</material>
+    </gazebo>
+    
+    <gazebo reference="$(arg ns)front_right_wheel_link_l">
+	<mu1>0.5</mu1>
+        <mu2>0.5</mu2>
+        <selfCollide>false</selfCollide>
+        <turnGravityOff>false</turnGravityOff>
+        <material>Gazebo/Gray</material>
+    </gazebo>
+
+    <gazebo reference="$(arg ns)front_right_wheel_link_r">
+	<mu1>0.5</mu1>
+        <mu2>0.5</mu2>
+        <selfCollide>false</selfCollide>
+        <turnGravityOff>false</turnGravityOff>
+        <material>Gazebo/Gray</material>
+    </gazebo>
+
+ <gazebo reference="$(arg ns)LAnklePitch">
     <mu1>0.5</mu1>
     <mu2>0.5</mu2>
     <selfCollide>false</selfCollide>
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
-  <gazebo reference="l_ankle">
+  <gazebo reference="$(arg ns)l_ankle">
     <mu1>0.5</mu1>
     <mu2>0.5</mu2>
     <selfCollide>false</selfCollide>
@@ -336,37 +473,37 @@
     <maxVel>0.1</maxVel>
     <minDepth>0.003</minDepth>
   </gazebo>
-  <gazebo reference="RPelvis">
+  <gazebo reference="$(arg ns)RPelvis">
       <mu1>0.5</mu1>
       <mu2>0.5</mu2>
       <selfCollide>false</selfCollide>
       <turnGravityOff>false</turnGravityOff>
   </gazebo>
-  <gazebo reference="RHip">
+  <gazebo reference="$(arg ns)RHip">
       <mu1>0.5</mu1>
       <mu2>0.5</mu2>
       <selfCollide>false</selfCollide>
       <turnGravityOff>false</turnGravityOff>
   </gazebo>
-  <gazebo reference="RThigh">
+  <gazebo reference="$(arg ns)RThigh">
       <mu1>0.5</mu1>
       <mu2>0.5</mu2>
       <selfCollide>false</selfCollide>
       <turnGravityOff>false</turnGravityOff>
   </gazebo>
-  <gazebo reference="RTibia">
+  <gazebo reference="$(arg ns)RTibia">
       <mu1>0.5</mu1>
       <mu2>0.5</mu2>
       <selfCollide>false</selfCollide>
       <turnGravityOff>false</turnGravityOff>
   </gazebo>
- <gazebo reference="RAnklePitch">
+ <gazebo reference="$(arg ns)RAnklePitch">
     <mu1>0.5</mu1>
     <mu2>0.5</mu2>
     <selfCollide>false</selfCollide>
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
-  <gazebo reference="r_ankle">
+  <gazebo reference="$(arg ns)r_ankle">
     <mu1>0.5</mu1>
     <mu2>0.5</mu2>
     <selfCollide>false</selfCollide>
@@ -376,49 +513,49 @@
     <minDepth>0.003</minDepth>
   </gazebo>
 
-    <gazebo reference="RFinger11_link">
+    <gazebo reference="$(arg ns)RFinger11_link">
         <mu1>0.5</mu1>
         <mu2>0.5</mu2>
         <selfCollide>false</selfCollide>
         <turnGravityOff>false</turnGravityOff>
     </gazebo>
-    <gazebo reference="RFinger12_link">
+    <gazebo reference="$(arg ns)RFinger12_link">
         <mu1>0.5</mu1>
         <mu2>0.5</mu2>
         <selfCollide>false</selfCollide>
         <turnGravityOff>false</turnGravityOff>
     </gazebo>
-    <gazebo reference="RFinger13_link">
+    <gazebo reference="$(arg ns)RFinger13_link">
         <mu1>0.5</mu1>
         <mu2>0.5</mu2>
         <selfCollide>false</selfCollide>
         <turnGravityOff>false</turnGravityOff>
     </gazebo>
-    <gazebo reference="RFinger21_link">
+    <gazebo reference="$(arg ns)RFinger21_link">
         <mu1>0.5</mu1>
         <mu2>0.5</mu2>
         <selfCollide>false</selfCollide>
         <turnGravityOff>false</turnGravityOff>
     </gazebo>
-    <gazebo reference="RFinger22_link">
+    <gazebo reference="$(arg ns)RFinger22_link">
         <mu1>0.5</mu1>
         <mu2>0.5</mu2>
         <selfCollide>false</selfCollide>
         <turnGravityOff>false</turnGravityOff>
     </gazebo>
-    <gazebo reference="RFinger23_link">
+    <gazebo reference="$(arg ns)RFinger23_link">
         <mu1>0.5</mu1>
         <mu2>0.5</mu2>
         <selfCollide>false</selfCollide>
         <turnGravityOff>false</turnGravityOff>
     </gazebo>
-    <gazebo reference="RThumb1_link">
+    <gazebo reference="$(arg ns)RThumb1_link">
         <mu1>0.5</mu1>
         <mu2>0.5</mu2>
         <selfCollide>false</selfCollide>
         <turnGravityOff>false</turnGravityOff>
     </gazebo>
-    <gazebo reference="RThumb2_link">
+    <gazebo reference="$(arg ns)RThumb2_link">
         <mu1>0.5</mu1>
         <mu2>0.5</mu2>
         <selfCollide>false</selfCollide>
@@ -429,7 +566,63 @@
         RGB CAMERAS: Working
 -->
 
- <gazebo reference="CameraTop_frame">
+  <xacro:macro name="Cameras" params="ns position">
+
+	<plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+            <alwaysOn>true</alwaysOn>
+            <updateRate>5.0</updateRate>
+            <cameraName>camera_${position}</cameraName>
+            <imageTopicName>image_raw</imageTopicName>
+            <cameraInfoTopicName>camera_info</cameraInfoTopicName>
+            <frameName>${ns}Camera${position}_optical_frame</frameName>
+            <hackBaseline>0.07</hackBaseline>
+            <distortionK1>-0.0545211</distortionK1>
+            <distortionK2>0.06919734</distortionK2>
+            <distortionK3>-0.0241095</distortionK3>
+            <distortionT1>-0.0112245</distortionT1>
+            <distortionT2>0.0</distortionT2>
+        </plugin>
+
+  </xacro:macro>
+
+  <xacro:macro name="Kinect_Cameras" params="ns position" >
+
+	<plugin name="kinect_camera_controller" filename="libgazebo_ros_openni_kinect.so">
+            <alwaysOn>true</alwaysOn>
+            <updateRate>20.0</updateRate>
+            <cameraName>kinect_camera_${position}</cameraName>
+            <imageTopicName>kinect/image_raw</imageTopicName>
+            <cameraInfoTopicName>kinect/camera_info</cameraInfoTopicName>
+            <frameName>${ns}Camera${position}_optical_frame</frameName>
+            <depthImageTopicName>depth/image_raw</depthImageTopicName>
+            <depthImageInfoTopicName>depth/camera_info</depthImageInfoTopicName>
+            <pointCloudTopicName>depth/points</pointCloudTopicName>
+            <pointCloudCutoff>0.5</pointCloudCutoff>
+            <distortionK1>0.00000001</distortionK1>
+            <distortionK2>0.00000001</distortionK2>
+            <distortionK3>0.00000001</distortionK3>
+            <distortionT1>0.00000001</distortionT1>
+            <distortionT2>0.00000001</distortionT2>
+            <CxPrime>0</CxPrime>
+            <Cx>0</Cx>
+            <Cy>0</Cy>
+            <focalLength>0</focalLength>
+            <hackBaseline>0</hackBaseline>
+        </plugin>
+
+  </xacro:macro>
+
+
+  <xacro:macro name="Rplidar_Laser" params="ns">
+
+	<plugin name="gazebo_rplidar" filename="libgazebo_ros_laser.so">
+               <topicName>scan</topicName>
+               <frameName>${ns}Rplidar_frame</frameName>
+        </plugin>
+
+  </xacro:macro>
+
+ <gazebo reference="$(arg ns)CameraTop_frame">
     <sensor type="camera" name="CameraTop">
         <update_rate>5.0</update_rate>
         <camera name="camera_top">
@@ -440,35 +633,23 @@
                 <format>R8G8B8</format>
             </image>
             <clip>
-                <near>0.3</near>
+                <near>0.03</near>
                 <far>500</far>
             </clip>
-            <noise>
+	    <noise>
                 <type>gaussian</type>
                 <mean>0.0</mean>
                 <stddev>0.007</stddev>
             </noise>
         </camera>
-        <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
-            <alwaysOn>true</alwaysOn>
-            <updateRate>5.0</updateRate>
-            <cameraName>camera/top</cameraName>
-            <imageTopicName>image_raw</imageTopicName>
-            <cameraInfoTopicName>camera_info</cameraInfoTopicName>
-            <frameName>CameraTop_optical_frame</frameName>
-            <hackBaseline>0.07</hackBaseline>
-            <distortionK1>-0.0545211</distortionK1>
-            <distortionK2>0.06919734</distortionK2>
-            <distortionK3>-0.0241095</distortionK3>
-            <distortionT1>-0.0112245</distortionT1>
-            <distortionT2>0.0</distortionT2>
-        </plugin>
+        <xacro:Cameras ns="$(arg ns)" position="Top"/>
     </sensor>
-</gazebo>
+ </gazebo>
 
- <gazebo reference="CameraBottom_frame">
-    <sensor type="camera" name="CameraBottom">
-        <update_rate>5.0</update_rate>
+ <gazebo reference="$(arg ns)CameraBottom_frame">
+    <sensor type="depth" name="CameraBottom">
+	<always_on>true</always_on>
+        <update_rate>20.0</update_rate>
         <camera name="camera_bottom">
             <horizontal_fov>1.06290551</horizontal_fov>
             <image>
@@ -480,27 +661,38 @@
                 <near>0.05</near>
                 <far>500</far>
             </clip>
-            <noise>
-                <type>gaussian</type>
-                <mean>0.0</mean>
-                <stddev>0.007</stddev>
-            </noise>
         </camera>
-        <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
-            <alwaysOn>true</alwaysOn>
-            <updateRate>5.0</updateRate>
-            <cameraName>camera_bottom</cameraName>
-            <imageTopicName>image_raw</imageTopicName>
-            <cameraInfoTopicName>camera_info</cameraInfoTopicName>
-            <frameName>CameraBottom_optical_frame</frameName>
-            <hackBaseline>0.07</hackBaseline>
-            <distortionK1>-0.0648764</distortionK1>
-            <distortionK2>0.06125202</distortionK2>
-            <distortionK3>0.00382815</distortionK3>
-            <distortionT1>-0.00551104</distortionT1>
-            <distortionT2>0.0</distortionT2>
-        </plugin>
+        <xacro:Kinect_Cameras ns="$(arg ns)" position="Bottom"/>
     </sensor>
+</gazebo>
+
+<gazebo reference="$(arg ns)Rplidar_frame">
+            <sensor type="ray" name="rplidar">
+                <pose>0 0 0 0 0 0</pose>
+                <visualize>false</visualize>
+                <update_rate>5.5</update_rate>
+                <ray>
+                    <scan>
+                      <horizontal>
+                        <samples>360</samples>
+                        <resolution>1</resolution>
+                        <min_angle>-3</min_angle>
+                        <max_angle>3</max_angle>
+                      </horizontal>
+                    </scan>
+                    <range>
+                      <min>0.10</min>
+                      <max>6.0</max>
+                      <resolution>0.01</resolution>
+                    </range>
+                    <noise>
+                      <type>gaussian</type>
+                      <mean>0.0</mean>
+                      <stddev>0.01</stddev>
+                    </noise>
+                </ray>
+                <xacro:Rplidar_Laser ns="$(arg ns)"/>
+           </sensor>
 </gazebo>
 
 
@@ -574,7 +766,7 @@ libgazebo_ros_bumper.so bugged right now, waiting for new release
   </sensor>
 </gazebo>
 -->
-<gazebo reference="RFsrFL_frame">
+<gazebo reference="$(arg ns)RFsrFL_frame">
   <mu1>0.5</mu1>
   <mu2>0.5</mu2>
   <selfCollide>false</selfCollide>
@@ -598,7 +790,7 @@ libgazebo_ros_bumper.so bugged right now, waiting for new release
   </sensor>
 </gazebo>
 
-<gazebo reference="RFsrFR_frame">
+<gazebo reference="$(arg ns)RFsrFR_frame">
   <mu1>0.5</mu1>
   <mu2>0.5</mu2>
   <selfCollide>false</selfCollide>
@@ -622,7 +814,7 @@ libgazebo_ros_bumper.so bugged right now, waiting for new release
   </sensor>
 </gazebo>
 
-<gazebo reference="RFsrRL_frame">
+<gazebo reference="$(arg ns)RFsrRL_frame">
   <mu1>0.5</mu1>
   <mu2>0.5</mu2>
   <selfCollide>false</selfCollide>
@@ -646,7 +838,7 @@ libgazebo_ros_bumper.so bugged right now, waiting for new release
   </sensor>
 </gazebo>
 
-<gazebo reference="RFsrRR_frame">
+<gazebo reference="$(arg ns)RFsrRR_frame">
   <mu1>0.5</mu1>
   <mu2>0.5</mu2>
   <selfCollide>false</selfCollide>
@@ -670,7 +862,7 @@ libgazebo_ros_bumper.so bugged right now, waiting for new release
   </sensor>
 </gazebo>
 
-<gazebo reference="LFsrFL_frame">
+<gazebo reference="$(arg ns)LFsrFL_frame">
   <mu1>0.5</mu1>
   <mu2>0.5</mu2>
   <selfCollide>false</selfCollide>
@@ -694,7 +886,7 @@ libgazebo_ros_bumper.so bugged right now, waiting for new release
   </sensor>
 </gazebo>
 
-<gazebo reference="LFsrFR_frame">
+<gazebo reference="$(arg ns)LFsrFR_frame">
   <mu1>0.5</mu1>
   <mu2>0.5</mu2>
   <selfCollide>false</selfCollide>
@@ -718,7 +910,7 @@ libgazebo_ros_bumper.so bugged right now, waiting for new release
   </sensor>
 </gazebo>
 
-<gazebo reference="LFsrRL_frame">
+<gazebo reference="$(arg ns)LFsrRL_frame">
   <mu1>0.5</mu1>
   <mu2>0.5</mu2>
   <selfCollide>false</selfCollide>
@@ -742,7 +934,7 @@ libgazebo_ros_bumper.so bugged right now, waiting for new release
   </sensor>
 </gazebo>
 
-<gazebo reference="LFsrRR_frame">
+<gazebo reference="$(arg ns)LFsrRR_frame">
   <mu1>0.5</mu1>
   <mu2>0.5</mu2>
   <selfCollide>false</selfCollide>
@@ -768,7 +960,42 @@ libgazebo_ros_bumper.so bugged right now, waiting for new release
 <!--
     Sonars
 -->
-<gazebo reference="LSonar_frame">
+
+ <xacro:macro name="Left_Sonar" params="ns side" >
+
+    <plugin filename="libgazebo_ros_range.so" name="gazebo_ros_range">
+      <gaussianNoise>0.05</gaussianNoise>
+      <alwaysOn>true</alwaysOn>
+      <updateRate>5</updateRate>
+      <topicName>sonar_${side}</topicName>
+      <frameName>${ns}LSonar_frame</frameName>
+      <minRange>0.025</minRange>
+      <maxRange>2.55</maxRange>
+      <fov>0.1</fov>
+<!--      <fov>0.1</fov> -->
+      <radiation>infrared</radiation>
+    </plugin>
+
+  </xacro:macro>
+
+  <xacro:macro name="Right_Sonar" params="ns side" >
+
+    <plugin filename="libgazebo_ros_range.so" name="gazebo_ros_range">
+      <gaussianNoise>0.05</gaussianNoise>
+      <alwaysOn>true</alwaysOn>
+      <updateRate>5</updateRate>
+      <topicName>sonar_${side}</topicName>
+      <frameName>${ns}RSonar_frame</frameName>
+      <minRange>0.025</minRange>
+      <maxRange>2.55</maxRange>
+      <fov>0.1</fov>
+<!--      <fov>0.1</fov> -->
+      <radiation>infrared</radiation>
+    </plugin>
+
+  </xacro:macro>
+
+<gazebo reference="$(arg ns)LSonar_frame">
   <sensor type="ray" name="LSonar">
     <pose>0 0 0 0 0 0</pose>
     <update_rate>20</update_rate>
@@ -776,11 +1003,11 @@ libgazebo_ros_bumper.so bugged right now, waiting for new release
     <ray>
       <scan>
         <horizontal>
-          <samples>5</samples>
+          <samples>1</samples>
           <resolution>1</resolution>
 
-          <min_angle>-0.2617993877991494</min_angle>
-          <max_angle>0.2617993877991494</max_angle>
+          <min_angle>-1</min_angle>
+          <max_angle>1</max_angle>
 
 <!--
           <min_angle>-0.10</min_angle>
@@ -788,11 +1015,11 @@ libgazebo_ros_bumper.so bugged right now, waiting for new release
 -->
         </horizontal>
         <vertical>
-          <samples>5</samples>
+          <samples>1</samples>
           <resolution>1</resolution>
 
-          <min_angle>-0.13</min_angle>
-          <max_angle>0.13</max_angle>
+          <min_angle>-1</min_angle>
+          <max_angle>1</max_angle>
 
 <!--
           <min_angle>-0.2617993877991494</min_angle>
@@ -806,23 +1033,12 @@ libgazebo_ros_bumper.so bugged right now, waiting for new release
         <resolution>1</resolution>
       </range>
     </ray>
-    <plugin filename="libgazebo_ros_range.so" name="gazebo_ros_range">
-      <robotNamespace>nao_robot</robotNamespace>
-      <gaussianNoise>0.05</gaussianNoise>
-      <alwaysOn>true</alwaysOn>
-      <updateRate>20</updateRate>
-      <topicName>sonar_left</topicName>
-      <frameName>LSonar_frame</frameName>
-      <minRange>0.025</minRange>
-      <maxRange>2.55</maxRange>
-      <fov>0.5235987755982988</fov>
-<!--      <fov>0.1</fov> -->
-      <radiation>ultrasound</radiation>
-    </plugin>
+    
+    <xacro:Left_Sonar ns="$(arg ns)" side="left"/>
   </sensor>
 </gazebo>
 
-<gazebo reference="RSonar_frame">
+<gazebo reference="$(arg ns)RSonar_frame">
   <sensor type="ray" name="RSonar">
     <pose>0 0 0 0 0 0</pose>
     <update_rate>20</update_rate>
@@ -830,16 +1046,16 @@ libgazebo_ros_bumper.so bugged right now, waiting for new release
     <ray>
       <scan>
         <horizontal>
-          <samples>5</samples>
+          <samples>1</samples>
           <resolution>1</resolution>
-          <min_angle>-0.2617993877991494</min_angle>
-          <max_angle>0.2617993877991494</max_angle>
+          <min_angle>-1</min_angle>
+          <max_angle>1</max_angle>
         </horizontal>
         <vertical>
-          <samples>5</samples>
+          <samples>1</samples>
           <resolution>1</resolution>
-          <min_angle>-0.13</min_angle>
-          <max_angle>0.13</max_angle>
+          <min_angle>-1</min_angle>
+          <max_angle>1</max_angle>
         </vertical>
       </scan>
       <range>
@@ -848,18 +1064,7 @@ libgazebo_ros_bumper.so bugged right now, waiting for new release
         <resolution>1</resolution>
       </range>
     </ray>
-    <plugin filename="libgazebo_ros_range.so" name="gazebo_ros_range">
-      <robotNamespace>nao_robot</robotNamespace>
-      <gaussianNoise>0.05</gaussianNoise>
-      <alwaysOn>true</alwaysOn>
-      <updateRate>20</updateRate>
-      <topicName>sonar_right</topicName>
-      <frameName>RSonar_frame</frameName>
-      <minRange>0.025</minRange>
-      <maxRange>2.55</maxRange>
-      <fov>0.5235987755982988</fov>
-      <radiation>ultrasound</radiation>
-    </plugin>
+    <xacro:Right_Sonar ns="$(arg ns)" side="right"/>
   </sensor>
 </gazebo>
 

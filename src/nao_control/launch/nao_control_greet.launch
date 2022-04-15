@@ -1,0 +1,12 @@
+<launch>
+    <arg name="nao_1" default="nao_1" />
+    <arg name="nao_2" default="nao_2" />
+    <arg name="nao_3" default="nao_3" />
+    <arg name="nao_4" default="nao_4" />
+
+    <node pkg="nao_control" type="nao_control_greeting.py" name="$(arg nao_1)_control_greeting" args="$(arg nao_1)" />
+    <node pkg="nao_control" type="nao_control_greeting.py" name="$(arg nao_2)_control_greeting" args="$(arg nao_2)" />
+    <node pkg="nao_control" type="nao_control_greeting.py" name="$(arg nao_3)_control_greeting" args="$(arg nao_3)" />
+    <node pkg="nao_control" type="nao_control_greeting.py" name="$(arg nao_4)_control_greeting" args="$(arg nao_4)" />
+  
+</launch>

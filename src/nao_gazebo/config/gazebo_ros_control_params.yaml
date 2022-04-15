@@ -51,6 +51,21 @@
 
   RAnkleRoll: {p: 500.0, i: 0.0, d: 0.1}
 
+  left_wheel_joint_l: {p: 0.0, i: 0.0, d: 0.0}
+
+  left_wheel_joint_r: {p: 0.0, i: 0.0, d: 0.0}
+
+  right_wheel_joint_l: {p: 0.0, i: 0.0, d: 0.0}
+
+  right_wheel_joint_r: {p: 0.0, i: 0.0, d: 0.0}
+
+  front_left_wheel_joint_l: {p: 0.0, i: 0.0, d: 0.0}
+
+  front_left_wheel_joint_r: {p: 0.0, i: 0.0, d: 0.0}
+
+  front_right_wheel_joint_l: {p: 0.0, i: 0.0, d: 0.0}
+
+  front_right_wheel_joint_r: {p: 0.0, i: 0.0, d: 0.0}
 /nao_2/gazebo_ros_control/pid_gains:
   HeadYaw: {p: 1000.0, i: 100.0, d: 1.0}
 
@@ -103,6 +118,22 @@
   RAnklePitch: {p: 500.0, i: 0.0, d: 0.1}
 
   RAnkleRoll: {p: 500.0, i: 0.0, d: 0.1}
+
+  left_wheel_joint_l: {p: 0.0, i: 0.0, d: 0.0}
+
+  left_wheel_joint_r: {p: 0.0, i: 0.0, d: 0.0}
+
+  right_wheel_joint_l: {p: 0.0, i: 0.0, d: 0.0}
+
+  right_wheel_joint_r: {p: 0.0, i: 0.0, d: 0.0}
+
+  front_left_wheel_joint_l: {p: 0.0, i: 0.0, d: 0.0}
+
+  front_left_wheel_joint_r: {p: 0.0, i: 0.0, d: 0.0}
+
+  front_right_wheel_joint_l: {p: 0.0, i: 0.0, d: 0.0}
+
+  front_right_wheel_joint_r: {p: 0.0, i: 0.0, d: 0.0}
 
 /nao_3/gazebo_ros_control/pid_gains:
   HeadYaw: {p: 1000.0, i: 100.0, d: 1.0}
@@ -157,6 +188,22 @@
 
   RAnkleRoll: {p: 500.0, i: 0.0, d: 0.1}
 
+  left_wheel_joint_l: {p: 0.0, i: 0.0, d: 0.0}
+
+  left_wheel_joint_r: {p: 0.0, i: 0.0, d: 0.0}
+
+  right_wheel_joint_l: {p: 0.0, i: 0.0, d: 0.0}
+
+  right_wheel_joint_r: {p: 0.0, i: 0.0, d: 0.0}
+
+  front_left_wheel_joint_l: {p: 0.0, i: 0.0, d: 0.0}
+
+  front_left_wheel_joint_r: {p: 0.0, i: 0.0, d: 0.0}
+
+  front_right_wheel_joint_l: {p: 0.0, i: 0.0, d: 0.0}
+
+  front_right_wheel_joint_r: {p: 0.0, i: 0.0, d: 0.0}
+
 /nao_4/gazebo_ros_control/pid_gains:
   HeadYaw: {p: 1000.0, i: 100.0, d: 1.0}
 
@@ -209,6 +256,22 @@
   RAnklePitch: {p: 500.0, i: 0.0, d: 0.1}
 
   RAnkleRoll: {p: 500.0, i: 0.0, d: 0.1}
+
+  left_wheel_joint_l: {p: 0.0, i: 0.0, d: 0.0}
+
+  left_wheel_joint_r: {p: 0.0, i: 0.0, d: 0.0}
+
+  right_wheel_joint_l: {p: 0.0, i: 0.0, d: 0.0}
+
+  right_wheel_joint_r: {p: 0.0, i: 0.0, d: 0.0}
+
+  front_left_wheel_joint_l: {p: 0.0, i: 0.0, d: 0.0}
+
+  front_left_wheel_joint_r: {p: 0.0, i: 0.0, d: 0.0}
+
+  front_right_wheel_joint_l: {p: 0.0, i: 0.0, d: 0.0}
+
+  front_right_wheel_joint_r: {p: 0.0, i: 0.0, d: 0.0}
 
 /nao_5/gazebo_ros_control/pid_gains:
   HeadYaw: {p: 1000.0, i: 100.0, d: 1.0}
@@ -263,6 +326,22 @@
 
   RAnkleRoll: {p: 500.0, i: 0.0, d: 0.1}
 
+  left_wheel_joint_l: {p: 0.0, i: 0.0, d: 0.0}
+
+  left_wheel_joint_r: {p: 0.0, i: 0.0, d: 0.0}
+
+  right_wheel_joint_l: {p: 0.0, i: 0.0, d: 0.0}
+
+  right_wheel_joint_r: {p: 0.0, i: 0.0, d: 0.0}
+
+  front_left_wheel_joint_l: {p: 0.0, i: 0.0, d: 0.0}
+
+  front_left_wheel_joint_r: {p: 0.0, i: 0.0, d: 0.0}
+
+  front_right_wheel_joint_l: {p: 0.0, i: 0.0, d: 0.0}
+
+  front_right_wheel_joint_r: {p: 0.0, i: 0.0, d: 0.0}
+
 /nao_6/gazebo_ros_control/pid_gains:
   HeadYaw: {p: 1000.0, i: 100.0, d: 1.0}
 
@@ -315,6 +394,22 @@
   RAnklePitch: {p: 500.0, i: 0.0, d: 0.1}
 
   RAnkleRoll: {p: 500.0, i: 0.0, d: 0.1}
+
+  left_wheel_joint_l: {p: 0.0, i: 0.0, d: 0.0}
+
+  left_wheel_joint_r: {p: 0.0, i: 0.0, d: 0.0}
+
+  right_wheel_joint_l: {p: 0.0, i: 0.0, d: 0.0}
+
+  right_wheel_joint_r: {p: 0.0, i: 0.0, d: 0.0}
+
+  front_left_wheel_joint_l: {p: 0.0, i: 0.0, d: 0.0}
+
+  front_left_wheel_joint_r: {p: 0.0, i: 0.0, d: 0.0}
+
+  front_right_wheel_joint_l: {p: 0.0, i: 0.0, d: 0.0}
+
+  front_right_wheel_joint_r: {p: 0.0, i: 0.0, d: 0.0}
 
 /nao_7/gazebo_ros_control/pid_gains:
   HeadYaw: {p: 1000.0, i: 100.0, d: 1.0}
@@ -369,6 +464,22 @@
 
   RAnkleRoll: {p: 500.0, i: 0.0, d: 0.1}
 
+  left_wheel_joint_l: {p: 0.0, i: 0.0, d: 0.0}
+
+  left_wheel_joint_r: {p: 0.0, i: 0.0, d: 0.0}
+
+  right_wheel_joint_l: {p: 0.0, i: 0.0, d: 0.0}
+
+  right_wheel_joint_r: {p: 0.0, i: 0.0, d: 0.0}
+
+  front_left_wheel_joint_l: {p: 0.0, i: 0.0, d: 0.0}
+
+  front_left_wheel_joint_r: {p: 0.0, i: 0.0, d: 0.0}
+
+  front_right_wheel_joint_l: {p: 0.0, i: 0.0, d: 0.0}
+
+  front_right_wheel_joint_r: {p: 0.0, i: 0.0, d: 0.0}
+
 /nao_8/gazebo_ros_control/pid_gains:
   HeadYaw: {p: 1000.0, i: 100.0, d: 1.0}
 
@@ -421,6 +532,22 @@
   RAnklePitch: {p: 500.0, i: 0.0, d: 0.1}
 
   RAnkleRoll: {p: 500.0, i: 0.0, d: 0.1}
+
+  left_wheel_joint_l: {p: 0.0, i: 0.0, d: 0.0}
+
+  left_wheel_joint_r: {p: 0.0, i: 0.0, d: 0.0}
+
+  right_wheel_joint_l: {p: 0.0, i: 0.0, d: 0.0}
+
+  right_wheel_joint_r: {p: 0.0, i: 0.0, d: 0.0}
+
+  front_left_wheel_joint_l: {p: 0.0, i: 0.0, d: 0.0}
+
+  front_left_wheel_joint_r: {p: 0.0, i: 0.0, d: 0.0}
+
+  front_right_wheel_joint_l: {p: 0.0, i: 0.0, d: 0.0}
+
+  front_right_wheel_joint_r: {p: 0.0, i: 0.0, d: 0.0}
 
 # /gazebo_ros_control/pid_gains:
 #   HeadYaw: {p: 100.0, i: 0.0, d: 0.0}

@@ -132,6 +132,7 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/lucas/nao_soccer_ws/build/gtest/cmake_install.cmake")
   include("/home/lucas/nao_soccer_ws/build/nao_moveit_config/cmake_install.cmake")
+  include("/home/lucas/nao_soccer_ws/build/nao_navigation/cmake_install.cmake")
   include("/home/lucas/nao_soccer_ws/build/nao_gazebo/cmake_install.cmake")
   include("/home/lucas/nao_soccer_ws/build/nao_control/cmake_install.cmake")
   include("/home/lucas/nao_soccer_ws/build/nao_description/cmake_install.cmake")

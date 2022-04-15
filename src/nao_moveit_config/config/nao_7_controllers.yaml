@@ -1,0 +1,90 @@
+controller_manager_ns: controller_manager
+controller_list:
+  - name: Head_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: true
+    joints:
+      - nao_7/HeadYaw
+      - nao_7/HeadPitch
+  - name: LeftArm_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: true
+    joints:
+      - nao_7/LShoulderPitch
+      - nao_7/LShoulderRoll
+      - nao_7/LElbowYaw
+      - nao_7/LElbowRoll
+      - nao_7/LWristYaw
+  - name: RightArm_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: true
+    joints:
+      - nao_7/RShoulderPitch
+      - nao_7/RShoulderRoll
+      - nao_7/RElbowYaw
+      - nao_7/RElbowRoll
+      - nao_7/RWristYaw
+  - name: LeftHand_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: true
+    joints:
+      - nao_7/LHand
+  - name: RightHand_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: true
+    joints:
+      - nao_7/RHand
+  - name: Pelvis_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: true
+    joints:
+      - nao_7/LHipYawPitch
+  - name: LeftLeg_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: true
+    joints:
+      - nao_7/LHipRoll
+      - nao_7/LHipPitch
+      - nao_7/LKneePitch
+  - name: RightLeg_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: true
+    joints:
+      - nao_7/RHipRoll
+      - nao_7/RHipPitch
+      - nao_7/RKneePitch
+  - name: LeftAnkle_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: true
+    joints:
+      - nao_7/LAnklePitch
+  - name: RightAnkle_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: true
+    joints:
+      - nao_7/RAnklePitch
+  - name: LeftFoot_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: true
+    joints:
+      - nao_7/LAnkleRoll
+  - name: RightFoot_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: true
+    joints:
+      - nao_7/RAnkleRoll
+
+
+

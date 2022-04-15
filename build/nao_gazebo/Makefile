@@ -68,30 +68,6 @@ install/strip/fast: preinstall/fast
 	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip/fast
 
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
-
-# Special rule for the target install/local
-install/local/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local/fast
-
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install
-
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
-
 # Special rule for the target list_install_components
 list_install_components:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
@@ -113,17 +89,6 @@ rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
 # Special rule for the target test
 test:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
@@ -134,6 +99,41 @@ test:
 test/fast: test
 
 .PHONY : test/fast
+
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -168,34 +168,19 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-nao_gazebo/CMakeFiles/control_msgs_generate_messages_py.dir/rule:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/control_msgs_generate_messages_py.dir/rule
-.PHONY : nao_gazebo/CMakeFiles/control_msgs_generate_messages_py.dir/rule
+nao_gazebo/CMakeFiles/control_msgs_generate_messages_nodejs.dir/rule:
+	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/control_msgs_generate_messages_nodejs.dir/rule
+.PHONY : nao_gazebo/CMakeFiles/control_msgs_generate_messages_nodejs.dir/rule
 
 # Convenience name for target.
-control_msgs_generate_messages_py: nao_gazebo/CMakeFiles/control_msgs_generate_messages_py.dir/rule
+control_msgs_generate_messages_nodejs: nao_gazebo/CMakeFiles/control_msgs_generate_messages_nodejs.dir/rule
 
-.PHONY : control_msgs_generate_messages_py
+.PHONY : control_msgs_generate_messages_nodejs
 
 # fast build rule for target.
-control_msgs_generate_messages_py/fast:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/control_msgs_generate_messages_py.dir/build.make nao_gazebo/CMakeFiles/control_msgs_generate_messages_py.dir/build
-.PHONY : control_msgs_generate_messages_py/fast
-
-# Convenience name for target.
-nao_gazebo/CMakeFiles/control_msgs_generate_messages_lisp.dir/rule:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/control_msgs_generate_messages_lisp.dir/rule
-.PHONY : nao_gazebo/CMakeFiles/control_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-control_msgs_generate_messages_lisp: nao_gazebo/CMakeFiles/control_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : control_msgs_generate_messages_lisp
-
-# fast build rule for target.
-control_msgs_generate_messages_lisp/fast:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/control_msgs_generate_messages_lisp.dir/build.make nao_gazebo/CMakeFiles/control_msgs_generate_messages_lisp.dir/build
-.PHONY : control_msgs_generate_messages_lisp/fast
+control_msgs_generate_messages_nodejs/fast:
+	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/control_msgs_generate_messages_nodejs.dir/build.make nao_gazebo/CMakeFiles/control_msgs_generate_messages_nodejs.dir/build
+.PHONY : control_msgs_generate_messages_nodejs/fast
 
 # Convenience name for target.
 nao_gazebo/CMakeFiles/control_msgs_generate_messages_eus.dir/rule:
@@ -226,36 +211,6 @@ control_msgs_generate_messages_cpp: nao_gazebo/CMakeFiles/control_msgs_generate_
 control_msgs_generate_messages_cpp/fast:
 	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/control_msgs_generate_messages_cpp.dir/build.make nao_gazebo/CMakeFiles/control_msgs_generate_messages_cpp.dir/build
 .PHONY : control_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-nao_gazebo/CMakeFiles/control_toolbox_generate_messages_py.dir/rule:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/control_toolbox_generate_messages_py.dir/rule
-.PHONY : nao_gazebo/CMakeFiles/control_toolbox_generate_messages_py.dir/rule
-
-# Convenience name for target.
-control_toolbox_generate_messages_py: nao_gazebo/CMakeFiles/control_toolbox_generate_messages_py.dir/rule
-
-.PHONY : control_toolbox_generate_messages_py
-
-# fast build rule for target.
-control_toolbox_generate_messages_py/fast:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/control_toolbox_generate_messages_py.dir/build.make nao_gazebo/CMakeFiles/control_toolbox_generate_messages_py.dir/build
-.PHONY : control_toolbox_generate_messages_py/fast
-
-# Convenience name for target.
-nao_gazebo/CMakeFiles/control_toolbox_generate_messages_nodejs.dir/rule:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/control_toolbox_generate_messages_nodejs.dir/rule
-.PHONY : nao_gazebo/CMakeFiles/control_toolbox_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-control_toolbox_generate_messages_nodejs: nao_gazebo/CMakeFiles/control_toolbox_generate_messages_nodejs.dir/rule
-
-.PHONY : control_toolbox_generate_messages_nodejs
-
-# fast build rule for target.
-control_toolbox_generate_messages_nodejs/fast:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/control_toolbox_generate_messages_nodejs.dir/build.make nao_gazebo/CMakeFiles/control_toolbox_generate_messages_nodejs.dir/build
-.PHONY : control_toolbox_generate_messages_nodejs/fast
 
 # Convenience name for target.
 nao_gazebo/CMakeFiles/control_toolbox_generate_messages_lisp.dir/rule:
@@ -303,6 +258,51 @@ control_toolbox_generate_messages_cpp/fast:
 .PHONY : control_toolbox_generate_messages_cpp/fast
 
 # Convenience name for target.
+nao_gazebo/CMakeFiles/control_toolbox_gencfg.dir/rule:
+	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/control_toolbox_gencfg.dir/rule
+.PHONY : nao_gazebo/CMakeFiles/control_toolbox_gencfg.dir/rule
+
+# Convenience name for target.
+control_toolbox_gencfg: nao_gazebo/CMakeFiles/control_toolbox_gencfg.dir/rule
+
+.PHONY : control_toolbox_gencfg
+
+# fast build rule for target.
+control_toolbox_gencfg/fast:
+	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/control_toolbox_gencfg.dir/build.make nao_gazebo/CMakeFiles/control_toolbox_gencfg.dir/build
+.PHONY : control_toolbox_gencfg/fast
+
+# Convenience name for target.
+nao_gazebo/CMakeFiles/controller_manager_msgs_generate_messages_lisp.dir/rule:
+	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/controller_manager_msgs_generate_messages_lisp.dir/rule
+.PHONY : nao_gazebo/CMakeFiles/controller_manager_msgs_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+controller_manager_msgs_generate_messages_lisp: nao_gazebo/CMakeFiles/controller_manager_msgs_generate_messages_lisp.dir/rule
+
+.PHONY : controller_manager_msgs_generate_messages_lisp
+
+# fast build rule for target.
+controller_manager_msgs_generate_messages_lisp/fast:
+	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/controller_manager_msgs_generate_messages_lisp.dir/build.make nao_gazebo/CMakeFiles/controller_manager_msgs_generate_messages_lisp.dir/build
+.PHONY : controller_manager_msgs_generate_messages_lisp/fast
+
+# Convenience name for target.
+nao_gazebo/CMakeFiles/controller_manager_msgs_generate_messages_eus.dir/rule:
+	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/controller_manager_msgs_generate_messages_eus.dir/rule
+.PHONY : nao_gazebo/CMakeFiles/controller_manager_msgs_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+controller_manager_msgs_generate_messages_eus: nao_gazebo/CMakeFiles/controller_manager_msgs_generate_messages_eus.dir/rule
+
+.PHONY : controller_manager_msgs_generate_messages_eus
+
+# fast build rule for target.
+controller_manager_msgs_generate_messages_eus/fast:
+	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/controller_manager_msgs_generate_messages_eus.dir/build.make nao_gazebo/CMakeFiles/controller_manager_msgs_generate_messages_eus.dir/build
+.PHONY : controller_manager_msgs_generate_messages_eus/fast
+
+# Convenience name for target.
 nao_gazebo/CMakeFiles/controller_manager_msgs_generate_messages_nodejs.dir/rule:
 	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/controller_manager_msgs_generate_messages_nodejs.dir/rule
 .PHONY : nao_gazebo/CMakeFiles/controller_manager_msgs_generate_messages_nodejs.dir/rule
@@ -348,109 +348,34 @@ gazebo_ros_gencfg/fast:
 .PHONY : gazebo_ros_gencfg/fast
 
 # Convenience name for target.
-nao_gazebo/CMakeFiles/dynamic_reconfigure_generate_messages_py.dir/rule:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/dynamic_reconfigure_generate_messages_py.dir/rule
-.PHONY : nao_gazebo/CMakeFiles/dynamic_reconfigure_generate_messages_py.dir/rule
+nao_gazebo/CMakeFiles/control_msgs_generate_messages_lisp.dir/rule:
+	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/control_msgs_generate_messages_lisp.dir/rule
+.PHONY : nao_gazebo/CMakeFiles/control_msgs_generate_messages_lisp.dir/rule
 
 # Convenience name for target.
-dynamic_reconfigure_generate_messages_py: nao_gazebo/CMakeFiles/dynamic_reconfigure_generate_messages_py.dir/rule
+control_msgs_generate_messages_lisp: nao_gazebo/CMakeFiles/control_msgs_generate_messages_lisp.dir/rule
 
-.PHONY : dynamic_reconfigure_generate_messages_py
+.PHONY : control_msgs_generate_messages_lisp
 
 # fast build rule for target.
-dynamic_reconfigure_generate_messages_py/fast:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/dynamic_reconfigure_generate_messages_py.dir/build.make nao_gazebo/CMakeFiles/dynamic_reconfigure_generate_messages_py.dir/build
-.PHONY : dynamic_reconfigure_generate_messages_py/fast
+control_msgs_generate_messages_lisp/fast:
+	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/control_msgs_generate_messages_lisp.dir/build.make nao_gazebo/CMakeFiles/control_msgs_generate_messages_lisp.dir/build
+.PHONY : control_msgs_generate_messages_lisp/fast
 
 # Convenience name for target.
-nao_gazebo/CMakeFiles/dynamic_reconfigure_generate_messages_nodejs.dir/rule:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/dynamic_reconfigure_generate_messages_nodejs.dir/rule
-.PHONY : nao_gazebo/CMakeFiles/dynamic_reconfigure_generate_messages_nodejs.dir/rule
+nao_gazebo/CMakeFiles/dynamic_reconfigure_gencfg.dir/rule:
+	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/dynamic_reconfigure_gencfg.dir/rule
+.PHONY : nao_gazebo/CMakeFiles/dynamic_reconfigure_gencfg.dir/rule
 
 # Convenience name for target.
-dynamic_reconfigure_generate_messages_nodejs: nao_gazebo/CMakeFiles/dynamic_reconfigure_generate_messages_nodejs.dir/rule
+dynamic_reconfigure_gencfg: nao_gazebo/CMakeFiles/dynamic_reconfigure_gencfg.dir/rule
 
-.PHONY : dynamic_reconfigure_generate_messages_nodejs
+.PHONY : dynamic_reconfigure_gencfg
 
 # fast build rule for target.
-dynamic_reconfigure_generate_messages_nodejs/fast:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/dynamic_reconfigure_generate_messages_nodejs.dir/build.make nao_gazebo/CMakeFiles/dynamic_reconfigure_generate_messages_nodejs.dir/build
-.PHONY : dynamic_reconfigure_generate_messages_nodejs/fast
-
-# Convenience name for target.
-nao_gazebo/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
-.PHONY : nao_gazebo/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-geometry_msgs_generate_messages_eus: nao_gazebo/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
-
-.PHONY : geometry_msgs_generate_messages_eus
-
-# fast build rule for target.
-geometry_msgs_generate_messages_eus/fast:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build.make nao_gazebo/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build
-.PHONY : geometry_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-nao_gazebo/CMakeFiles/control_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/control_msgs_generate_messages_nodejs.dir/rule
-.PHONY : nao_gazebo/CMakeFiles/control_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-control_msgs_generate_messages_nodejs: nao_gazebo/CMakeFiles/control_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : control_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-control_msgs_generate_messages_nodejs/fast:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/control_msgs_generate_messages_nodejs.dir/build.make nao_gazebo/CMakeFiles/control_msgs_generate_messages_nodejs.dir/build
-.PHONY : control_msgs_generate_messages_nodejs/fast
-
-# Convenience name for target.
-nao_gazebo/CMakeFiles/roscpp_generate_messages_cpp.dir/rule:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
-.PHONY : nao_gazebo/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-roscpp_generate_messages_cpp: nao_gazebo/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
-
-.PHONY : roscpp_generate_messages_cpp
-
-# fast build rule for target.
-roscpp_generate_messages_cpp/fast:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make nao_gazebo/CMakeFiles/roscpp_generate_messages_cpp.dir/build
-.PHONY : roscpp_generate_messages_cpp/fast
-
-# Convenience name for target.
-nao_gazebo/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule
-.PHONY : nao_gazebo/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-sensor_msgs_generate_messages_nodejs: nao_gazebo/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : sensor_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-sensor_msgs_generate_messages_nodejs/fast:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build.make nao_gazebo/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build
-.PHONY : sensor_msgs_generate_messages_nodejs/fast
-
-# Convenience name for target.
-nao_gazebo/CMakeFiles/actionlib_generate_messages_cpp.dir/rule:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/actionlib_generate_messages_cpp.dir/rule
-.PHONY : nao_gazebo/CMakeFiles/actionlib_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-actionlib_generate_messages_cpp: nao_gazebo/CMakeFiles/actionlib_generate_messages_cpp.dir/rule
-
-.PHONY : actionlib_generate_messages_cpp
-
-# fast build rule for target.
-actionlib_generate_messages_cpp/fast:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/actionlib_generate_messages_cpp.dir/build.make nao_gazebo/CMakeFiles/actionlib_generate_messages_cpp.dir/build
-.PHONY : actionlib_generate_messages_cpp/fast
+dynamic_reconfigure_gencfg/fast:
+	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/dynamic_reconfigure_gencfg.dir/build.make nao_gazebo/CMakeFiles/dynamic_reconfigure_gencfg.dir/build
+.PHONY : dynamic_reconfigure_gencfg/fast
 
 # Convenience name for target.
 nao_gazebo/CMakeFiles/std_srvs_generate_messages_py.dir/rule:
@@ -468,484 +393,19 @@ std_srvs_generate_messages_py/fast:
 .PHONY : std_srvs_generate_messages_py/fast
 
 # Convenience name for target.
-nao_gazebo/CMakeFiles/std_srvs_generate_messages_cpp.dir/rule:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/std_srvs_generate_messages_cpp.dir/rule
-.PHONY : nao_gazebo/CMakeFiles/std_srvs_generate_messages_cpp.dir/rule
+nao_gazebo/CMakeFiles/controller_manager_msgs_generate_messages_py.dir/rule:
+	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/controller_manager_msgs_generate_messages_py.dir/rule
+.PHONY : nao_gazebo/CMakeFiles/controller_manager_msgs_generate_messages_py.dir/rule
 
 # Convenience name for target.
-std_srvs_generate_messages_cpp: nao_gazebo/CMakeFiles/std_srvs_generate_messages_cpp.dir/rule
+controller_manager_msgs_generate_messages_py: nao_gazebo/CMakeFiles/controller_manager_msgs_generate_messages_py.dir/rule
 
-.PHONY : std_srvs_generate_messages_cpp
+.PHONY : controller_manager_msgs_generate_messages_py
 
 # fast build rule for target.
-std_srvs_generate_messages_cpp/fast:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/std_srvs_generate_messages_cpp.dir/build.make nao_gazebo/CMakeFiles/std_srvs_generate_messages_cpp.dir/build
-.PHONY : std_srvs_generate_messages_cpp/fast
-
-# Convenience name for target.
-nao_gazebo/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
-.PHONY : nao_gazebo/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-geometry_msgs_generate_messages_py: nao_gazebo/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
-
-.PHONY : geometry_msgs_generate_messages_py
-
-# fast build rule for target.
-geometry_msgs_generate_messages_py/fast:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/geometry_msgs_generate_messages_py.dir/build.make nao_gazebo/CMakeFiles/geometry_msgs_generate_messages_py.dir/build
-.PHONY : geometry_msgs_generate_messages_py/fast
-
-# Convenience name for target.
-nao_gazebo/CMakeFiles/std_srvs_generate_messages_eus.dir/rule:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/std_srvs_generate_messages_eus.dir/rule
-.PHONY : nao_gazebo/CMakeFiles/std_srvs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-std_srvs_generate_messages_eus: nao_gazebo/CMakeFiles/std_srvs_generate_messages_eus.dir/rule
-
-.PHONY : std_srvs_generate_messages_eus
-
-# fast build rule for target.
-std_srvs_generate_messages_eus/fast:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/std_srvs_generate_messages_eus.dir/build.make nao_gazebo/CMakeFiles/std_srvs_generate_messages_eus.dir/build
-.PHONY : std_srvs_generate_messages_eus/fast
-
-# Convenience name for target.
-nao_gazebo/CMakeFiles/roscpp_generate_messages_lisp.dir/rule:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
-.PHONY : nao_gazebo/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-roscpp_generate_messages_lisp: nao_gazebo/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
-
-.PHONY : roscpp_generate_messages_lisp
-
-# fast build rule for target.
-roscpp_generate_messages_lisp/fast:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/roscpp_generate_messages_lisp.dir/build.make nao_gazebo/CMakeFiles/roscpp_generate_messages_lisp.dir/build
-.PHONY : roscpp_generate_messages_lisp/fast
-
-# Convenience name for target.
-nao_gazebo/CMakeFiles/gazebo_msgs_generate_messages_lisp.dir/rule:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/gazebo_msgs_generate_messages_lisp.dir/rule
-.PHONY : nao_gazebo/CMakeFiles/gazebo_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-gazebo_msgs_generate_messages_lisp: nao_gazebo/CMakeFiles/gazebo_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : gazebo_msgs_generate_messages_lisp
-
-# fast build rule for target.
-gazebo_msgs_generate_messages_lisp/fast:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/gazebo_msgs_generate_messages_lisp.dir/build.make nao_gazebo/CMakeFiles/gazebo_msgs_generate_messages_lisp.dir/build
-.PHONY : gazebo_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-nao_gazebo/CMakeFiles/bond_generate_messages_eus.dir/rule:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/bond_generate_messages_eus.dir/rule
-.PHONY : nao_gazebo/CMakeFiles/bond_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-bond_generate_messages_eus: nao_gazebo/CMakeFiles/bond_generate_messages_eus.dir/rule
-
-.PHONY : bond_generate_messages_eus
-
-# fast build rule for target.
-bond_generate_messages_eus/fast:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/bond_generate_messages_eus.dir/build.make nao_gazebo/CMakeFiles/bond_generate_messages_eus.dir/build
-.PHONY : bond_generate_messages_eus/fast
-
-# Convenience name for target.
-nao_gazebo/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
-.PHONY : nao_gazebo/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-geometry_msgs_generate_messages_nodejs: nao_gazebo/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : geometry_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-geometry_msgs_generate_messages_nodejs/fast:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build.make nao_gazebo/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build
-.PHONY : geometry_msgs_generate_messages_nodejs/fast
-
-# Convenience name for target.
-nao_gazebo/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
-.PHONY : nao_gazebo/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-geometry_msgs_generate_messages_lisp: nao_gazebo/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : geometry_msgs_generate_messages_lisp
-
-# fast build rule for target.
-geometry_msgs_generate_messages_lisp/fast:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build.make nao_gazebo/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build
-.PHONY : geometry_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-nao_gazebo/CMakeFiles/roscpp_generate_messages_py.dir/rule:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/roscpp_generate_messages_py.dir/rule
-.PHONY : nao_gazebo/CMakeFiles/roscpp_generate_messages_py.dir/rule
-
-# Convenience name for target.
-roscpp_generate_messages_py: nao_gazebo/CMakeFiles/roscpp_generate_messages_py.dir/rule
-
-.PHONY : roscpp_generate_messages_py
-
-# fast build rule for target.
-roscpp_generate_messages_py/fast:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/roscpp_generate_messages_py.dir/build.make nao_gazebo/CMakeFiles/roscpp_generate_messages_py.dir/build
-.PHONY : roscpp_generate_messages_py/fast
-
-# Convenience name for target.
-nao_gazebo/CMakeFiles/controller_manager_msgs_generate_messages_eus.dir/rule:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/controller_manager_msgs_generate_messages_eus.dir/rule
-.PHONY : nao_gazebo/CMakeFiles/controller_manager_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-controller_manager_msgs_generate_messages_eus: nao_gazebo/CMakeFiles/controller_manager_msgs_generate_messages_eus.dir/rule
-
-.PHONY : controller_manager_msgs_generate_messages_eus
-
-# fast build rule for target.
-controller_manager_msgs_generate_messages_eus/fast:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/controller_manager_msgs_generate_messages_eus.dir/build.make nao_gazebo/CMakeFiles/controller_manager_msgs_generate_messages_eus.dir/build
-.PHONY : controller_manager_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-nao_gazebo/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/rule:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/rule
-.PHONY : nao_gazebo/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-trajectory_msgs_generate_messages_eus: nao_gazebo/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/rule
-
-.PHONY : trajectory_msgs_generate_messages_eus
-
-# fast build rule for target.
-trajectory_msgs_generate_messages_eus/fast:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/build.make nao_gazebo/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/build
-.PHONY : trajectory_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-nao_gazebo/CMakeFiles/gazebo_msgs_generate_messages_py.dir/rule:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/gazebo_msgs_generate_messages_py.dir/rule
-.PHONY : nao_gazebo/CMakeFiles/gazebo_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-gazebo_msgs_generate_messages_py: nao_gazebo/CMakeFiles/gazebo_msgs_generate_messages_py.dir/rule
-
-.PHONY : gazebo_msgs_generate_messages_py
-
-# fast build rule for target.
-gazebo_msgs_generate_messages_py/fast:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/gazebo_msgs_generate_messages_py.dir/build.make nao_gazebo/CMakeFiles/gazebo_msgs_generate_messages_py.dir/build
-.PHONY : gazebo_msgs_generate_messages_py/fast
-
-# Convenience name for target.
-nao_gazebo/CMakeFiles/std_msgs_generate_messages_eus.dir/rule:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
-.PHONY : nao_gazebo/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-std_msgs_generate_messages_eus: nao_gazebo/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
-
-.PHONY : std_msgs_generate_messages_eus
-
-# fast build rule for target.
-std_msgs_generate_messages_eus/fast:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/std_msgs_generate_messages_eus.dir/build.make nao_gazebo/CMakeFiles/std_msgs_generate_messages_eus.dir/build
-.PHONY : std_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-nao_gazebo/CMakeFiles/trajectory_msgs_generate_messages_py.dir/rule:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/trajectory_msgs_generate_messages_py.dir/rule
-.PHONY : nao_gazebo/CMakeFiles/trajectory_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-trajectory_msgs_generate_messages_py: nao_gazebo/CMakeFiles/trajectory_msgs_generate_messages_py.dir/rule
-
-.PHONY : trajectory_msgs_generate_messages_py
-
-# fast build rule for target.
-trajectory_msgs_generate_messages_py/fast:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/trajectory_msgs_generate_messages_py.dir/build.make nao_gazebo/CMakeFiles/trajectory_msgs_generate_messages_py.dir/build
-.PHONY : trajectory_msgs_generate_messages_py/fast
-
-# Convenience name for target.
-nao_gazebo/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
-.PHONY : nao_gazebo/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-std_msgs_generate_messages_nodejs: nao_gazebo/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : std_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-std_msgs_generate_messages_nodejs/fast:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build.make nao_gazebo/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build
-.PHONY : std_msgs_generate_messages_nodejs/fast
-
-# Convenience name for target.
-nao_gazebo/CMakeFiles/dynamic_reconfigure_generate_messages_lisp.dir/rule:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/dynamic_reconfigure_generate_messages_lisp.dir/rule
-.PHONY : nao_gazebo/CMakeFiles/dynamic_reconfigure_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-dynamic_reconfigure_generate_messages_lisp: nao_gazebo/CMakeFiles/dynamic_reconfigure_generate_messages_lisp.dir/rule
-
-.PHONY : dynamic_reconfigure_generate_messages_lisp
-
-# fast build rule for target.
-dynamic_reconfigure_generate_messages_lisp/fast:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/dynamic_reconfigure_generate_messages_lisp.dir/build.make nao_gazebo/CMakeFiles/dynamic_reconfigure_generate_messages_lisp.dir/build
-.PHONY : dynamic_reconfigure_generate_messages_lisp/fast
-
-# Convenience name for target.
-nao_gazebo/CMakeFiles/gazebo_msgs_generate_messages_cpp.dir/rule:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/gazebo_msgs_generate_messages_cpp.dir/rule
-.PHONY : nao_gazebo/CMakeFiles/gazebo_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-gazebo_msgs_generate_messages_cpp: nao_gazebo/CMakeFiles/gazebo_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : gazebo_msgs_generate_messages_cpp
-
-# fast build rule for target.
-gazebo_msgs_generate_messages_cpp/fast:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/gazebo_msgs_generate_messages_cpp.dir/build.make nao_gazebo/CMakeFiles/gazebo_msgs_generate_messages_cpp.dir/build
-.PHONY : gazebo_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-nao_gazebo/CMakeFiles/bond_generate_messages_lisp.dir/rule:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/bond_generate_messages_lisp.dir/rule
-.PHONY : nao_gazebo/CMakeFiles/bond_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-bond_generate_messages_lisp: nao_gazebo/CMakeFiles/bond_generate_messages_lisp.dir/rule
-
-.PHONY : bond_generate_messages_lisp
-
-# fast build rule for target.
-bond_generate_messages_lisp/fast:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/bond_generate_messages_lisp.dir/build.make nao_gazebo/CMakeFiles/bond_generate_messages_lisp.dir/build
-.PHONY : bond_generate_messages_lisp/fast
-
-# Convenience name for target.
-nao_gazebo/CMakeFiles/gazebo_plugins_gencfg.dir/rule:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/gazebo_plugins_gencfg.dir/rule
-.PHONY : nao_gazebo/CMakeFiles/gazebo_plugins_gencfg.dir/rule
-
-# Convenience name for target.
-gazebo_plugins_gencfg: nao_gazebo/CMakeFiles/gazebo_plugins_gencfg.dir/rule
-
-.PHONY : gazebo_plugins_gencfg
-
-# fast build rule for target.
-gazebo_plugins_gencfg/fast:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/gazebo_plugins_gencfg.dir/build.make nao_gazebo/CMakeFiles/gazebo_plugins_gencfg.dir/build
-.PHONY : gazebo_plugins_gencfg/fast
-
-# Convenience name for target.
-nao_gazebo/CMakeFiles/std_srvs_generate_messages_nodejs.dir/rule:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/std_srvs_generate_messages_nodejs.dir/rule
-.PHONY : nao_gazebo/CMakeFiles/std_srvs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-std_srvs_generate_messages_nodejs: nao_gazebo/CMakeFiles/std_srvs_generate_messages_nodejs.dir/rule
-
-.PHONY : std_srvs_generate_messages_nodejs
-
-# fast build rule for target.
-std_srvs_generate_messages_nodejs/fast:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/std_srvs_generate_messages_nodejs.dir/build.make nao_gazebo/CMakeFiles/std_srvs_generate_messages_nodejs.dir/build
-.PHONY : std_srvs_generate_messages_nodejs/fast
-
-# Convenience name for target.
-nao_gazebo/CMakeFiles/nodelet_generate_messages_cpp.dir/rule:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/nodelet_generate_messages_cpp.dir/rule
-.PHONY : nao_gazebo/CMakeFiles/nodelet_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-nodelet_generate_messages_cpp: nao_gazebo/CMakeFiles/nodelet_generate_messages_cpp.dir/rule
-
-.PHONY : nodelet_generate_messages_cpp
-
-# fast build rule for target.
-nodelet_generate_messages_cpp/fast:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/nodelet_generate_messages_cpp.dir/build.make nao_gazebo/CMakeFiles/nodelet_generate_messages_cpp.dir/build
-.PHONY : nodelet_generate_messages_cpp/fast
-
-# Convenience name for target.
-nao_gazebo/CMakeFiles/bond_generate_messages_py.dir/rule:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/bond_generate_messages_py.dir/rule
-.PHONY : nao_gazebo/CMakeFiles/bond_generate_messages_py.dir/rule
-
-# Convenience name for target.
-bond_generate_messages_py: nao_gazebo/CMakeFiles/bond_generate_messages_py.dir/rule
-
-.PHONY : bond_generate_messages_py
-
-# fast build rule for target.
-bond_generate_messages_py/fast:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/bond_generate_messages_py.dir/build.make nao_gazebo/CMakeFiles/bond_generate_messages_py.dir/build
-.PHONY : bond_generate_messages_py/fast
-
-# Convenience name for target.
-nao_gazebo/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
-.PHONY : nao_gazebo/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-geometry_msgs_generate_messages_cpp: nao_gazebo/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : geometry_msgs_generate_messages_cpp
-
-# fast build rule for target.
-geometry_msgs_generate_messages_cpp/fast:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build.make nao_gazebo/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build
-.PHONY : geometry_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-nao_gazebo/CMakeFiles/actionlib_generate_messages_lisp.dir/rule:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/actionlib_generate_messages_lisp.dir/rule
-.PHONY : nao_gazebo/CMakeFiles/actionlib_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-actionlib_generate_messages_lisp: nao_gazebo/CMakeFiles/actionlib_generate_messages_lisp.dir/rule
-
-.PHONY : actionlib_generate_messages_lisp
-
-# fast build rule for target.
-actionlib_generate_messages_lisp/fast:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/actionlib_generate_messages_lisp.dir/build.make nao_gazebo/CMakeFiles/actionlib_generate_messages_lisp.dir/build
-.PHONY : actionlib_generate_messages_lisp/fast
-
-# Convenience name for target.
-nao_gazebo/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
-.PHONY : nao_gazebo/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-sensor_msgs_generate_messages_eus: nao_gazebo/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
-
-.PHONY : sensor_msgs_generate_messages_eus
-
-# fast build rule for target.
-sensor_msgs_generate_messages_eus/fast:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build.make nao_gazebo/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build
-.PHONY : sensor_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-nao_gazebo/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
-.PHONY : nao_gazebo/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-sensor_msgs_generate_messages_cpp: nao_gazebo/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : sensor_msgs_generate_messages_cpp
-
-# fast build rule for target.
-sensor_msgs_generate_messages_cpp/fast:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build.make nao_gazebo/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build
-.PHONY : sensor_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-nao_gazebo/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
-.PHONY : nao_gazebo/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-roscpp_generate_messages_nodejs: nao_gazebo/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
-
-.PHONY : roscpp_generate_messages_nodejs
-
-# fast build rule for target.
-roscpp_generate_messages_nodejs/fast:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/roscpp_generate_messages_nodejs.dir/build.make nao_gazebo/CMakeFiles/roscpp_generate_messages_nodejs.dir/build
-.PHONY : roscpp_generate_messages_nodejs/fast
-
-# Convenience name for target.
-nao_gazebo/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
-.PHONY : nao_gazebo/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-std_msgs_generate_messages_lisp: nao_gazebo/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : std_msgs_generate_messages_lisp
-
-# fast build rule for target.
-std_msgs_generate_messages_lisp/fast:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make nao_gazebo/CMakeFiles/std_msgs_generate_messages_lisp.dir/build
-.PHONY : std_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-nao_gazebo/CMakeFiles/gazebo_msgs_generate_messages_eus.dir/rule:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/gazebo_msgs_generate_messages_eus.dir/rule
-.PHONY : nao_gazebo/CMakeFiles/gazebo_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-gazebo_msgs_generate_messages_eus: nao_gazebo/CMakeFiles/gazebo_msgs_generate_messages_eus.dir/rule
-
-.PHONY : gazebo_msgs_generate_messages_eus
-
-# fast build rule for target.
-gazebo_msgs_generate_messages_eus/fast:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/gazebo_msgs_generate_messages_eus.dir/build.make nao_gazebo/CMakeFiles/gazebo_msgs_generate_messages_eus.dir/build
-.PHONY : gazebo_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-nao_gazebo/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
-.PHONY : nao_gazebo/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-sensor_msgs_generate_messages_lisp: nao_gazebo/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : sensor_msgs_generate_messages_lisp
-
-# fast build rule for target.
-sensor_msgs_generate_messages_lisp/fast:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build.make nao_gazebo/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build
-.PHONY : sensor_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-nao_gazebo/CMakeFiles/nav_msgs_generate_messages_cpp.dir/rule:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/nav_msgs_generate_messages_cpp.dir/rule
-.PHONY : nao_gazebo/CMakeFiles/nav_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-nav_msgs_generate_messages_cpp: nao_gazebo/CMakeFiles/nav_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : nav_msgs_generate_messages_cpp
-
-# fast build rule for target.
-nav_msgs_generate_messages_cpp/fast:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/nav_msgs_generate_messages_cpp.dir/build.make nao_gazebo/CMakeFiles/nav_msgs_generate_messages_cpp.dir/build
-.PHONY : nav_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-nao_gazebo/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
-.PHONY : nao_gazebo/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-std_msgs_generate_messages_cpp: nao_gazebo/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : std_msgs_generate_messages_cpp
-
-# fast build rule for target.
-std_msgs_generate_messages_cpp/fast:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/std_msgs_generate_messages_cpp.dir/build.make nao_gazebo/CMakeFiles/std_msgs_generate_messages_cpp.dir/build
-.PHONY : std_msgs_generate_messages_cpp/fast
+controller_manager_msgs_generate_messages_py/fast:
+	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/controller_manager_msgs_generate_messages_py.dir/build.make nao_gazebo/CMakeFiles/controller_manager_msgs_generate_messages_py.dir/build
+.PHONY : controller_manager_msgs_generate_messages_py/fast
 
 # Convenience name for target.
 nao_gazebo/CMakeFiles/std_srvs_generate_messages_lisp.dir/rule:
@@ -963,34 +423,94 @@ std_srvs_generate_messages_lisp/fast:
 .PHONY : std_srvs_generate_messages_lisp/fast
 
 # Convenience name for target.
-nao_gazebo/CMakeFiles/control_toolbox_gencfg.dir/rule:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/control_toolbox_gencfg.dir/rule
-.PHONY : nao_gazebo/CMakeFiles/control_toolbox_gencfg.dir/rule
+nao_gazebo/CMakeFiles/bond_generate_messages_cpp.dir/rule:
+	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/bond_generate_messages_cpp.dir/rule
+.PHONY : nao_gazebo/CMakeFiles/bond_generate_messages_cpp.dir/rule
 
 # Convenience name for target.
-control_toolbox_gencfg: nao_gazebo/CMakeFiles/control_toolbox_gencfg.dir/rule
+bond_generate_messages_cpp: nao_gazebo/CMakeFiles/bond_generate_messages_cpp.dir/rule
 
-.PHONY : control_toolbox_gencfg
+.PHONY : bond_generate_messages_cpp
 
 # fast build rule for target.
-control_toolbox_gencfg/fast:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/control_toolbox_gencfg.dir/build.make nao_gazebo/CMakeFiles/control_toolbox_gencfg.dir/build
-.PHONY : control_toolbox_gencfg/fast
+bond_generate_messages_cpp/fast:
+	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/bond_generate_messages_cpp.dir/build.make nao_gazebo/CMakeFiles/bond_generate_messages_cpp.dir/build
+.PHONY : bond_generate_messages_cpp/fast
 
 # Convenience name for target.
-nao_gazebo/CMakeFiles/std_msgs_generate_messages_py.dir/rule:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/std_msgs_generate_messages_py.dir/rule
-.PHONY : nao_gazebo/CMakeFiles/std_msgs_generate_messages_py.dir/rule
+nao_gazebo/CMakeFiles/nav_msgs_generate_messages_py.dir/rule:
+	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/nav_msgs_generate_messages_py.dir/rule
+.PHONY : nao_gazebo/CMakeFiles/nav_msgs_generate_messages_py.dir/rule
 
 # Convenience name for target.
-std_msgs_generate_messages_py: nao_gazebo/CMakeFiles/std_msgs_generate_messages_py.dir/rule
+nav_msgs_generate_messages_py: nao_gazebo/CMakeFiles/nav_msgs_generate_messages_py.dir/rule
 
-.PHONY : std_msgs_generate_messages_py
+.PHONY : nav_msgs_generate_messages_py
 
 # fast build rule for target.
-std_msgs_generate_messages_py/fast:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/std_msgs_generate_messages_py.dir/build.make nao_gazebo/CMakeFiles/std_msgs_generate_messages_py.dir/build
-.PHONY : std_msgs_generate_messages_py/fast
+nav_msgs_generate_messages_py/fast:
+	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/nav_msgs_generate_messages_py.dir/build.make nao_gazebo/CMakeFiles/nav_msgs_generate_messages_py.dir/build
+.PHONY : nav_msgs_generate_messages_py/fast
+
+# Convenience name for target.
+nao_gazebo/CMakeFiles/std_srvs_generate_messages_eus.dir/rule:
+	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/std_srvs_generate_messages_eus.dir/rule
+.PHONY : nao_gazebo/CMakeFiles/std_srvs_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+std_srvs_generate_messages_eus: nao_gazebo/CMakeFiles/std_srvs_generate_messages_eus.dir/rule
+
+.PHONY : std_srvs_generate_messages_eus
+
+# fast build rule for target.
+std_srvs_generate_messages_eus/fast:
+	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/std_srvs_generate_messages_eus.dir/build.make nao_gazebo/CMakeFiles/std_srvs_generate_messages_eus.dir/build
+.PHONY : std_srvs_generate_messages_eus/fast
+
+# Convenience name for target.
+nao_gazebo/CMakeFiles/std_srvs_generate_messages_cpp.dir/rule:
+	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/std_srvs_generate_messages_cpp.dir/rule
+.PHONY : nao_gazebo/CMakeFiles/std_srvs_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+std_srvs_generate_messages_cpp: nao_gazebo/CMakeFiles/std_srvs_generate_messages_cpp.dir/rule
+
+.PHONY : std_srvs_generate_messages_cpp
+
+# fast build rule for target.
+std_srvs_generate_messages_cpp/fast:
+	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/std_srvs_generate_messages_cpp.dir/build.make nao_gazebo/CMakeFiles/std_srvs_generate_messages_cpp.dir/build
+.PHONY : std_srvs_generate_messages_cpp/fast
+
+# Convenience name for target.
+nao_gazebo/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/rule:
+	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/rule
+.PHONY : nao_gazebo/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+trajectory_msgs_generate_messages_nodejs: nao_gazebo/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/rule
+
+.PHONY : trajectory_msgs_generate_messages_nodejs
+
+# fast build rule for target.
+trajectory_msgs_generate_messages_nodejs/fast:
+	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/build.make nao_gazebo/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/build
+.PHONY : trajectory_msgs_generate_messages_nodejs/fast
+
+# Convenience name for target.
+nao_gazebo/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/rule:
+	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/rule
+.PHONY : nao_gazebo/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+trajectory_msgs_generate_messages_eus: nao_gazebo/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/rule
+
+.PHONY : trajectory_msgs_generate_messages_eus
+
+# fast build rule for target.
+trajectory_msgs_generate_messages_eus/fast:
+	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/build.make nao_gazebo/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/build
+.PHONY : trajectory_msgs_generate_messages_eus/fast
 
 # Convenience name for target.
 nao_gazebo/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/rule:
@@ -1023,244 +543,79 @@ nodelet_generate_messages_py/fast:
 .PHONY : nodelet_generate_messages_py/fast
 
 # Convenience name for target.
-nao_gazebo/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
-.PHONY : nao_gazebo/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
+nao_gazebo/CMakeFiles/control_toolbox_generate_messages_py.dir/rule:
+	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/control_toolbox_generate_messages_py.dir/rule
+.PHONY : nao_gazebo/CMakeFiles/control_toolbox_generate_messages_py.dir/rule
 
 # Convenience name for target.
-sensor_msgs_generate_messages_py: nao_gazebo/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
+control_toolbox_generate_messages_py: nao_gazebo/CMakeFiles/control_toolbox_generate_messages_py.dir/rule
 
-.PHONY : sensor_msgs_generate_messages_py
+.PHONY : control_toolbox_generate_messages_py
 
 # fast build rule for target.
-sensor_msgs_generate_messages_py/fast:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/sensor_msgs_generate_messages_py.dir/build.make nao_gazebo/CMakeFiles/sensor_msgs_generate_messages_py.dir/build
-.PHONY : sensor_msgs_generate_messages_py/fast
+control_toolbox_generate_messages_py/fast:
+	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/control_toolbox_generate_messages_py.dir/build.make nao_gazebo/CMakeFiles/control_toolbox_generate_messages_py.dir/build
+.PHONY : control_toolbox_generate_messages_py/fast
 
 # Convenience name for target.
-nao_gazebo/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
-.PHONY : nao_gazebo/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
+nao_gazebo/CMakeFiles/bond_generate_messages_nodejs.dir/rule:
+	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/bond_generate_messages_nodejs.dir/rule
+.PHONY : nao_gazebo/CMakeFiles/bond_generate_messages_nodejs.dir/rule
 
 # Convenience name for target.
-rosgraph_msgs_generate_messages_cpp: nao_gazebo/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
+bond_generate_messages_nodejs: nao_gazebo/CMakeFiles/bond_generate_messages_nodejs.dir/rule
 
-.PHONY : rosgraph_msgs_generate_messages_cpp
+.PHONY : bond_generate_messages_nodejs
 
 # fast build rule for target.
-rosgraph_msgs_generate_messages_cpp/fast:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build.make nao_gazebo/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build
-.PHONY : rosgraph_msgs_generate_messages_cpp/fast
+bond_generate_messages_nodejs/fast:
+	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/bond_generate_messages_nodejs.dir/build.make nao_gazebo/CMakeFiles/bond_generate_messages_nodejs.dir/build
+.PHONY : bond_generate_messages_nodejs/fast
 
 # Convenience name for target.
-nao_gazebo/CMakeFiles/tf_generate_messages_py.dir/rule:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/tf_generate_messages_py.dir/rule
-.PHONY : nao_gazebo/CMakeFiles/tf_generate_messages_py.dir/rule
+nao_gazebo/CMakeFiles/dynamic_reconfigure_generate_messages_lisp.dir/rule:
+	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/dynamic_reconfigure_generate_messages_lisp.dir/rule
+.PHONY : nao_gazebo/CMakeFiles/dynamic_reconfigure_generate_messages_lisp.dir/rule
 
 # Convenience name for target.
-tf_generate_messages_py: nao_gazebo/CMakeFiles/tf_generate_messages_py.dir/rule
+dynamic_reconfigure_generate_messages_lisp: nao_gazebo/CMakeFiles/dynamic_reconfigure_generate_messages_lisp.dir/rule
 
-.PHONY : tf_generate_messages_py
+.PHONY : dynamic_reconfigure_generate_messages_lisp
 
 # fast build rule for target.
-tf_generate_messages_py/fast:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/tf_generate_messages_py.dir/build.make nao_gazebo/CMakeFiles/tf_generate_messages_py.dir/build
-.PHONY : tf_generate_messages_py/fast
+dynamic_reconfigure_generate_messages_lisp/fast:
+	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/dynamic_reconfigure_generate_messages_lisp.dir/build.make nao_gazebo/CMakeFiles/dynamic_reconfigure_generate_messages_lisp.dir/build
+.PHONY : dynamic_reconfigure_generate_messages_lisp/fast
 
 # Convenience name for target.
-nao_gazebo/CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/rule:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/rule
-.PHONY : nao_gazebo/CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/rule
+nao_gazebo/CMakeFiles/nav_msgs_generate_messages_cpp.dir/rule:
+	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/nav_msgs_generate_messages_cpp.dir/rule
+.PHONY : nao_gazebo/CMakeFiles/nav_msgs_generate_messages_cpp.dir/rule
 
 # Convenience name for target.
-dynamic_reconfigure_generate_messages_cpp: nao_gazebo/CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/rule
+nav_msgs_generate_messages_cpp: nao_gazebo/CMakeFiles/nav_msgs_generate_messages_cpp.dir/rule
 
-.PHONY : dynamic_reconfigure_generate_messages_cpp
+.PHONY : nav_msgs_generate_messages_cpp
 
 # fast build rule for target.
-dynamic_reconfigure_generate_messages_cpp/fast:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/build.make nao_gazebo/CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/build
-.PHONY : dynamic_reconfigure_generate_messages_cpp/fast
+nav_msgs_generate_messages_cpp/fast:
+	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/nav_msgs_generate_messages_cpp.dir/build.make nao_gazebo/CMakeFiles/nav_msgs_generate_messages_cpp.dir/build
+.PHONY : nav_msgs_generate_messages_cpp/fast
 
 # Convenience name for target.
-nao_gazebo/CMakeFiles/gazebo_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/gazebo_msgs_generate_messages_nodejs.dir/rule
-.PHONY : nao_gazebo/CMakeFiles/gazebo_msgs_generate_messages_nodejs.dir/rule
+nao_gazebo/CMakeFiles/gazebo_msgs_generate_messages_eus.dir/rule:
+	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/gazebo_msgs_generate_messages_eus.dir/rule
+.PHONY : nao_gazebo/CMakeFiles/gazebo_msgs_generate_messages_eus.dir/rule
 
 # Convenience name for target.
-gazebo_msgs_generate_messages_nodejs: nao_gazebo/CMakeFiles/gazebo_msgs_generate_messages_nodejs.dir/rule
+gazebo_msgs_generate_messages_eus: nao_gazebo/CMakeFiles/gazebo_msgs_generate_messages_eus.dir/rule
 
-.PHONY : gazebo_msgs_generate_messages_nodejs
+.PHONY : gazebo_msgs_generate_messages_eus
 
 # fast build rule for target.
-gazebo_msgs_generate_messages_nodejs/fast:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/gazebo_msgs_generate_messages_nodejs.dir/build.make nao_gazebo/CMakeFiles/gazebo_msgs_generate_messages_nodejs.dir/build
-.PHONY : gazebo_msgs_generate_messages_nodejs/fast
-
-# Convenience name for target.
-nao_gazebo/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
-.PHONY : nao_gazebo/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-rosgraph_msgs_generate_messages_eus: nao_gazebo/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
-
-.PHONY : rosgraph_msgs_generate_messages_eus
-
-# fast build rule for target.
-rosgraph_msgs_generate_messages_eus/fast:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build.make nao_gazebo/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build
-.PHONY : rosgraph_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-nao_gazebo/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
-.PHONY : nao_gazebo/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-rosgraph_msgs_generate_messages_lisp: nao_gazebo/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : rosgraph_msgs_generate_messages_lisp
-
-# fast build rule for target.
-rosgraph_msgs_generate_messages_lisp/fast:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build.make nao_gazebo/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build
-.PHONY : rosgraph_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-nao_gazebo/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
-.PHONY : nao_gazebo/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-rosgraph_msgs_generate_messages_nodejs: nao_gazebo/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : rosgraph_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-rosgraph_msgs_generate_messages_nodejs/fast:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build.make nao_gazebo/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build
-.PHONY : rosgraph_msgs_generate_messages_nodejs/fast
-
-# Convenience name for target.
-nao_gazebo/CMakeFiles/controller_manager_msgs_generate_messages_lisp.dir/rule:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/controller_manager_msgs_generate_messages_lisp.dir/rule
-.PHONY : nao_gazebo/CMakeFiles/controller_manager_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-controller_manager_msgs_generate_messages_lisp: nao_gazebo/CMakeFiles/controller_manager_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : controller_manager_msgs_generate_messages_lisp
-
-# fast build rule for target.
-controller_manager_msgs_generate_messages_lisp/fast:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/controller_manager_msgs_generate_messages_lisp.dir/build.make nao_gazebo/CMakeFiles/controller_manager_msgs_generate_messages_lisp.dir/build
-.PHONY : controller_manager_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-nao_gazebo/CMakeFiles/nodelet_generate_messages_eus.dir/rule:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/nodelet_generate_messages_eus.dir/rule
-.PHONY : nao_gazebo/CMakeFiles/nodelet_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-nodelet_generate_messages_eus: nao_gazebo/CMakeFiles/nodelet_generate_messages_eus.dir/rule
-
-.PHONY : nodelet_generate_messages_eus
-
-# fast build rule for target.
-nodelet_generate_messages_eus/fast:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/nodelet_generate_messages_eus.dir/build.make nao_gazebo/CMakeFiles/nodelet_generate_messages_eus.dir/build
-.PHONY : nodelet_generate_messages_eus/fast
-
-# Convenience name for target.
-nao_gazebo/CMakeFiles/controller_manager_msgs_generate_messages_py.dir/rule:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/controller_manager_msgs_generate_messages_py.dir/rule
-.PHONY : nao_gazebo/CMakeFiles/controller_manager_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-controller_manager_msgs_generate_messages_py: nao_gazebo/CMakeFiles/controller_manager_msgs_generate_messages_py.dir/rule
-
-.PHONY : controller_manager_msgs_generate_messages_py
-
-# fast build rule for target.
-controller_manager_msgs_generate_messages_py/fast:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/controller_manager_msgs_generate_messages_py.dir/build.make nao_gazebo/CMakeFiles/controller_manager_msgs_generate_messages_py.dir/build
-.PHONY : controller_manager_msgs_generate_messages_py/fast
-
-# Convenience name for target.
-nao_gazebo/CMakeFiles/nodelet_generate_messages_lisp.dir/rule:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/nodelet_generate_messages_lisp.dir/rule
-.PHONY : nao_gazebo/CMakeFiles/nodelet_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-nodelet_generate_messages_lisp: nao_gazebo/CMakeFiles/nodelet_generate_messages_lisp.dir/rule
-
-.PHONY : nodelet_generate_messages_lisp
-
-# fast build rule for target.
-nodelet_generate_messages_lisp/fast:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/nodelet_generate_messages_lisp.dir/build.make nao_gazebo/CMakeFiles/nodelet_generate_messages_lisp.dir/build
-.PHONY : nodelet_generate_messages_lisp/fast
-
-# Convenience name for target.
-nao_gazebo/CMakeFiles/roscpp_generate_messages_eus.dir/rule:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/roscpp_generate_messages_eus.dir/rule
-.PHONY : nao_gazebo/CMakeFiles/roscpp_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-roscpp_generate_messages_eus: nao_gazebo/CMakeFiles/roscpp_generate_messages_eus.dir/rule
-
-.PHONY : roscpp_generate_messages_eus
-
-# fast build rule for target.
-roscpp_generate_messages_eus/fast:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/roscpp_generate_messages_eus.dir/build.make nao_gazebo/CMakeFiles/roscpp_generate_messages_eus.dir/build
-.PHONY : roscpp_generate_messages_eus/fast
-
-# Convenience name for target.
-nao_gazebo/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
-.PHONY : nao_gazebo/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-rosgraph_msgs_generate_messages_py: nao_gazebo/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
-
-.PHONY : rosgraph_msgs_generate_messages_py
-
-# fast build rule for target.
-rosgraph_msgs_generate_messages_py/fast:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build.make nao_gazebo/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build
-.PHONY : rosgraph_msgs_generate_messages_py/fast
-
-# Convenience name for target.
-nao_gazebo/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/rule:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/rule
-.PHONY : nao_gazebo/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-actionlib_msgs_generate_messages_eus: nao_gazebo/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/rule
-
-.PHONY : actionlib_msgs_generate_messages_eus
-
-# fast build rule for target.
-actionlib_msgs_generate_messages_eus/fast:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/build.make nao_gazebo/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/build
-.PHONY : actionlib_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-nao_gazebo/CMakeFiles/nodelet_generate_messages_nodejs.dir/rule:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/nodelet_generate_messages_nodejs.dir/rule
-.PHONY : nao_gazebo/CMakeFiles/nodelet_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-nodelet_generate_messages_nodejs: nao_gazebo/CMakeFiles/nodelet_generate_messages_nodejs.dir/rule
-
-.PHONY : nodelet_generate_messages_nodejs
-
-# fast build rule for target.
-nodelet_generate_messages_nodejs/fast:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/nodelet_generate_messages_nodejs.dir/build.make nao_gazebo/CMakeFiles/nodelet_generate_messages_nodejs.dir/build
-.PHONY : nodelet_generate_messages_nodejs/fast
+gazebo_msgs_generate_messages_eus/fast:
+	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/gazebo_msgs_generate_messages_eus.dir/build.make nao_gazebo/CMakeFiles/gazebo_msgs_generate_messages_eus.dir/build
+.PHONY : gazebo_msgs_generate_messages_eus/fast
 
 # Convenience name for target.
 nao_gazebo/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/rule:
@@ -1278,79 +633,259 @@ trajectory_msgs_generate_messages_lisp/fast:
 .PHONY : trajectory_msgs_generate_messages_lisp/fast
 
 # Convenience name for target.
-nao_gazebo/CMakeFiles/bond_generate_messages_cpp.dir/rule:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/bond_generate_messages_cpp.dir/rule
-.PHONY : nao_gazebo/CMakeFiles/bond_generate_messages_cpp.dir/rule
+nao_gazebo/CMakeFiles/control_msgs_generate_messages_py.dir/rule:
+	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/control_msgs_generate_messages_py.dir/rule
+.PHONY : nao_gazebo/CMakeFiles/control_msgs_generate_messages_py.dir/rule
 
 # Convenience name for target.
-bond_generate_messages_cpp: nao_gazebo/CMakeFiles/bond_generate_messages_cpp.dir/rule
+control_msgs_generate_messages_py: nao_gazebo/CMakeFiles/control_msgs_generate_messages_py.dir/rule
 
-.PHONY : bond_generate_messages_cpp
+.PHONY : control_msgs_generate_messages_py
 
 # fast build rule for target.
-bond_generate_messages_cpp/fast:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/bond_generate_messages_cpp.dir/build.make nao_gazebo/CMakeFiles/bond_generate_messages_cpp.dir/build
-.PHONY : bond_generate_messages_cpp/fast
+control_msgs_generate_messages_py/fast:
+	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/control_msgs_generate_messages_py.dir/build.make nao_gazebo/CMakeFiles/control_msgs_generate_messages_py.dir/build
+.PHONY : control_msgs_generate_messages_py/fast
 
 # Convenience name for target.
-nao_gazebo/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/rule:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/rule
-.PHONY : nao_gazebo/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/rule
+nao_gazebo/CMakeFiles/gazebo_plugins_gencfg.dir/rule:
+	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/gazebo_plugins_gencfg.dir/rule
+.PHONY : nao_gazebo/CMakeFiles/gazebo_plugins_gencfg.dir/rule
 
 # Convenience name for target.
-actionlib_msgs_generate_messages_cpp: nao_gazebo/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/rule
+gazebo_plugins_gencfg: nao_gazebo/CMakeFiles/gazebo_plugins_gencfg.dir/rule
 
-.PHONY : actionlib_msgs_generate_messages_cpp
+.PHONY : gazebo_plugins_gencfg
 
 # fast build rule for target.
-actionlib_msgs_generate_messages_cpp/fast:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/build.make nao_gazebo/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/build
-.PHONY : actionlib_msgs_generate_messages_cpp/fast
+gazebo_plugins_gencfg/fast:
+	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/gazebo_plugins_gencfg.dir/build.make nao_gazebo/CMakeFiles/gazebo_plugins_gencfg.dir/build
+.PHONY : gazebo_plugins_gencfg/fast
 
 # Convenience name for target.
-nao_gazebo/CMakeFiles/tf_generate_messages_eus.dir/rule:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/tf_generate_messages_eus.dir/rule
-.PHONY : nao_gazebo/CMakeFiles/tf_generate_messages_eus.dir/rule
+nao_gazebo/CMakeFiles/trajectory_msgs_generate_messages_py.dir/rule:
+	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/trajectory_msgs_generate_messages_py.dir/rule
+.PHONY : nao_gazebo/CMakeFiles/trajectory_msgs_generate_messages_py.dir/rule
 
 # Convenience name for target.
-tf_generate_messages_eus: nao_gazebo/CMakeFiles/tf_generate_messages_eus.dir/rule
+trajectory_msgs_generate_messages_py: nao_gazebo/CMakeFiles/trajectory_msgs_generate_messages_py.dir/rule
 
-.PHONY : tf_generate_messages_eus
+.PHONY : trajectory_msgs_generate_messages_py
 
 # fast build rule for target.
-tf_generate_messages_eus/fast:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/tf_generate_messages_eus.dir/build.make nao_gazebo/CMakeFiles/tf_generate_messages_eus.dir/build
-.PHONY : tf_generate_messages_eus/fast
+trajectory_msgs_generate_messages_py/fast:
+	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/trajectory_msgs_generate_messages_py.dir/build.make nao_gazebo/CMakeFiles/trajectory_msgs_generate_messages_py.dir/build
+.PHONY : trajectory_msgs_generate_messages_py/fast
 
 # Convenience name for target.
-nao_gazebo/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/rule
-.PHONY : nao_gazebo/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/rule
+nao_gazebo/CMakeFiles/gazebo_msgs_generate_messages_py.dir/rule:
+	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/gazebo_msgs_generate_messages_py.dir/rule
+.PHONY : nao_gazebo/CMakeFiles/gazebo_msgs_generate_messages_py.dir/rule
 
 # Convenience name for target.
-trajectory_msgs_generate_messages_nodejs: nao_gazebo/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/rule
+gazebo_msgs_generate_messages_py: nao_gazebo/CMakeFiles/gazebo_msgs_generate_messages_py.dir/rule
 
-.PHONY : trajectory_msgs_generate_messages_nodejs
+.PHONY : gazebo_msgs_generate_messages_py
 
 # fast build rule for target.
-trajectory_msgs_generate_messages_nodejs/fast:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/build.make nao_gazebo/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/build
-.PHONY : trajectory_msgs_generate_messages_nodejs/fast
+gazebo_msgs_generate_messages_py/fast:
+	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/gazebo_msgs_generate_messages_py.dir/build.make nao_gazebo/CMakeFiles/gazebo_msgs_generate_messages_py.dir/build
+.PHONY : gazebo_msgs_generate_messages_py/fast
 
 # Convenience name for target.
-nao_gazebo/CMakeFiles/bond_generate_messages_nodejs.dir/rule:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/bond_generate_messages_nodejs.dir/rule
-.PHONY : nao_gazebo/CMakeFiles/bond_generate_messages_nodejs.dir/rule
+nao_gazebo/CMakeFiles/nodelet_generate_messages_nodejs.dir/rule:
+	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/nodelet_generate_messages_nodejs.dir/rule
+.PHONY : nao_gazebo/CMakeFiles/nodelet_generate_messages_nodejs.dir/rule
 
 # Convenience name for target.
-bond_generate_messages_nodejs: nao_gazebo/CMakeFiles/bond_generate_messages_nodejs.dir/rule
+nodelet_generate_messages_nodejs: nao_gazebo/CMakeFiles/nodelet_generate_messages_nodejs.dir/rule
 
-.PHONY : bond_generate_messages_nodejs
+.PHONY : nodelet_generate_messages_nodejs
 
 # fast build rule for target.
-bond_generate_messages_nodejs/fast:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/bond_generate_messages_nodejs.dir/build.make nao_gazebo/CMakeFiles/bond_generate_messages_nodejs.dir/build
-.PHONY : bond_generate_messages_nodejs/fast
+nodelet_generate_messages_nodejs/fast:
+	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/nodelet_generate_messages_nodejs.dir/build.make nao_gazebo/CMakeFiles/nodelet_generate_messages_nodejs.dir/build
+.PHONY : nodelet_generate_messages_nodejs/fast
+
+# Convenience name for target.
+nao_gazebo/CMakeFiles/std_srvs_generate_messages_nodejs.dir/rule:
+	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/std_srvs_generate_messages_nodejs.dir/rule
+.PHONY : nao_gazebo/CMakeFiles/std_srvs_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+std_srvs_generate_messages_nodejs: nao_gazebo/CMakeFiles/std_srvs_generate_messages_nodejs.dir/rule
+
+.PHONY : std_srvs_generate_messages_nodejs
+
+# fast build rule for target.
+std_srvs_generate_messages_nodejs/fast:
+	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/std_srvs_generate_messages_nodejs.dir/build.make nao_gazebo/CMakeFiles/std_srvs_generate_messages_nodejs.dir/build
+.PHONY : std_srvs_generate_messages_nodejs/fast
+
+# Convenience name for target.
+nao_gazebo/CMakeFiles/bond_generate_messages_py.dir/rule:
+	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/bond_generate_messages_py.dir/rule
+.PHONY : nao_gazebo/CMakeFiles/bond_generate_messages_py.dir/rule
+
+# Convenience name for target.
+bond_generate_messages_py: nao_gazebo/CMakeFiles/bond_generate_messages_py.dir/rule
+
+.PHONY : bond_generate_messages_py
+
+# fast build rule for target.
+bond_generate_messages_py/fast:
+	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/bond_generate_messages_py.dir/build.make nao_gazebo/CMakeFiles/bond_generate_messages_py.dir/build
+.PHONY : bond_generate_messages_py/fast
+
+# Convenience name for target.
+nao_gazebo/CMakeFiles/nodelet_generate_messages_cpp.dir/rule:
+	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/nodelet_generate_messages_cpp.dir/rule
+.PHONY : nao_gazebo/CMakeFiles/nodelet_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+nodelet_generate_messages_cpp: nao_gazebo/CMakeFiles/nodelet_generate_messages_cpp.dir/rule
+
+.PHONY : nodelet_generate_messages_cpp
+
+# fast build rule for target.
+nodelet_generate_messages_cpp/fast:
+	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/nodelet_generate_messages_cpp.dir/build.make nao_gazebo/CMakeFiles/nodelet_generate_messages_cpp.dir/build
+.PHONY : nodelet_generate_messages_cpp/fast
+
+# Convenience name for target.
+nao_gazebo/CMakeFiles/nodelet_generate_messages_eus.dir/rule:
+	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/nodelet_generate_messages_eus.dir/rule
+.PHONY : nao_gazebo/CMakeFiles/nodelet_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+nodelet_generate_messages_eus: nao_gazebo/CMakeFiles/nodelet_generate_messages_eus.dir/rule
+
+.PHONY : nodelet_generate_messages_eus
+
+# fast build rule for target.
+nodelet_generate_messages_eus/fast:
+	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/nodelet_generate_messages_eus.dir/build.make nao_gazebo/CMakeFiles/nodelet_generate_messages_eus.dir/build
+.PHONY : nodelet_generate_messages_eus/fast
+
+# Convenience name for target.
+nao_gazebo/CMakeFiles/nodelet_generate_messages_lisp.dir/rule:
+	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/nodelet_generate_messages_lisp.dir/rule
+.PHONY : nao_gazebo/CMakeFiles/nodelet_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+nodelet_generate_messages_lisp: nao_gazebo/CMakeFiles/nodelet_generate_messages_lisp.dir/rule
+
+.PHONY : nodelet_generate_messages_lisp
+
+# fast build rule for target.
+nodelet_generate_messages_lisp/fast:
+	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/nodelet_generate_messages_lisp.dir/build.make nao_gazebo/CMakeFiles/nodelet_generate_messages_lisp.dir/build
+.PHONY : nodelet_generate_messages_lisp/fast
+
+# Convenience name for target.
+nao_gazebo/CMakeFiles/gazebo_msgs_generate_messages_nodejs.dir/rule:
+	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/gazebo_msgs_generate_messages_nodejs.dir/rule
+.PHONY : nao_gazebo/CMakeFiles/gazebo_msgs_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+gazebo_msgs_generate_messages_nodejs: nao_gazebo/CMakeFiles/gazebo_msgs_generate_messages_nodejs.dir/rule
+
+.PHONY : gazebo_msgs_generate_messages_nodejs
+
+# fast build rule for target.
+gazebo_msgs_generate_messages_nodejs/fast:
+	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/gazebo_msgs_generate_messages_nodejs.dir/build.make nao_gazebo/CMakeFiles/gazebo_msgs_generate_messages_nodejs.dir/build
+.PHONY : gazebo_msgs_generate_messages_nodejs/fast
+
+# Convenience name for target.
+nao_gazebo/CMakeFiles/gazebo_msgs_generate_messages_lisp.dir/rule:
+	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/gazebo_msgs_generate_messages_lisp.dir/rule
+.PHONY : nao_gazebo/CMakeFiles/gazebo_msgs_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+gazebo_msgs_generate_messages_lisp: nao_gazebo/CMakeFiles/gazebo_msgs_generate_messages_lisp.dir/rule
+
+.PHONY : gazebo_msgs_generate_messages_lisp
+
+# fast build rule for target.
+gazebo_msgs_generate_messages_lisp/fast:
+	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/gazebo_msgs_generate_messages_lisp.dir/build.make nao_gazebo/CMakeFiles/gazebo_msgs_generate_messages_lisp.dir/build
+.PHONY : gazebo_msgs_generate_messages_lisp/fast
+
+# Convenience name for target.
+nao_gazebo/CMakeFiles/bond_generate_messages_eus.dir/rule:
+	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/bond_generate_messages_eus.dir/rule
+.PHONY : nao_gazebo/CMakeFiles/bond_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+bond_generate_messages_eus: nao_gazebo/CMakeFiles/bond_generate_messages_eus.dir/rule
+
+.PHONY : bond_generate_messages_eus
+
+# fast build rule for target.
+bond_generate_messages_eus/fast:
+	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/bond_generate_messages_eus.dir/build.make nao_gazebo/CMakeFiles/bond_generate_messages_eus.dir/build
+.PHONY : bond_generate_messages_eus/fast
+
+# Convenience name for target.
+nao_gazebo/CMakeFiles/dynamic_reconfigure_generate_messages_nodejs.dir/rule:
+	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/dynamic_reconfigure_generate_messages_nodejs.dir/rule
+.PHONY : nao_gazebo/CMakeFiles/dynamic_reconfigure_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+dynamic_reconfigure_generate_messages_nodejs: nao_gazebo/CMakeFiles/dynamic_reconfigure_generate_messages_nodejs.dir/rule
+
+.PHONY : dynamic_reconfigure_generate_messages_nodejs
+
+# fast build rule for target.
+dynamic_reconfigure_generate_messages_nodejs/fast:
+	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/dynamic_reconfigure_generate_messages_nodejs.dir/build.make nao_gazebo/CMakeFiles/dynamic_reconfigure_generate_messages_nodejs.dir/build
+.PHONY : dynamic_reconfigure_generate_messages_nodejs/fast
+
+# Convenience name for target.
+nao_gazebo/CMakeFiles/gazebo_msgs_generate_messages_cpp.dir/rule:
+	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/gazebo_msgs_generate_messages_cpp.dir/rule
+.PHONY : nao_gazebo/CMakeFiles/gazebo_msgs_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+gazebo_msgs_generate_messages_cpp: nao_gazebo/CMakeFiles/gazebo_msgs_generate_messages_cpp.dir/rule
+
+.PHONY : gazebo_msgs_generate_messages_cpp
+
+# fast build rule for target.
+gazebo_msgs_generate_messages_cpp/fast:
+	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/gazebo_msgs_generate_messages_cpp.dir/build.make nao_gazebo/CMakeFiles/gazebo_msgs_generate_messages_cpp.dir/build
+.PHONY : gazebo_msgs_generate_messages_cpp/fast
+
+# Convenience name for target.
+nao_gazebo/CMakeFiles/bond_generate_messages_lisp.dir/rule:
+	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/bond_generate_messages_lisp.dir/rule
+.PHONY : nao_gazebo/CMakeFiles/bond_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+bond_generate_messages_lisp: nao_gazebo/CMakeFiles/bond_generate_messages_lisp.dir/rule
+
+.PHONY : bond_generate_messages_lisp
+
+# fast build rule for target.
+bond_generate_messages_lisp/fast:
+	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/bond_generate_messages_lisp.dir/build.make nao_gazebo/CMakeFiles/bond_generate_messages_lisp.dir/build
+.PHONY : bond_generate_messages_lisp/fast
+
+# Convenience name for target.
+nao_gazebo/CMakeFiles/nav_msgs_generate_messages_eus.dir/rule:
+	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/nav_msgs_generate_messages_eus.dir/rule
+.PHONY : nao_gazebo/CMakeFiles/nav_msgs_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+nav_msgs_generate_messages_eus: nao_gazebo/CMakeFiles/nav_msgs_generate_messages_eus.dir/rule
+
+.PHONY : nav_msgs_generate_messages_eus
+
+# fast build rule for target.
+nav_msgs_generate_messages_eus/fast:
+	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/nav_msgs_generate_messages_eus.dir/build.make nao_gazebo/CMakeFiles/nav_msgs_generate_messages_eus.dir/build
+.PHONY : nav_msgs_generate_messages_eus/fast
 
 # Convenience name for target.
 nao_gazebo/CMakeFiles/nav_msgs_generate_messages_lisp.dir/rule:
@@ -1383,259 +918,34 @@ nav_msgs_generate_messages_nodejs/fast:
 .PHONY : nav_msgs_generate_messages_nodejs/fast
 
 # Convenience name for target.
-nao_gazebo/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/rule:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/rule
-.PHONY : nao_gazebo/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/rule
+nao_gazebo/CMakeFiles/control_toolbox_generate_messages_nodejs.dir/rule:
+	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/control_toolbox_generate_messages_nodejs.dir/rule
+.PHONY : nao_gazebo/CMakeFiles/control_toolbox_generate_messages_nodejs.dir/rule
 
 # Convenience name for target.
-actionlib_msgs_generate_messages_lisp: nao_gazebo/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/rule
+control_toolbox_generate_messages_nodejs: nao_gazebo/CMakeFiles/control_toolbox_generate_messages_nodejs.dir/rule
 
-.PHONY : actionlib_msgs_generate_messages_lisp
+.PHONY : control_toolbox_generate_messages_nodejs
 
 # fast build rule for target.
-actionlib_msgs_generate_messages_lisp/fast:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/build.make nao_gazebo/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/build
-.PHONY : actionlib_msgs_generate_messages_lisp/fast
+control_toolbox_generate_messages_nodejs/fast:
+	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/control_toolbox_generate_messages_nodejs.dir/build.make nao_gazebo/CMakeFiles/control_toolbox_generate_messages_nodejs.dir/build
+.PHONY : control_toolbox_generate_messages_nodejs/fast
 
 # Convenience name for target.
-nao_gazebo/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/rule
-.PHONY : nao_gazebo/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/rule
+nao_gazebo/CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/rule:
+	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/rule
+.PHONY : nao_gazebo/CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/rule
 
 # Convenience name for target.
-actionlib_msgs_generate_messages_nodejs: nao_gazebo/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/rule
+dynamic_reconfigure_generate_messages_cpp: nao_gazebo/CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/rule
 
-.PHONY : actionlib_msgs_generate_messages_nodejs
+.PHONY : dynamic_reconfigure_generate_messages_cpp
 
 # fast build rule for target.
-actionlib_msgs_generate_messages_nodejs/fast:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/build.make nao_gazebo/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/build
-.PHONY : actionlib_msgs_generate_messages_nodejs/fast
-
-# Convenience name for target.
-nao_gazebo/CMakeFiles/actionlib_msgs_generate_messages_py.dir/rule:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/actionlib_msgs_generate_messages_py.dir/rule
-.PHONY : nao_gazebo/CMakeFiles/actionlib_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-actionlib_msgs_generate_messages_py: nao_gazebo/CMakeFiles/actionlib_msgs_generate_messages_py.dir/rule
-
-.PHONY : actionlib_msgs_generate_messages_py
-
-# fast build rule for target.
-actionlib_msgs_generate_messages_py/fast:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/actionlib_msgs_generate_messages_py.dir/build.make nao_gazebo/CMakeFiles/actionlib_msgs_generate_messages_py.dir/build
-.PHONY : actionlib_msgs_generate_messages_py/fast
-
-# Convenience name for target.
-nao_gazebo/CMakeFiles/tf_generate_messages_lisp.dir/rule:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/tf_generate_messages_lisp.dir/rule
-.PHONY : nao_gazebo/CMakeFiles/tf_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-tf_generate_messages_lisp: nao_gazebo/CMakeFiles/tf_generate_messages_lisp.dir/rule
-
-.PHONY : tf_generate_messages_lisp
-
-# fast build rule for target.
-tf_generate_messages_lisp/fast:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/tf_generate_messages_lisp.dir/build.make nao_gazebo/CMakeFiles/tf_generate_messages_lisp.dir/build
-.PHONY : tf_generate_messages_lisp/fast
-
-# Convenience name for target.
-nao_gazebo/CMakeFiles/tf_generate_messages_nodejs.dir/rule:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/tf_generate_messages_nodejs.dir/rule
-.PHONY : nao_gazebo/CMakeFiles/tf_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-tf_generate_messages_nodejs: nao_gazebo/CMakeFiles/tf_generate_messages_nodejs.dir/rule
-
-.PHONY : tf_generate_messages_nodejs
-
-# fast build rule for target.
-tf_generate_messages_nodejs/fast:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/tf_generate_messages_nodejs.dir/build.make nao_gazebo/CMakeFiles/tf_generate_messages_nodejs.dir/build
-.PHONY : tf_generate_messages_nodejs/fast
-
-# Convenience name for target.
-nao_gazebo/CMakeFiles/actionlib_generate_messages_eus.dir/rule:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/actionlib_generate_messages_eus.dir/rule
-.PHONY : nao_gazebo/CMakeFiles/actionlib_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-actionlib_generate_messages_eus: nao_gazebo/CMakeFiles/actionlib_generate_messages_eus.dir/rule
-
-.PHONY : actionlib_generate_messages_eus
-
-# fast build rule for target.
-actionlib_generate_messages_eus/fast:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/actionlib_generate_messages_eus.dir/build.make nao_gazebo/CMakeFiles/actionlib_generate_messages_eus.dir/build
-.PHONY : actionlib_generate_messages_eus/fast
-
-# Convenience name for target.
-nao_gazebo/CMakeFiles/tf_generate_messages_cpp.dir/rule:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/tf_generate_messages_cpp.dir/rule
-.PHONY : nao_gazebo/CMakeFiles/tf_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-tf_generate_messages_cpp: nao_gazebo/CMakeFiles/tf_generate_messages_cpp.dir/rule
-
-.PHONY : tf_generate_messages_cpp
-
-# fast build rule for target.
-tf_generate_messages_cpp/fast:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/tf_generate_messages_cpp.dir/build.make nao_gazebo/CMakeFiles/tf_generate_messages_cpp.dir/build
-.PHONY : tf_generate_messages_cpp/fast
-
-# Convenience name for target.
-nao_gazebo/CMakeFiles/actionlib_generate_messages_nodejs.dir/rule:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/actionlib_generate_messages_nodejs.dir/rule
-.PHONY : nao_gazebo/CMakeFiles/actionlib_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-actionlib_generate_messages_nodejs: nao_gazebo/CMakeFiles/actionlib_generate_messages_nodejs.dir/rule
-
-.PHONY : actionlib_generate_messages_nodejs
-
-# fast build rule for target.
-actionlib_generate_messages_nodejs/fast:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/actionlib_generate_messages_nodejs.dir/build.make nao_gazebo/CMakeFiles/actionlib_generate_messages_nodejs.dir/build
-.PHONY : actionlib_generate_messages_nodejs/fast
-
-# Convenience name for target.
-nao_gazebo/CMakeFiles/tf2_msgs_generate_messages_cpp.dir/rule:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/tf2_msgs_generate_messages_cpp.dir/rule
-.PHONY : nao_gazebo/CMakeFiles/tf2_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-tf2_msgs_generate_messages_cpp: nao_gazebo/CMakeFiles/tf2_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : tf2_msgs_generate_messages_cpp
-
-# fast build rule for target.
-tf2_msgs_generate_messages_cpp/fast:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/tf2_msgs_generate_messages_cpp.dir/build.make nao_gazebo/CMakeFiles/tf2_msgs_generate_messages_cpp.dir/build
-.PHONY : tf2_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-nao_gazebo/CMakeFiles/nav_msgs_generate_messages_eus.dir/rule:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/nav_msgs_generate_messages_eus.dir/rule
-.PHONY : nao_gazebo/CMakeFiles/nav_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-nav_msgs_generate_messages_eus: nao_gazebo/CMakeFiles/nav_msgs_generate_messages_eus.dir/rule
-
-.PHONY : nav_msgs_generate_messages_eus
-
-# fast build rule for target.
-nav_msgs_generate_messages_eus/fast:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/nav_msgs_generate_messages_eus.dir/build.make nao_gazebo/CMakeFiles/nav_msgs_generate_messages_eus.dir/build
-.PHONY : nav_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-nao_gazebo/CMakeFiles/tf2_msgs_generate_messages_eus.dir/rule:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/tf2_msgs_generate_messages_eus.dir/rule
-.PHONY : nao_gazebo/CMakeFiles/tf2_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-tf2_msgs_generate_messages_eus: nao_gazebo/CMakeFiles/tf2_msgs_generate_messages_eus.dir/rule
-
-.PHONY : tf2_msgs_generate_messages_eus
-
-# fast build rule for target.
-tf2_msgs_generate_messages_eus/fast:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/tf2_msgs_generate_messages_eus.dir/build.make nao_gazebo/CMakeFiles/tf2_msgs_generate_messages_eus.dir/build
-.PHONY : tf2_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-nao_gazebo/CMakeFiles/dynamic_reconfigure_gencfg.dir/rule:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/dynamic_reconfigure_gencfg.dir/rule
-.PHONY : nao_gazebo/CMakeFiles/dynamic_reconfigure_gencfg.dir/rule
-
-# Convenience name for target.
-dynamic_reconfigure_gencfg: nao_gazebo/CMakeFiles/dynamic_reconfigure_gencfg.dir/rule
-
-.PHONY : dynamic_reconfigure_gencfg
-
-# fast build rule for target.
-dynamic_reconfigure_gencfg/fast:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/dynamic_reconfigure_gencfg.dir/build.make nao_gazebo/CMakeFiles/dynamic_reconfigure_gencfg.dir/build
-.PHONY : dynamic_reconfigure_gencfg/fast
-
-# Convenience name for target.
-nao_gazebo/CMakeFiles/nav_msgs_generate_messages_py.dir/rule:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/nav_msgs_generate_messages_py.dir/rule
-.PHONY : nao_gazebo/CMakeFiles/nav_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-nav_msgs_generate_messages_py: nao_gazebo/CMakeFiles/nav_msgs_generate_messages_py.dir/rule
-
-.PHONY : nav_msgs_generate_messages_py
-
-# fast build rule for target.
-nav_msgs_generate_messages_py/fast:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/nav_msgs_generate_messages_py.dir/build.make nao_gazebo/CMakeFiles/nav_msgs_generate_messages_py.dir/build
-.PHONY : nav_msgs_generate_messages_py/fast
-
-# Convenience name for target.
-nao_gazebo/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/rule:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/rule
-.PHONY : nao_gazebo/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-tf2_msgs_generate_messages_lisp: nao_gazebo/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : tf2_msgs_generate_messages_lisp
-
-# fast build rule for target.
-tf2_msgs_generate_messages_lisp/fast:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/build.make nao_gazebo/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/build
-.PHONY : tf2_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-nao_gazebo/CMakeFiles/actionlib_generate_messages_py.dir/rule:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/actionlib_generate_messages_py.dir/rule
-.PHONY : nao_gazebo/CMakeFiles/actionlib_generate_messages_py.dir/rule
-
-# Convenience name for target.
-actionlib_generate_messages_py: nao_gazebo/CMakeFiles/actionlib_generate_messages_py.dir/rule
-
-.PHONY : actionlib_generate_messages_py
-
-# fast build rule for target.
-actionlib_generate_messages_py/fast:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/actionlib_generate_messages_py.dir/build.make nao_gazebo/CMakeFiles/actionlib_generate_messages_py.dir/build
-.PHONY : actionlib_generate_messages_py/fast
-
-# Convenience name for target.
-nao_gazebo/CMakeFiles/tf2_msgs_generate_messages_py.dir/rule:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/tf2_msgs_generate_messages_py.dir/rule
-.PHONY : nao_gazebo/CMakeFiles/tf2_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-tf2_msgs_generate_messages_py: nao_gazebo/CMakeFiles/tf2_msgs_generate_messages_py.dir/rule
-
-.PHONY : tf2_msgs_generate_messages_py
-
-# fast build rule for target.
-tf2_msgs_generate_messages_py/fast:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/tf2_msgs_generate_messages_py.dir/build.make nao_gazebo/CMakeFiles/tf2_msgs_generate_messages_py.dir/build
-.PHONY : tf2_msgs_generate_messages_py/fast
-
-# Convenience name for target.
-nao_gazebo/CMakeFiles/tf2_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/tf2_msgs_generate_messages_nodejs.dir/rule
-.PHONY : nao_gazebo/CMakeFiles/tf2_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-tf2_msgs_generate_messages_nodejs: nao_gazebo/CMakeFiles/tf2_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : tf2_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-tf2_msgs_generate_messages_nodejs/fast:
-	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/tf2_msgs_generate_messages_nodejs.dir/build.make nao_gazebo/CMakeFiles/tf2_msgs_generate_messages_nodejs.dir/build
-.PHONY : tf2_msgs_generate_messages_nodejs/fast
+dynamic_reconfigure_generate_messages_cpp/fast:
+	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/build.make nao_gazebo/CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/build
+.PHONY : dynamic_reconfigure_generate_messages_cpp/fast
 
 # Convenience name for target.
 nao_gazebo/CMakeFiles/dynamic_reconfigure_generate_messages_eus.dir/rule:
@@ -1652,6 +962,21 @@ dynamic_reconfigure_generate_messages_eus/fast:
 	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/dynamic_reconfigure_generate_messages_eus.dir/build.make nao_gazebo/CMakeFiles/dynamic_reconfigure_generate_messages_eus.dir/build
 .PHONY : dynamic_reconfigure_generate_messages_eus/fast
 
+# Convenience name for target.
+nao_gazebo/CMakeFiles/dynamic_reconfigure_generate_messages_py.dir/rule:
+	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nao_gazebo/CMakeFiles/dynamic_reconfigure_generate_messages_py.dir/rule
+.PHONY : nao_gazebo/CMakeFiles/dynamic_reconfigure_generate_messages_py.dir/rule
+
+# Convenience name for target.
+dynamic_reconfigure_generate_messages_py: nao_gazebo/CMakeFiles/dynamic_reconfigure_generate_messages_py.dir/rule
+
+.PHONY : dynamic_reconfigure_generate_messages_py
+
+# fast build rule for target.
+dynamic_reconfigure_generate_messages_py/fast:
+	cd /home/lucas/nao_soccer_ws/build && $(MAKE) -f nao_gazebo/CMakeFiles/dynamic_reconfigure_generate_messages_py.dir/build.make nao_gazebo/CMakeFiles/dynamic_reconfigure_generate_messages_py.dir/build
+.PHONY : dynamic_reconfigure_generate_messages_py/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -1659,111 +984,66 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... install/strip"
-	@echo "... install/local"
-	@echo "... install"
 	@echo "... list_install_components"
-	@echo "... control_msgs_generate_messages_py"
-	@echo "... control_msgs_generate_messages_lisp"
+	@echo "... rebuild_cache"
+	@echo "... test"
+	@echo "... control_msgs_generate_messages_nodejs"
 	@echo "... control_msgs_generate_messages_eus"
 	@echo "... control_msgs_generate_messages_cpp"
-	@echo "... control_toolbox_generate_messages_py"
-	@echo "... control_toolbox_generate_messages_nodejs"
 	@echo "... control_toolbox_generate_messages_lisp"
 	@echo "... control_toolbox_generate_messages_eus"
 	@echo "... control_toolbox_generate_messages_cpp"
+	@echo "... control_toolbox_gencfg"
+	@echo "... controller_manager_msgs_generate_messages_lisp"
+	@echo "... controller_manager_msgs_generate_messages_eus"
 	@echo "... controller_manager_msgs_generate_messages_nodejs"
 	@echo "... controller_manager_msgs_generate_messages_cpp"
 	@echo "... gazebo_ros_gencfg"
-	@echo "... dynamic_reconfigure_generate_messages_py"
-	@echo "... dynamic_reconfigure_generate_messages_nodejs"
-	@echo "... geometry_msgs_generate_messages_eus"
-	@echo "... control_msgs_generate_messages_nodejs"
-	@echo "... roscpp_generate_messages_cpp"
-	@echo "... sensor_msgs_generate_messages_nodejs"
-	@echo "... rebuild_cache"
-	@echo "... actionlib_generate_messages_cpp"
+	@echo "... control_msgs_generate_messages_lisp"
+	@echo "... dynamic_reconfigure_gencfg"
 	@echo "... std_srvs_generate_messages_py"
-	@echo "... std_srvs_generate_messages_cpp"
-	@echo "... geometry_msgs_generate_messages_py"
-	@echo "... std_srvs_generate_messages_eus"
-	@echo "... roscpp_generate_messages_lisp"
-	@echo "... gazebo_msgs_generate_messages_lisp"
-	@echo "... bond_generate_messages_eus"
-	@echo "... geometry_msgs_generate_messages_nodejs"
-	@echo "... geometry_msgs_generate_messages_lisp"
-	@echo "... roscpp_generate_messages_py"
-	@echo "... controller_manager_msgs_generate_messages_eus"
-	@echo "... trajectory_msgs_generate_messages_eus"
-	@echo "... gazebo_msgs_generate_messages_py"
-	@echo "... edit_cache"
-	@echo "... std_msgs_generate_messages_eus"
-	@echo "... trajectory_msgs_generate_messages_py"
-	@echo "... std_msgs_generate_messages_nodejs"
-	@echo "... dynamic_reconfigure_generate_messages_lisp"
-	@echo "... gazebo_msgs_generate_messages_cpp"
-	@echo "... bond_generate_messages_lisp"
-	@echo "... gazebo_plugins_gencfg"
-	@echo "... std_srvs_generate_messages_nodejs"
-	@echo "... nodelet_generate_messages_cpp"
-	@echo "... bond_generate_messages_py"
-	@echo "... geometry_msgs_generate_messages_cpp"
-	@echo "... actionlib_generate_messages_lisp"
-	@echo "... sensor_msgs_generate_messages_eus"
-	@echo "... sensor_msgs_generate_messages_cpp"
-	@echo "... roscpp_generate_messages_nodejs"
-	@echo "... std_msgs_generate_messages_lisp"
-	@echo "... gazebo_msgs_generate_messages_eus"
-	@echo "... sensor_msgs_generate_messages_lisp"
-	@echo "... nav_msgs_generate_messages_cpp"
-	@echo "... std_msgs_generate_messages_cpp"
+	@echo "... controller_manager_msgs_generate_messages_py"
 	@echo "... std_srvs_generate_messages_lisp"
-	@echo "... control_toolbox_gencfg"
-	@echo "... std_msgs_generate_messages_py"
+	@echo "... bond_generate_messages_cpp"
+	@echo "... install"
+	@echo "... nav_msgs_generate_messages_py"
+	@echo "... install/local"
+	@echo "... std_srvs_generate_messages_eus"
+	@echo "... std_srvs_generate_messages_cpp"
+	@echo "... trajectory_msgs_generate_messages_nodejs"
+	@echo "... trajectory_msgs_generate_messages_eus"
 	@echo "... trajectory_msgs_generate_messages_cpp"
 	@echo "... nodelet_generate_messages_py"
-	@echo "... sensor_msgs_generate_messages_py"
-	@echo "... rosgraph_msgs_generate_messages_cpp"
-	@echo "... tf_generate_messages_py"
-	@echo "... dynamic_reconfigure_generate_messages_cpp"
-	@echo "... gazebo_msgs_generate_messages_nodejs"
-	@echo "... rosgraph_msgs_generate_messages_eus"
-	@echo "... rosgraph_msgs_generate_messages_lisp"
-	@echo "... rosgraph_msgs_generate_messages_nodejs"
-	@echo "... controller_manager_msgs_generate_messages_lisp"
-	@echo "... nodelet_generate_messages_eus"
-	@echo "... controller_manager_msgs_generate_messages_py"
-	@echo "... nodelet_generate_messages_lisp"
-	@echo "... roscpp_generate_messages_eus"
-	@echo "... rosgraph_msgs_generate_messages_py"
-	@echo "... actionlib_msgs_generate_messages_eus"
-	@echo "... nodelet_generate_messages_nodejs"
-	@echo "... trajectory_msgs_generate_messages_lisp"
-	@echo "... bond_generate_messages_cpp"
-	@echo "... actionlib_msgs_generate_messages_cpp"
-	@echo "... tf_generate_messages_eus"
-	@echo "... trajectory_msgs_generate_messages_nodejs"
+	@echo "... control_toolbox_generate_messages_py"
 	@echo "... bond_generate_messages_nodejs"
-	@echo "... nav_msgs_generate_messages_lisp"
-	@echo "... test"
-	@echo "... nav_msgs_generate_messages_nodejs"
-	@echo "... actionlib_msgs_generate_messages_lisp"
-	@echo "... actionlib_msgs_generate_messages_nodejs"
-	@echo "... actionlib_msgs_generate_messages_py"
-	@echo "... tf_generate_messages_lisp"
-	@echo "... tf_generate_messages_nodejs"
-	@echo "... actionlib_generate_messages_eus"
-	@echo "... tf_generate_messages_cpp"
-	@echo "... actionlib_generate_messages_nodejs"
-	@echo "... tf2_msgs_generate_messages_cpp"
+	@echo "... dynamic_reconfigure_generate_messages_lisp"
+	@echo "... nav_msgs_generate_messages_cpp"
+	@echo "... gazebo_msgs_generate_messages_eus"
+	@echo "... trajectory_msgs_generate_messages_lisp"
+	@echo "... control_msgs_generate_messages_py"
+	@echo "... gazebo_plugins_gencfg"
+	@echo "... trajectory_msgs_generate_messages_py"
+	@echo "... gazebo_msgs_generate_messages_py"
+	@echo "... nodelet_generate_messages_nodejs"
+	@echo "... std_srvs_generate_messages_nodejs"
+	@echo "... bond_generate_messages_py"
+	@echo "... nodelet_generate_messages_cpp"
+	@echo "... nodelet_generate_messages_eus"
+	@echo "... nodelet_generate_messages_lisp"
+	@echo "... gazebo_msgs_generate_messages_nodejs"
+	@echo "... gazebo_msgs_generate_messages_lisp"
+	@echo "... bond_generate_messages_eus"
+	@echo "... dynamic_reconfigure_generate_messages_nodejs"
+	@echo "... gazebo_msgs_generate_messages_cpp"
+	@echo "... bond_generate_messages_lisp"
 	@echo "... nav_msgs_generate_messages_eus"
-	@echo "... tf2_msgs_generate_messages_eus"
-	@echo "... dynamic_reconfigure_gencfg"
-	@echo "... nav_msgs_generate_messages_py"
-	@echo "... tf2_msgs_generate_messages_lisp"
-	@echo "... actionlib_generate_messages_py"
-	@echo "... tf2_msgs_generate_messages_py"
-	@echo "... tf2_msgs_generate_messages_nodejs"
+	@echo "... edit_cache"
+	@echo "... nav_msgs_generate_messages_lisp"
+	@echo "... nav_msgs_generate_messages_nodejs"
+	@echo "... control_toolbox_generate_messages_nodejs"
+	@echo "... dynamic_reconfigure_generate_messages_cpp"
 	@echo "... dynamic_reconfigure_generate_messages_eus"
+	@echo "... dynamic_reconfigure_generate_messages_py"
 .PHONY : help
 
 
